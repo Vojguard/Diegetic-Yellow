@@ -49,7 +49,8 @@ func _handle_actions() -> void:
 		_shoot_cast.set_enabled(true)
 		_shoot_cast.force_raycast_update()
 		var hit : Object = _shoot_cast.get_collider()
-		print(hit)
+		if hit is Target:
+			print(hit)
 		_shoot_cast.set_enabled(false)
 		
 	if Input.is_action_just_pressed("interact"):
@@ -59,7 +60,9 @@ func _handle_actions() -> void:
 			var collisions : int = _interaction_cast.get_collision_count()
 			if collisions > 0:
 				var hit : Object = _interaction_cast.get_collider(0)
-				print(hit)
+				if hit is Interactable:
+					hit.interact()
+					print(hit)
 			_interaction_cast.set_enabled(true)
 
 #func _input(event: InputEvent) -> void:

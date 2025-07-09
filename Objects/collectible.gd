@@ -6,8 +6,8 @@ func interact():
 
 
 func _on_screen_entered() -> void:
-	print("bonjour")
+	print("heya")
 
 
 func _on_screen_exited() -> void:
-	print("adios")
+	print("byea")

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dit0ixxyrcvvp"]
+
+[ext_resource type="Script" uid="uid://b6lx1v1uloe0u" path="res://Objects/target.gd" id="1_d628h"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_by6mq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d628h"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jge0a"]
+material = SubResource("StandardMaterial3D_d628h")
+
+[node name="Target" type="StaticBody3D"]
+script = ExtResource("1_d628h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_by6mq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_jge0a")
+
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]
+aabb = AABB(-0.5, -1, -0.5, 1, 2, 1)
+
+[connection signal="screen_entered" from="VisibleOnScreenEnabler3D" to="." method="_on_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler3D" to="." method="_on_screen_exited"]
