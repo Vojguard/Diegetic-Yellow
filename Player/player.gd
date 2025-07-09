@@ -1,18 +1,27 @@
 class_name PlayerController
 extends CharacterBody3D
 
+const SHOOT_RAY_LENGHT = 1000
+
 @export var movement_speed : float = 500.0
 @export var mouse_sensivity : float = 0.005
 @export var camera_vertical_limit : float = 45
 @export var jump_force : float = 5
 
 @onready var _camera : Camera3D = $Camera
+@onready var _interaction_cast : ShapeCast3D = $Camera/InteractionCast
+@onready var _shoot_cast : RayCast3D = $Camera/ShootCast
+
+func _ready() -> void:
+	_interaction_cast.add_exception(self)
 
 func _physics_process(delta: float) -> void:
 	
 	_handle_horizontal_movement(delta)
 	
 	_handle_vertical_movement(delta)
+	
+	_handle_actions()
 	
 	move_and_slide()
 
@@ -34,9 +43,48 @@ func _handle_vertical_movement(delta: float) -> void:
 	else:
 		velocity.y += -9.81 * delta
 
+func _handle_actions() -> void:
+	if Input.is_action_just_pressed("shoot"):
+		print("pew pew")
+		_shoot_cast.set_enabled(true)
+		_shoot_cast.force_raycast_update()
+		var hit : Object = _shoot_cast.get_collider()
+		print(hit)
+		_shoot_cast.set_enabled(false)
+		
+	if Input.is_action_just_pressed("interact"):
+			print("cmon do something")
+			_interaction_cast.set_enabled(true)
+			_interaction_cast.force_shapecast_update()
+			var collisions : int = _interaction_cast.get_collision_count()
+			if collisions > 0:
+				var hit : Object = _interaction_cast.get_collider(0)
+				print(hit)
+			_interaction_cast.set_enabled(true)
+
+#func _input(event: InputEvent) -> void:
+	#if event is InputEventKey:
+		#if event.is_action_pressed("interact"):
+			#print("cmon do something")
+		
+
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * mouse_sensivity)
 		
 		_camera.rotate_x(-event.relative.y * mouse_sensivity)
 		_camera.rotation.x = clamp(_camera.rotation.x, deg_to_rad(-camera_vertical_limit), deg_to_rad(camera_vertical_limit))
+
+# function that shoot a ray from the camera forward returning the result dictionary
+func _shoot_ray_from_camera() -> Dictionary:
+	var space_state : PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
+	var mouse_position : Vector2 = get_viewport().get_mouse_position()
+		
+	# create the ray from center of the screen forward
+	var from : Vector3 = _camera.project_ray_origin(mouse_position)
+	var to : Vector3 = from + _camera.project_ray_normal(mouse_position) * SHOOT_RAY_LENGHT
+	var query : PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(from, to)
+	query.exclude = [self] #ignore the hit of the players bounding box
+		
+	var result : Dictionary = space_state.intersect_ray(query)
+	return result
