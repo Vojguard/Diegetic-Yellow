@@ -14,6 +14,8 @@ const SHOOT_RAY_LENGHT = 1000
 
 func _ready() -> void:
 	_interaction_cast.add_exception(self)
+	_interaction_cast.set_enabled(false)
+	_shoot_cast.set_enabled(false)
 
 func _physics_process(delta: float) -> void:
 	

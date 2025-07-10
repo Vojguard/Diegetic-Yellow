@@ -21,12 +21,11 @@ mesh = SubResource("CapsuleMesh_hvfyp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 
 [node name="ShootCast" type="RayCast3D" parent="Camera"]
-enabled = false
 target_position = Vector3(0, 0, -10)
 hit_back_faces = false
 debug_shape_custom_color = Color(1, 0, 0, 1)
 
 [node name="InteractionCast" type="ShapeCast3D" parent="Camera"]
-enabled = false
 shape = SubResource("SphereShape3D_l8h54")
 target_position = Vector3(0, 0, -2)
+debug_shape_custom_color = Color(0, 1, 0, 1)
