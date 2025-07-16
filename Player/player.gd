@@ -52,6 +52,7 @@ func _handle_actions() -> void:
 		_shoot_cast.force_raycast_update()
 		var hit : Object = _shoot_cast.get_collider()
 		if hit is Target:
+			hit.take_hit()
 			print(hit)
 		_shoot_cast.set_enabled(false)
 		

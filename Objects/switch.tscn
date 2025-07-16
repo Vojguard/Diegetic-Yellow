@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://xojga2b86md2"]
+
+[ext_resource type="Script" uid="uid://bpd4st4scxpg7" path="res://Objects/switch.gd" id="1_yyvnn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_en4se"]
+
+[node name="Switch" type="StaticBody3D"]
+script = ExtResource("1_yyvnn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_en4se")
