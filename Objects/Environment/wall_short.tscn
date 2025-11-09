@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://ejrfeg3guuuo"]
+
+[ext_resource type="PackedScene" uid="uid://d22q326jt5cwm" path="res://Models/short_wall.glb" id="1_i2xvs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rdwpg"]
+size = Vector3(1, 2.5, 0.14)
+
+[node name="ShortWall" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0.05)
+shape = SubResource("BoxShape3D_rdwpg")
+
+[node name="short_wall2" parent="." instance=ExtResource("1_i2xvs")]

@@ -3,13 +3,18 @@
 [ext_resource type="Script" uid="uid://da6fx643tjv3k" path="res://Player/player.gd" id="1_l8h54"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hvfyp"]
+radius = 0.25
+height = 1.8
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_hvfyp"]
+radius = 0.25
+height = 1.8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_l8h54"]
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_l8h54")
+jump_force = 2.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_hvfyp")
@@ -18,7 +23,7 @@ shape = SubResource("CapsuleShape3D_hvfyp")
 mesh = SubResource("CapsuleMesh_hvfyp")
 
 [node name="Camera" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
 [node name="ShootCast" type="RayCast3D" parent="Camera"]
 target_position = Vector3(0, 0, -10)
