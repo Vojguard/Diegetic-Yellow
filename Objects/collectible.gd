@@ -2,6 +2,7 @@ class_name Collectible
 extends Interactable
 
 func interact():
+	SignalBus.item_collected.emit(self)
 	queue_free()
 
 

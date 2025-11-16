@@ -16,6 +16,7 @@ func _ready() -> void:
 	_interaction_cast.add_exception(self)
 	_interaction_cast.set_enabled(false)
 	_shoot_cast.set_enabled(false)
+	SignalBus.player_loaded.emit(self)
 
 func _physics_process(delta: float) -> void:
 	
