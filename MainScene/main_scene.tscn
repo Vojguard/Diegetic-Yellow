@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://08msfmig0t30"]
+[gd_scene load_steps=16 format=3 uid="uid://08msfmig0t30"]
 
 [ext_resource type="PackedScene" uid="uid://dry5s7ff6a5i0" path="res://Player/player.tscn" id="1_fyr3e"]
 [ext_resource type="Script" uid="uid://c86ly3ox8pyub" path="res://MainScene/main_scene.gd" id="1_qjv46"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cqo83hkshkihh" path="res://Objects/Environment/wall_low.tscn" id="6_ji2x1"]
 [ext_resource type="PackedScene" uid="uid://dduifyfmja5tk" path="res://Objects/Environment/window.tscn" id="7_l5w4b"]
 [ext_resource type="PackedScene" uid="uid://ejrfeg3guuuo" path="res://Objects/Environment/wall_short.tscn" id="9_ji2x1"]
+[ext_resource type="PackedScene" uid="uid://cxed0t0aoghna" path="res://Objects/Environment/hangar.tscn" id="11_1m37m"]
+[ext_resource type="Material" uid="uid://cevxkbwlia6qp" path="res://Materials/hangar_material.tres" id="12_5ltmk"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_25u3m"]
 material = ExtResource("2_l5w4b")
@@ -17,6 +19,11 @@ size = Vector2(50, 80)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_25u3m"]
 size = Vector3(50, 0.1, 80)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_48xrq"]
+material = ExtResource("12_5ltmk")
+flip_faces = true
+size = Vector2(52, 82)
 
 [node name="MainScene" type="Node3D"]
 script = ExtResource("1_qjv46")
@@ -1119,3 +1126,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.5, 0, -16)
 
 [node name="ShortWall2" parent="." instance=ExtResource("9_ji2x1")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 24.5, 0, -6)
+
+[node name="Hangar" parent="." instance=ExtResource("11_1m37m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21, 0)
+
+[node name="Roof" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+mesh = SubResource("PlaneMesh_48xrq")
