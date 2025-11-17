@@ -17,9 +17,13 @@ func _on_player_loaded(p : PlayerController) -> void:
 	print("player_loaded")
 
 func _on_target_hit(t : Target) -> void:
-	_score += TARGET_HIT_SCORE
+	_update_score(TARGET_HIT_SCORE)
 	print("target hit %d" % _score)
 
 func _on_item_collected(ci : Collectible) -> void:
-	_score += COLLECTABLE_SCORE
+	_update_score(COLLECTABLE_SCORE)
 	print("item collected %d" % _score)
+
+func _update_score(score_update : int) -> void:
+	_score += score_update
+	SignalBus.score_updated.emit(_score)
