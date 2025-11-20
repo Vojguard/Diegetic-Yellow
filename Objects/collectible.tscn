@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://dc7gyrty7hjwp" path="res://Objects/collectible.gd" id="1_hjhql"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o8e5b"]
+size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hjhql"]
 albedo_color = Color(1, 1, 0, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6x32e"]
 material = SubResource("StandardMaterial3D_hjhql")
+size = Vector3(0.5, 0.5, 0.5)
 
 [node name="Collectible" type="StaticBody3D"]
 script = ExtResource("1_hjhql")
@@ -20,7 +22,7 @@ shape = SubResource("BoxShape3D_o8e5b")
 mesh = SubResource("BoxMesh_6x32e")
 
 [node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]
-aabb = AABB(-0.5, -0.5, -0.5, 1, 1, 1)
+aabb = AABB(-0.25, -0.25, -0.25, 0.5, 0.5, 0.5)
 
 [connection signal="screen_entered" from="VisibleOnScreenEnabler3D" to="." method="_on_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler3D" to="." method="_on_screen_exited"]
