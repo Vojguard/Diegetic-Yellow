@@ -17,6 +17,7 @@ height = 1.8
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_l8h54")
 movement_speed = 300.0
+mouse_sensivity = 0.002
 jump_force = 2.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -29,7 +30,8 @@ mesh = SubResource("CapsuleMesh_hvfyp")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
 [node name="weapon" parent="Camera" instance=ExtResource("2_4ntmi")]
-transform = Transform3D(0.9874138, 0, 0.15815806, 0, 1, 0, -0.15815806, 0, 0.9874138, 0.24542469, -0.12938768, -0.2599473)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06343359, -0.30052105)
+visible = false
 
 [node name="ShootCast" type="RayCast3D" parent="Camera"]
 target_position = Vector3(0, 0, -50)

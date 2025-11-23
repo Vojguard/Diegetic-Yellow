@@ -2,17 +2,22 @@ class_name PlayerController
 extends CharacterBody3D
 
 const SHOOT_RAY_LENGHT = 1000
+const ADS_FOV = 45
+const DEF_FOV = 75
 
 @export var movement_speed : float = 500.0
 @export var mouse_sensivity : float = 0.005
 @export var camera_vertical_limit : float = 45
 @export var jump_force : float = 5
 
+var _ads : bool = false
+
 @onready var _camera : Camera3D = $Camera
 @onready var _interaction_cast : ShapeCast3D = $Camera/InteractionCast
 @onready var _shoot_cast : RayCast3D = $Camera/ShootCast
 
 func _ready() -> void:
+	_camera.fov = DEF_FOV
 	_interaction_cast.add_exception(self)
 	_interaction_cast.set_enabled(false)
 	_shoot_cast.set_enabled(false)
@@ -47,6 +52,13 @@ func _handle_vertical_movement(delta: float) -> void:
 		velocity.y += -9.81 * delta
 
 func _handle_actions() -> void:
+	if Input.is_action_just_pressed("ads") and !_ads:
+		_ads = true
+		_camera.fov = ADS_FOV
+	if Input.is_action_just_released("ads") and _ads:
+		_ads = false
+		_camera.fov = DEF_FOV
+	
 	if Input.is_action_just_pressed("shoot"):
 		print("pew pew")
 		_shoot_cast.set_enabled(true)
