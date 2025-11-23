@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://08msfmig0t30"]
+[gd_scene load_steps=19 format=3 uid="uid://08msfmig0t30"]
 
 [ext_resource type="PackedScene" uid="uid://dry5s7ff6a5i0" path="res://Player/player.tscn" id="1_fyr3e"]
 [ext_resource type="Script" uid="uid://c86ly3ox8pyub" path="res://MainScene/main_scene.gd" id="1_qjv46"]
@@ -26,6 +26,9 @@ size = Vector3(50, 0.1, 80)
 material = ExtResource("12_5ltmk")
 flip_faces = true
 size = Vector2(52, 82)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_55fm0"]
+size = Vector3(9.5, 2, 3.5)
 
 [node name="MainScene" type="Node3D"]
 script = ExtResource("1_qjv46")
@@ -1435,3 +1438,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 1.05, -24)
 
 [node name="Player" parent="." instance=ExtResource("1_fyr3e")]
 transform = Transform3D(-0.9659258, 0, 0.25881913, 0, 1, 0, -0.25881913, 0, -0.9659258, 24, 0.9499999, -24)
+
+[node name="Exit" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -38)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Exit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_55fm0")
+
+[node name="Exit2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 2, 38)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Exit2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_55fm0")
+
+[connection signal="body_entered" from="Exit" to="GameManager" method="_on_exit_body_entered"]
+[connection signal="body_entered" from="Exit2" to="GameManager" method="_on_exit_body_entered"]

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Diegetic Yellow"
-run/main_scene="uid://08msfmig0t30"
+run/main_scene="uid://cos4y7qhiixte"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
