@@ -17,8 +17,8 @@ config/icon="uid://dikg0rrwpq6et"
 
 [autoload]
 
+LogWriter="*res://Autoload/log_writer.gd"
 SignalBus="*res://Autoload/signal_bus.gd"
-GameManager="*res://Autoload/game_manager.gd"
 
 [display]
 

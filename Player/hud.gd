@@ -14,7 +14,7 @@ func _ready() -> void:
 	SignalBus.score_updated.connect(_on_score_update)
 	SignalBus.target_hit.connect(_on_target_hit)
 	SignalBus.item_collected.connect(_on_item_collected)
-	_start_time = GameManager.start_time
+	_start_time = Time.get_ticks_msec()
 
 func _process(_delta: float) -> void:
 	var time_diff = (Time.get_ticks_msec() - _start_time) / 1000

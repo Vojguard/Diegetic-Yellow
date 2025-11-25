@@ -9,6 +9,7 @@ func take_hit() -> void:
 	if !hit:
 		hit = true
 		SignalBus.target_hit.emit(self)
+		print("ouch")
 		#_mesh.get_active_material(0).albedo_color = hit_color
 		queue_free()
 	

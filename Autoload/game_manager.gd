@@ -1,3 +1,4 @@
+class_name GameManager
 extends Node3D
 
 const TARGET_HIT_SCORE = 10
@@ -10,9 +11,9 @@ var score: int = 0
 
 func _ready() -> void:
 	_connect_signals()
-	start_time = Time.get_ticks_msec()
 
 func _connect_signals() -> void:
+	print("connection")
 	SignalBus.player_loaded.connect(_on_player_loaded)
 	SignalBus.target_hit.connect(_on_target_hit)
 	SignalBus.item_collected.connect(_on_item_collected)
@@ -24,14 +25,19 @@ func _disconnect_signals() -> void:
 
 func _on_player_loaded(p : PlayerController) -> void:
 	player = p
+	score = 0
+	start_time = Time.get_ticks_msec()
+	LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.PL, score)
 	print("player_loaded")
 
-func _on_target_hit(t : Target) -> void:
+func _on_target_hit(_t : Target) -> void:
 	_update_score(TARGET_HIT_SCORE)
+	LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.TH, score)
 	print("target hit %d" % score)
 
-func _on_item_collected(ci : Collectible) -> void:
+func _on_item_collected(_ci : Collectible) -> void:
 	_update_score(COLLECTABLE_SCORE)
+	LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.IC, score)
 	print("item collected %d" % score)
 
 func _update_score(score_update : int) -> void:
@@ -43,6 +49,10 @@ func _on_exit_body_entered(body: Node3D) -> void:
 		call_deferred("_return_to_main_menu")
 
 func _return_to_main_menu() -> void:
+	LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.PE, score)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	_disconnect_signals()
 	get_tree().change_scene_to_file("res://UI/main_menu.tscn")
+
+func get_time() -> int:
+	return (Time.get_ticks_msec() - start_time) / 1000
