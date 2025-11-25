@@ -17,7 +17,7 @@ height = 1.8
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_l8h54")
 movement_speed = 300.0
-mouse_sensivity = 0.002
+default_mouse_sensivity = 0.003
 jump_force = 2.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

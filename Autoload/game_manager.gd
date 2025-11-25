@@ -5,10 +5,12 @@ const COLLECTABLE_SCORE = 2
 
 var player: PlayerController = null
 
-var _score: int = 0
+var start_time = 0
+var score: int = 0
 
 func _ready() -> void:
 	_connect_signals()
+	start_time = Time.get_ticks_msec()
 
 func _connect_signals() -> void:
 	SignalBus.player_loaded.connect(_on_player_loaded)
@@ -26,15 +28,15 @@ func _on_player_loaded(p : PlayerController) -> void:
 
 func _on_target_hit(t : Target) -> void:
 	_update_score(TARGET_HIT_SCORE)
-	print("target hit %d" % _score)
+	print("target hit %d" % score)
 
 func _on_item_collected(ci : Collectible) -> void:
 	_update_score(COLLECTABLE_SCORE)
-	print("item collected %d" % _score)
+	print("item collected %d" % score)
 
 func _update_score(score_update : int) -> void:
-	_score += score_update
-	SignalBus.score_updated.emit(_score)
+	score += score_update
+	SignalBus.score_updated.emit(score)
 
 func _on_exit_body_entered(body: Node3D) -> void:
 	if body is PlayerController:

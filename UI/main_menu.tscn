@@ -58,13 +58,26 @@ theme_override_font_sizes/font_size = 64
 text = "Jiří Kropáč
 MFF UK 2026"
 
-[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 800
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2/CenterContainer"]
 layout_mode = 2
 texture = ExtResource("2_tk8dj")
+
+[node name="DateTime" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "dd-mm-yyyy hh:mm:ss"
+horizontal_alignment = 2
+vertical_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

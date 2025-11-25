@@ -54,7 +54,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.21, 0)
 
 [node name="Roof" type="MeshInstance3D" parent="Environment/Hangar2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08136845, 9.95259, -0.040249825)
-visible = false
 mesh = SubResource("PlaneMesh_48xrq")
 skeleton = NodePath("../../..")
 

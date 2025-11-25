@@ -35,7 +35,43 @@ offset_right = -114.0
 offset_bottom = 102.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 32
-text = "Score : 0"
+text = "Score :   0"
+
+[node name="Stopwatch" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1811.0
+offset_top = 57.0
+offset_right = -1628.0
+offset_bottom = 102.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "Time : 00:00"
+
+[node name="Targets" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -253.0
+offset_top = 856.0
+offset_right = -94.0
+offset_bottom = 901.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "Targets :  0"
+
+[node name="Items" type="Label" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -216.0
+offset_top = 928.0
+offset_right = -85.0
+offset_bottom = 973.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "Items :  0"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 15

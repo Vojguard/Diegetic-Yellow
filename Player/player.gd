@@ -6,11 +6,13 @@ const ADS_FOV = 45
 const DEF_FOV = 75
 
 @export var movement_speed : float = 500.0
-@export var mouse_sensivity : float = 0.005
+@export var default_mouse_sensivity : float = 0.005
+@export var ads_mouse_sensivity : float = 0.001
 @export var camera_vertical_limit : float = 45
 @export var jump_force : float = 5
 
 var _ads : bool = false
+var _current_mouse_sensivity
 
 @onready var _camera : Camera3D = $Camera
 @onready var _interaction_cast : ShapeCast3D = $Camera/InteractionCast
@@ -18,6 +20,7 @@ var _ads : bool = false
 
 func _ready() -> void:
 	_camera.fov = DEF_FOV
+	_current_mouse_sensivity = default_mouse_sensivity
 	_interaction_cast.add_exception(self)
 	_interaction_cast.set_enabled(false)
 	_shoot_cast.set_enabled(false)
@@ -55,9 +58,11 @@ func _handle_actions() -> void:
 	if Input.is_action_just_pressed("ads") and !_ads:
 		_ads = true
 		_camera.fov = ADS_FOV
+		_current_mouse_sensivity = ads_mouse_sensivity
 	if Input.is_action_just_released("ads") and _ads:
 		_ads = false
 		_camera.fov = DEF_FOV
+		_current_mouse_sensivity = default_mouse_sensivity
 	
 	if Input.is_action_just_pressed("shoot"):
 		print("pew pew")
@@ -89,9 +94,9 @@ func _handle_actions() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		rotate_y(-event.relative.x * mouse_sensivity)
+		rotate_y(-event.relative.x * _current_mouse_sensivity)
 		
-		_camera.rotate_x(-event.relative.y * mouse_sensivity)
+		_camera.rotate_x(-event.relative.y * _current_mouse_sensivity)
 		_camera.rotation.x = clamp(_camera.rotation.x, deg_to_rad(-camera_vertical_limit), deg_to_rad(camera_vertical_limit))
 
 # function that shoot a ray from the camera forward returning the result dictionary
