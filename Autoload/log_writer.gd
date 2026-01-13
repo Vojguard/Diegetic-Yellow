@@ -28,7 +28,13 @@ func close_log_file() -> void:
 	if log_file != null:
 		log_file.close()
 
+func check_log_open() -> bool:
+	if log_file == null: return false
+	else:
+		return log_file.is_open
+
 func print_header_to_log(date_time : Dictionary, event_tag : EVENT_TAG) -> void:
+	if !check_log_open(): return
 	log_file.store_line(HEADER_LINE)
 	var event_name = event_dict[event_tag]
 	var string_to_store =("(%s)[%02d-%02d-%04d %02d:%02d:%02d] %-15s " % [event_tag, date_time.day, date_time.month, date_time.year,
@@ -36,6 +42,7 @@ func print_header_to_log(date_time : Dictionary, event_tag : EVENT_TAG) -> void:
 	log_file.store_line(string_to_store)
 
 func print_event_to_log(time_stamp : int, event_tag : EVENT_TAG, score : int) -> void:
+	if !check_log_open(): return
 	var sec = time_stamp % 60
 	var mins = time_stamp / 60
 	var event_name = event_dict[event_tag]
