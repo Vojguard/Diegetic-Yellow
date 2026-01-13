@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dng4wo0gqiwtx"]
+
+[ext_resource type="PackedScene" uid="uid://dvpgkxr1b6ivc" path="res://Levels/game_manager.tscn" id="1_cb347"]
+[ext_resource type="PackedScene" uid="uid://dry5s7ff6a5i0" path="res://Player/player.tscn" id="2_fxbc5"]
+
+[node name="LevelOne" type="Node3D"]
+
+[node name="GameManager" parent="." instance=ExtResource("1_cb347")]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="Targets" type="Node3D" parent="."]
+
+[node name="Collectible" type="Node3D" parent="."]
+
+[node name="Player" parent="." instance=ExtResource("2_fxbc5")]
