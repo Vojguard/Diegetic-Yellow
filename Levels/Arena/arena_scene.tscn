@@ -1,10 +1,10 @@
 [gd_scene load_steps=19 format=3 uid="uid://08msfmig0t30"]
 
 [ext_resource type="PackedScene" uid="uid://dry5s7ff6a5i0" path="res://Player/player.tscn" id="1_fyr3e"]
-[ext_resource type="Script" uid="uid://c86ly3ox8pyub" path="res://MainScene/main_scene.gd" id="1_qjv46"]
+[ext_resource type="Script" uid="uid://c86ly3ox8pyub" path="res://Levels/Arena/arena_scene.gd" id="1_qjv46"]
 [ext_resource type="PackedScene" uid="uid://bniu7fgcine6q" path="res://Objects/Environment/wall.tscn" id="2_1lkik"]
 [ext_resource type="PackedScene" uid="uid://ciqpw8ehoxobv" path="res://Objects/Environment/door.tscn" id="2_25os6"]
-[ext_resource type="Script" uid="uid://m5clkexf0kyx" path="res://Autoload/game_manager.gd" id="2_48xrq"]
+[ext_resource type="PackedScene" uid="uid://dvpgkxr1b6ivc" path="res://Levels/game_manager.tscn" id="2_ga1bq"]
 [ext_resource type="Material" uid="uid://duihj73dofihk" path="res://Materials/floor_material.tres" id="2_l5w4b"]
 [ext_resource type="PackedScene" uid="uid://du7a4g7j3pm7b" path="res://Objects/collectible.tscn" id="3_25u3m"]
 [ext_resource type="PackedScene" uid="uid://dit0ixxyrcvvp" path="res://Objects/target.tscn" id="4_r4p44"]
@@ -33,8 +33,8 @@ size = Vector3(9.5, 2, 3.5)
 [node name="MainScene" type="Node3D"]
 script = ExtResource("1_qjv46")
 
-[node name="GameManager" type="Node3D" parent="."]
-script = ExtResource("2_48xrq")
+[node name="GameManager" parent="." instance=ExtResource("2_ga1bq")]
+unique_name_in_owner = true
 
 [node name="Environment" type="Node3D" parent="."]
 

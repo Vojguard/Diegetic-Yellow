@@ -12,7 +12,7 @@ func _on_play_pressed() -> void:
 	date_time = Time.get_datetime_dict_from_system()
 	LogWriter.open_log_file(date_time)
 	LogWriter.print_header_to_log(date_time, LogWriter.EVENT_TAG.NG)
-	get_tree().change_scene_to_file("res://MainScene/main_scene.tscn")
+	get_tree().change_scene_to_file("res://Levels/Arena/arena_scene.tscn")
 
 func _on_quit_pressed() -> void:
 	LogWriter.close_log_file()
