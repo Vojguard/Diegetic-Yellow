@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cos4y7qhiixte"]
 
 [ext_resource type="Script" uid="uid://d2qtfrbhsxi11" path="res://UI/main_menu.gd" id="1_tk8dj"]
-[ext_resource type="Texture2D" uid="uid://e51jha23oxhv" path="res://UI/menu_bg.png" id="2_d8nwk"]
+[ext_resource type="Texture2D" uid="uid://bt2c8e5ckl56y" path="res://UI/menu_bg_2-dark.png" id="2_d8nwk"]
 [ext_resource type="Texture2D" uid="uid://dikg0rrwpq6et" path="res://game_icon.png" id="2_tk8dj"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
@@ -75,6 +75,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer2/CenterContainer"]
+visible = false
 layout_mode = 2
 texture = ExtResource("2_tk8dj")
 
