@@ -31,7 +31,7 @@ func close_log_file() -> void:
 func check_log_open() -> bool:
 	if log_file == null: return false
 	else:
-		return log_file.is_open
+		return log_file.is_open()
 
 func print_header_to_log(date_time : Dictionary, event_tag : EVENT_TAG) -> void:
 	if !check_log_open(): return
