@@ -1,0 +1,61 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://bph00rrmfl7h5"
+path="res://.godot/imported/corner_out_v2.glb-2572a57e376e22f4a339e2c76d9458e9.scn"
+
+[deps]
+
+source_file="res://Models/v2/corner_out_v2.glb"
+dest_files=["res://.godot/imported/corner_out_v2.glb-2572a57e376e22f4a339e2c76d9458e9.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=false
+meshes/create_shadow_meshes=false
+meshes/light_baking=0
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=false
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"Material.006": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/cardboard_brown_material.tres",
+"use_external/path": "uid://g0k4iok0c567"
+}
+},
+"meshes": {
+"corner_out_v2_Cube_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://Meshes/corner_out.res",
+"save_to_file/path": "uid://bxrhlca3gnbcq"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

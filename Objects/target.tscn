@@ -1,26 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://dit0ixxyrcvvp"]
+[gd_scene load_steps=6 format=3 uid="uid://dit0ixxyrcvvp"]
 
 [ext_resource type="Script" uid="uid://b6lx1v1uloe0u" path="res://Objects/target.gd" id="1_d628h"]
+[ext_resource type="PackedScene" uid="uid://x8yy7j5u1kig" path="res://Models/v2/snakehead.glb" id="2_jge0a"]
+[ext_resource type="Material" uid="uid://dus5e3m7i528s" path="res://Materials/target_red_material.tres" id="2_k0c6r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_by6mq"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d628h"]
-albedo_color = Color(1, 0, 0, 1)
+height = 1.75
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jge0a"]
-material = SubResource("StandardMaterial3D_d628h")
+material = ExtResource("2_k0c6r")
 
 [node name="Target" type="StaticBody3D"]
 script = ExtResource("1_d628h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12036133, 0)
 shape = SubResource("CapsuleShape3D_by6mq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_jge0a")
 
 [node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]
 aabb = AABB(-0.5, -1, -0.5, 1, 2, 1)
+
+[node name="snakehead" parent="." instance=ExtResource("2_jge0a")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -1, 0)
 
 [connection signal="screen_entered" from="VisibleOnScreenEnabler3D" to="." method="_on_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler3D" to="." method="_on_screen_exited"]

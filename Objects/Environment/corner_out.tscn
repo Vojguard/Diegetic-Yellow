@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c88g36ag4m3r7"]
+
+[ext_resource type="PackedScene" uid="uid://bph00rrmfl7h5" path="res://Models/v2/corner_out_v2.glb" id="1_7lda2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fca3b"]
+size = Vector3(2, 2.5, 0.2)
+
+[node name="CornerOut" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -1)
+shape = SubResource("BoxShape3D_fca3b")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 1.25, 0)
+shape = SubResource("BoxShape3D_fca3b")
+
+[node name="corner_out_v2" parent="." instance=ExtResource("1_7lda2")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
