@@ -11,6 +11,11 @@ var score: int = 0
 
 func _ready() -> void:
 	_connect_signals()
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _process(_delta: float) -> void:
+	if Input.is_key_pressed(KEY_ESCAPE):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _connect_signals() -> void:
 	print("connection")
