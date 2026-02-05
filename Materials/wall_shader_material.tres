@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dpyah6pb8kno7"]
+
+[ext_resource type="Shader" uid="uid://buleifkywh5ie" path="res://Shaders/wall_vs.tres" id="1_mcpud"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_mcpud")
