@@ -1,28 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://du7a4g7j3pm7b"]
+[gd_scene format=3 uid="uid://du7a4g7j3pm7b"]
 
 [ext_resource type="Script" uid="uid://dc7gyrty7hjwp" path="res://Objects/collectible.gd" id="1_hjhql"]
+[ext_resource type="PackedScene" uid="uid://btwcw7l66xqt2" path="res://Models/v2/colect_cube_v2.glb" id="2_6x32e"]
+[ext_resource type="Material" uid="uid://dvwv5vc636m84" path="res://Materials/collectible_yellow_material.tres" id="2_rgo0y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o8e5b"]
 size = Vector3(0.5, 0.5, 0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hjhql"]
-albedo_color = Color(1, 1, 0, 1)
-
 [sub_resource type="BoxMesh" id="BoxMesh_6x32e"]
-material = SubResource("StandardMaterial3D_hjhql")
+material = ExtResource("2_rgo0y")
 size = Vector3(0.5, 0.5, 0.5)
 
-[node name="Collectible" type="StaticBody3D"]
+[node name="Collectible" type="StaticBody3D" unique_id=1930530466]
 script = ExtResource("1_hjhql")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1551512068]
 shape = SubResource("BoxShape3D_o8e5b")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1746618895]
+visible = false
 mesh = SubResource("BoxMesh_6x32e")
 
-[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="." unique_id=368236857]
 aabb = AABB(-0.25, -0.25, -0.25, 0.5, 0.5, 0.5)
+
+[node name="colect_cube_v2" parent="." unique_id=1053265973 instance=ExtResource("2_6x32e")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
 
 [connection signal="screen_entered" from="VisibleOnScreenEnabler3D" to="." method="_on_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler3D" to="." method="_on_screen_exited"]
