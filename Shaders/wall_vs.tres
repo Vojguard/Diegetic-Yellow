@@ -1,0 +1,130 @@
+[gd_resource type="VisualShader" format=3 uid="uid://buleifkywh5ie"]
+
+[sub_resource type="VisualShaderNodeTransformVecMult" id="VisualShaderNodeTransformVecMult_hsjnn"]
+expanded_output_ports = [0]
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_wv0wl"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, Vector3(0.5, 0.5, 0.5)]
+op_type = 3
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_6aer4"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, Vector3(0.5, 0.5, 0.5)]
+op_type = 3
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_h4w01"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, Vector3(0.5, 0.5, 0.5)]
+op_type = 3
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_thnmu"]
+expanded_output_ports = [0]
+constant = Color(0, 1, 0, 1)
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_455hm"]
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_6q6od"]
+
+[sub_resource type="VisualShaderNodeExpression" id="VisualShaderNodeExpression_hsjnn"]
+size = Vector2(980, 340)
+expression = "vec3 temp = normalize((MODEL_MATRIX * vec4(NORMAL, 0.0)).xyz);
+output0 = (INV_VIEW_MATRIX * vec4(temp, 0.0)).xyz;"
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_hsjnn"]
+default_input_values = [0, 0.0, 1, 0.0, 2, 0.0, 3, 1.0]
+op_type = 2
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_hsjnn"]
+expanded_output_ports = [0]
+constant = Color(1, 0, 0, 1)
+
+[sub_resource type="VisualShaderNodeVectorFunc" id="VisualShaderNodeVectorFunc_hsjnn"]
+
+[sub_resource type="VisualShaderNodeTransformVecMult" id="VisualShaderNodeTransformVecMult_wv0wl"]
+expanded_output_ports = [0]
+operator = 1
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_455hm"]
+input_name = "model_matrix"
+
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_wv0wl"]
+expanded_output_ports = [0]
+constant = Color(0, 0, 1, 1)
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_6aer4"]
+expanded_output_ports = [0]
+input_name = "normal"
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_hsjnn"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, Vector3(0.5, 0.5, 0.5)]
+op_type = 3
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_h4w01"]
+input_name = "inv_view_matrix"
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_wv0wl"]
+input_name = "normal"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_6aer4"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_h4w01"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_thnmu"]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_455hm"]
+constant = 0.02
+
+[resource]
+nodes/vertex/0/position = Vector2(1008, 192)
+nodes/vertex/2/node = SubResource("VisualShaderNodeInput_wv0wl")
+nodes/vertex/2/position = Vector2(80, 304)
+nodes/vertex/3/node = SubResource("VisualShaderNodeVectorOp_6aer4")
+nodes/vertex/3/position = Vector2(464, 368)
+nodes/vertex/4/node = SubResource("VisualShaderNodeVectorOp_h4w01")
+nodes/vertex/4/position = Vector2(736, 368)
+nodes/vertex/5/node = SubResource("VisualShaderNodeInput_thnmu")
+nodes/vertex/5/position = Vector2(304, 672)
+nodes/vertex/6/node = SubResource("VisualShaderNodeFloatConstant_455hm")
+nodes/vertex/6/position = Vector2(80, 544)
+nodes/vertex/connections = PackedInt32Array(2, 0, 3, 0, 3, 0, 4, 0, 5, 0, 4, 1, 6, 0, 3, 1)
+nodes/fragment/0/position = Vector2(1152, 336)
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorConstant_hsjnn")
+nodes/fragment/2/position = Vector2(-224, 64)
+nodes/fragment/6/node = SubResource("VisualShaderNodeColorConstant_wv0wl")
+nodes/fragment/6/position = Vector2(-96, -144)
+nodes/fragment/7/node = SubResource("VisualShaderNodeInput_6aer4")
+nodes/fragment/7/position = Vector2(-1232, 464)
+nodes/fragment/8/node = SubResource("VisualShaderNodeMix_hsjnn")
+nodes/fragment/8/position = Vector2(160, 80)
+nodes/fragment/9/node = SubResource("VisualShaderNodeInput_h4w01")
+nodes/fragment/9/position = Vector2(-912, 336)
+nodes/fragment/11/node = SubResource("VisualShaderNodeTransformVecMult_hsjnn")
+nodes/fragment/11/position = Vector2(-624, 352)
+nodes/fragment/12/node = SubResource("VisualShaderNodeMix_wv0wl")
+nodes/fragment/12/position = Vector2(160, 288)
+nodes/fragment/13/node = SubResource("VisualShaderNodeMix_6aer4")
+nodes/fragment/13/position = Vector2(160, 480)
+nodes/fragment/14/node = SubResource("VisualShaderNodeMix_h4w01")
+nodes/fragment/14/position = Vector2(160, 688)
+nodes/fragment/15/node = SubResource("VisualShaderNodeColorConstant_thnmu")
+nodes/fragment/15/position = Vector2(-489.0703, -62.6528)
+nodes/fragment/16/node = SubResource("VisualShaderNodeVectorOp_455hm")
+nodes/fragment/16/position = Vector2(496, 320)
+nodes/fragment/17/node = SubResource("VisualShaderNodeVectorOp_6q6od")
+nodes/fragment/17/position = Vector2(752, 432)
+nodes/fragment/18/node = SubResource("VisualShaderNodeExpression_hsjnn")
+nodes/fragment/18/position = Vector2(-912, 784)
+nodes/fragment/18/size = Vector2(980, 340)
+nodes/fragment/18/input_ports = ""
+nodes/fragment/18/output_ports = "0,4,output0;"
+nodes/fragment/18/expression = "vec3 temp = normalize((MODEL_MATRIX * vec4(NORMAL, 0.0)).xyz);
+output0 = (INV_VIEW_MATRIX * vec4(temp, 0.0)).xyz;"
+nodes/fragment/19/node = SubResource("VisualShaderNodeVectorCompose_hsjnn")
+nodes/fragment/19/position = Vector2(-848, 464)
+nodes/fragment/20/node = SubResource("VisualShaderNodeVectorFunc_hsjnn")
+nodes/fragment/20/position = Vector2(704, 976)
+nodes/fragment/21/node = SubResource("VisualShaderNodeTransformVecMult_wv0wl")
+nodes/fragment/21/position = Vector2(-352, 352)
+nodes/fragment/22/node = SubResource("VisualShaderNodeInput_455hm")
+nodes/fragment/22/position = Vector2(-704, 208)
+nodes/fragment/connections = PackedInt32Array(6, 0, 8, 0, 2, 0, 8, 1, 6, 0, 12, 1, 2, 0, 13, 1, 12, 0, 16, 0, 13, 0, 16, 1, 9, 0, 11, 0, 14, 0, 17, 1, 16, 0, 17, 0, 15, 0, 14, 1, 19, 0, 11, 1, 7, 1, 19, 0, 7, 3, 19, 2, 7, 2, 19, 1, 20, 0, 0, 0, 11, 0, 21, 1, 22, 0, 21, 0, 21, 0, 20, 0)
