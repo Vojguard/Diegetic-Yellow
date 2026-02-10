@@ -57,7 +57,7 @@ func _return_to_main_menu() -> void:
 	LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.PE, score)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	_disconnect_signals()
-	get_tree().change_scene_to_file("res://UI/main_menu.tscn")
+	get_tree().change_scene_to_file(Globals.SCENES.MAIN_MENU)
 
 func get_time() -> int:
 	return (Time.get_ticks_msec() - start_time) / 1000

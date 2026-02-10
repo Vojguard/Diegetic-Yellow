@@ -21,6 +21,7 @@ config/icon="uid://dikg0rrwpq6et"
 
 [autoload]
 
+Globals="*uid://dn0fm4u2aiby8"
 LogWriter="*res://Autoload/log_writer.gd"
 SignalBus="*res://Autoload/signal_bus.gd"
 
