@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://ciqpw8ehoxobv" path="res://Objects/Environment/door.tscn" id="4_drw48"]
 [ext_resource type="PackedScene" uid="uid://ba3oc244y583w" path="res://Objects/Environment/corner_in.tscn" id="4_x8kjb"]
 [ext_resource type="PackedScene" uid="uid://c88g36ag4m3r7" path="res://Objects/Environment/corner_out.tscn" id="5_hfaxq"]
+[ext_resource type="PackedScene" uid="uid://dit0ixxyrcvvp" path="res://Objects/target.tscn" id="7_v3v8q"]
+[ext_resource type="PackedScene" uid="uid://du7a4g7j3pm7b" path="res://Objects/collectible.tscn" id="8_48c07"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_v3v8q"]
 material = ExtResource("2_hfaxq")
@@ -906,7 +908,13 @@ light_bake_mode = 1
 
 [node name="Targets" type="Node3D" parent="." unique_id=930413730]
 
+[node name="Target" parent="Targets" unique_id=1985561171 instance=ExtResource("7_v3v8q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -7)
+
 [node name="Collectible" type="Node3D" parent="." unique_id=235030013]
+
+[node name="Collectible" parent="Collectible" unique_id=1930530466 instance=ExtResource("8_48c07")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, -2)
 
 [node name="Player" parent="." unique_id=2068185920 instance=ExtResource("2_fxbc5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

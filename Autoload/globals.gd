@@ -1,4 +1,4 @@
-extends Object
+extends Node
 
 ## holds the const strings of scenes
 class SCENES:
