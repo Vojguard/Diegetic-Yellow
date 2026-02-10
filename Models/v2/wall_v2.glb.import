@@ -41,8 +41,8 @@ _subresources={
 "materials": {
 "Material": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://Materials/wall_shader_material.tres",
-"use_external/path": "uid://dpyah6pb8kno7"
+"use_external/fallback_path": "res://Materials/cardboard_brown_material.tres",
+"use_external/path": "uid://g0k4iok0c567"
 }
 }
 }
