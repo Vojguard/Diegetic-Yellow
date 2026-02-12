@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcjfnc5l73mc5"]
+[gd_scene format=3 uid="uid://bcjfnc5l73mc5"]
 
 [ext_resource type="Script" uid="uid://mwdjgxgg6fyr" path="res://Player/hud.gd" id="1_jrba6"]
 [ext_resource type="Texture2D" uid="uid://dolm0slrhnyxo" path="res://UI/crosshair_white.png" id="2_jrba6"]
 [ext_resource type="Texture2D" uid="uid://b0a31j03ds41h" path="res://UI/hud_overlay.png" id="3_11qr4"]
 
-[node name="Hud" type="CanvasLayer"]
+[node name="Hud" type="CanvasLayer" unique_id=2075121733]
 script = ExtResource("1_jrba6")
 
-[node name="Reticle" type="TextureRect" parent="."]
+[node name="Reticle" type="TextureRect" parent="." unique_id=727427836]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -25,7 +25,7 @@ size_flags_vertical = 4
 texture = ExtResource("2_jrba6")
 expand_mode = 5
 
-[node name="Score" type="Label" parent="."]
+[node name="Score" type="Label" parent="." unique_id=284533652]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -37,7 +37,7 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 32
 text = "Score :   0"
 
-[node name="Stopwatch" type="Label" parent="."]
+[node name="Stopwatch" type="Label" parent="." unique_id=1923875093]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -49,7 +49,7 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 32
 text = "Time : 00:00"
 
-[node name="Targets" type="Label" parent="."]
+[node name="Targets" type="Label" parent="." unique_id=1582153250]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -61,7 +61,7 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 32
 text = "Targets :  0"
 
-[node name="Items" type="Label" parent="."]
+[node name="Items" type="Label" parent="." unique_id=421525243]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -73,7 +73,8 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 32
 text = "Items :  0"
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1052619461]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

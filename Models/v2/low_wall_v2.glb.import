@@ -39,8 +39,9 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"@MATERIAL:0": {
+"low_wall": {
 "use_external/enabled": true,
+"use_external/fallback_path": "res://Materials/cardboard_brown_material.tres",
 "use_external/path": "uid://g0k4iok0c567"
 }
 }
