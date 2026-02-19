@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cqo83hkshkihh" path="res://Objects/Environment/wall_low.tscn" id="7_y4wra"]
 [ext_resource type="PackedScene" uid="uid://du7a4g7j3pm7b" path="res://Objects/collectible.tscn" id="8_48c07"]
 [ext_resource type="PackedScene" uid="uid://22k42j4wuk38" path="res://Objects/Environment/column.tscn" id="8_vp3rn"]
+[ext_resource type="PackedScene" uid="uid://16quanjj4w7m" path="res://Objects/Environment/table.tscn" id="9_aol5l"]
+[ext_resource type="PackedScene" uid="uid://bksi84vgmqnd3" path="res://Objects/Environment/pylon.tscn" id="10_7a4fi"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_v3v8q"]
 material = ExtResource("2_hfaxq")
@@ -27,6 +29,7 @@ size = Vector3(66, 0.1, 54)
 
 [node name="GroundPlane" type="StaticBody3D" parent="Environment" unique_id=1677603486]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -23)
+collision_layer = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/GroundPlane" unique_id=1979740700]
 material_override = ExtResource("2_hfaxq")
@@ -37,9 +40,10 @@ shape = SubResource("BoxShape3D_48c07")
 
 [node name="CeilingPlane" type="StaticBody3D" parent="Environment" unique_id=1089641133]
 transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 28, 2.5, -23)
+collision_layer = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/CeilingPlane" unique_id=1318513300]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.028291702, -9.536743e-07, -0.017850876)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.030145645, -9.536743e-07, -0.018260956)
 material_override = ExtResource("2_hfaxq")
 mesh = SubResource("PlaneMesh_v3v8q")
 
@@ -907,6 +911,39 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -8)
 [node name="column6" parent="Environment" unique_id=864845340 instance=ExtResource("8_vp3rn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -8)
 
+[node name="Table" parent="Environment" unique_id=1568790723 instance=ExtResource("9_aol5l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -16)
+
+[node name="Table2" parent="Environment" unique_id=498885512 instance=ExtResource("9_aol5l")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 50, 0, -17)
+
+[node name="Table4" parent="Environment" unique_id=1121991863 instance=ExtResource("9_aol5l")]
+transform = Transform3D(0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.7071067, 46, 0, -17)
+
+[node name="Table3" parent="Environment" unique_id=1213565696 instance=ExtResource("9_aol5l")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2, 0, -2)
+
+[node name="Pylon" parent="Environment" unique_id=770882524 instance=ExtResource("10_7a4fi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -31)
+
+[node name="Pylon2" parent="Environment" unique_id=1697315454 instance=ExtResource("10_7a4fi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -11)
+
+[node name="Pylon3" parent="Environment" unique_id=1424165069 instance=ExtResource("10_7a4fi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -25)
+
+[node name="Pylon4" parent="Environment" unique_id=456619724 instance=ExtResource("10_7a4fi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -1)
+
+[node name="Pylon5" parent="Environment" unique_id=1192284182 instance=ExtResource("10_7a4fi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -31)
+
+[node name="Pylon6" parent="Environment" unique_id=392808438 instance=ExtResource("10_7a4fi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -41)
+
+[node name="Pylon7" parent="Environment" unique_id=1369891202 instance=ExtResource("10_7a4fi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -41)
+
 [node name="Lights" type="Node3D" parent="." unique_id=1957034723]
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=1911358531]
@@ -914,12 +951,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -1)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 5.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 
 [node name="OmniLight3D13" type="OmniLight3D" parent="Lights" unique_id=761805376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 1.25, -46)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 3.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 omni_range = 3.0
 
 [node name="OmniLight3D20" type="OmniLight3D" parent="Lights" unique_id=1569402173]
@@ -927,18 +970,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.25, -35)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 5.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 
 [node name="OmniLight3D21" type="OmniLight3D" parent="Lights" unique_id=832804585]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.25, -35)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 5.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 
 [node name="OmniLight3D14" type="OmniLight3D" parent="Lights" unique_id=1313014092]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1.25, -46)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 3.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 omni_range = 3.0
 
 [node name="OmniLight3D25" type="OmniLight3D" parent="Lights" unique_id=1035360378]
@@ -946,6 +998,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1.25, -12)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 3.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 omni_range = 3.0
 
 [node name="OmniLight3D26" type="OmniLight3D" parent="Lights" unique_id=422575168]
@@ -953,48 +1008,72 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.25, -14)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 5.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 
 [node name="OmniLight3D17" type="OmniLight3D" parent="Lights" unique_id=485507965]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 1.25, -37)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 3.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 
 [node name="OmniLight3D18" type="OmniLight3D" parent="Lights" unique_id=104622379]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 1.25, -32)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 3.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 
 [node name="OmniLight3D19" type="OmniLight3D" parent="Lights" unique_id=1556081804]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 1.25, -32)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 3.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 
 [node name="OmniLight3D10" type="OmniLight3D" parent="Lights" unique_id=1973174179]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 1.25, -16)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 5.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 
 [node name="OmniLight3D11" type="OmniLight3D" parent="Lights" unique_id=1376744264]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 1.25, -25)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 5.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="Lights" unique_id=1712607739]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 1.25, -5)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 5.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="Lights" unique_id=1621934777]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 1.25, -21)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 7.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 omni_range = 7.0
 
 [node name="OmniLight3D22" type="OmniLight3D" parent="Lights" unique_id=1597488643]
@@ -1002,6 +1081,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.25, -25)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 7.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 omni_range = 7.0
 
 [node name="OmniLight3D23" type="OmniLight3D" parent="Lights" unique_id=701386081]
@@ -1009,6 +1091,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.25, -20)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 7.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 omni_range = 7.0
 
 [node name="OmniLight3D24" type="OmniLight3D" parent="Lights" unique_id=1522445442]
@@ -1016,6 +1101,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -20)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 7.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 omni_range = 7.0
 
 [node name="OmniLight3D15" type="OmniLight3D" parent="Lights" unique_id=1629870870]
@@ -1023,6 +1111,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39, 1.25, -35)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 7.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 omni_range = 7.0
 
 [node name="OmniLight3D16" type="OmniLight3D" parent="Lights" unique_id=1223830068]
@@ -1030,6 +1121,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45, 1.25, -35)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 7.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 omni_range = 7.0
 
 [node name="OmniLight3D12" type="OmniLight3D" parent="Lights" unique_id=329371735]
@@ -1037,6 +1131,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 1.25, -24)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 7.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 omni_range = 7.0
 
 [node name="OmniLight3D8" type="OmniLight3D" parent="Lights" unique_id=1165866285]
@@ -1044,6 +1141,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 1.25, -15)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 7.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 omni_range = 7.0
 
 [node name="OmniLight3D9" type="OmniLight3D" parent="Lights" unique_id=376910068]
@@ -1051,6 +1151,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 1.25, -22)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 7.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 omni_range = 7.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=820323214]
@@ -1058,24 +1161,36 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.25, -7)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 5.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=1083583038]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1.25, -7)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 5.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Lights" unique_id=1284296442]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 1.25, -2)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 5.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="Lights" unique_id=1343767145]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.25, -2)
 light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 5.0
 light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
 
 [node name="Targets" type="Node3D" parent="." unique_id=930413730]
 
@@ -1142,49 +1257,49 @@ transform = Transform3D(-0.70710677, 0, 0.70710695, 0, 1, 0, -0.70710695, 0, -0.
 [node name="Collectible" type="Node3D" parent="." unique_id=235030013]
 
 [node name="Collectible" parent="Collectible" unique_id=1930530466 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.2, -2)
 
 [node name="Collectible2" parent="Collectible" unique_id=25397596 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.5, -7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.25, -7)
 
 [node name="Collectible5" parent="Collectible" unique_id=195093183 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0.5, -21)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0.25, -21)
 
 [node name="Collectible13" parent="Collectible" unique_id=1979737480 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.5, -23)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.25, -23)
 
 [node name="Collectible14" parent="Collectible" unique_id=1666956744 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.5, -13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.25, -13)
 
 [node name="Collectible15" parent="Collectible" unique_id=903193639 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -11)
 
 [node name="Collectible9" parent="Collectible" unique_id=962742794 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0.5, -31)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0.25, -31)
 
 [node name="Collectible10" parent="Collectible" unique_id=1741134639 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0.5, -35)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0.25, -35)
 
 [node name="Collectible11" parent="Collectible" unique_id=1069928934 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.5, -45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.25, -45)
 
 [node name="Collectible12" parent="Collectible" unique_id=1620580890 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.5, -45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.25, -45)
 
 [node name="Collectible7" parent="Collectible" unique_id=1881248494 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0.5, -17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 1.25, -17)
 
 [node name="Collectible8" parent="Collectible" unique_id=382776537 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0.5, -17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1.25, -17)
 
 [node name="Collectible6" parent="Collectible" unique_id=1951658965 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0.5, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0.25, -11)
 
 [node name="Collectible3" parent="Collectible" unique_id=2136495853 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0.5, -9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0.25, -9)
 
 [node name="Collectible4" parent="Collectible" unique_id=1869501707 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0.5, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0.25, -3)
 
 [node name="Player" parent="." unique_id=2068185920 instance=ExtResource("2_fxbc5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

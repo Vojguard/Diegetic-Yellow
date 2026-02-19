@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqo83hkshkihh"]
+[gd_scene format=3 uid="uid://cqo83hkshkihh"]
 
 [ext_resource type="PackedScene" uid="uid://obk5lqmlor1x" path="res://Models/low_wall.glb" id="1_lcw4j"]
 [ext_resource type="PackedScene" uid="uid://c7s660poyrj5u" path="res://Models/v2/low_wall_v2.glb" id="2_f8exw"]
@@ -6,13 +6,14 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_fca3b"]
 size = Vector3(2, 1, 0.2)
 
-[node name="LowWall" type="StaticBody3D"]
+[node name="LowWall" type="StaticBody3D" unique_id=1976739848]
+collision_layer = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1236789049]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_fca3b")
 
-[node name="low_wall2" parent="." instance=ExtResource("1_lcw4j")]
+[node name="low_wall2" parent="." unique_id=1240093458 instance=ExtResource("1_lcw4j")]
 visible = false
 
-[node name="low_wall_v2" parent="." instance=ExtResource("2_f8exw")]
+[node name="low_wall_v2" parent="." unique_id=1764310767 instance=ExtResource("2_f8exw")]

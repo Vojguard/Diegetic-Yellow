@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dduifyfmja5tk"]
+[gd_scene format=3 uid="uid://dduifyfmja5tk"]
 
 [ext_resource type="PackedScene" uid="uid://6ci25mukydg5" path="res://Models/window.glb" id="1_l4urs"]
 
@@ -11,22 +11,23 @@ size = Vector3(1, 0.7, 0.14)
 [sub_resource type="BoxShape3D" id="BoxShape3D_qit0j"]
 size = Vector3(1, 1, 0.14)
 
-[node name="Window" type="StaticBody3D"]
+[node name="Window" type="StaticBody3D" unique_id=1342365099]
+collision_layer = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1424591037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 1.25, 0.05)
 shape = SubResource("BoxShape3D_53t6o")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=2121047502]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 1.25, 0.05)
 shape = SubResource("BoxShape3D_53t6o")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=2110578714]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.15, 0.05)
 shape = SubResource("BoxShape3D_oqm2c")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=857712241]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.05)
 shape = SubResource("BoxShape3D_qit0j")
 
-[node name="window2" parent="." instance=ExtResource("1_l4urs")]
+[node name="window2" parent="." unique_id=930300948 instance=ExtResource("1_l4urs")]

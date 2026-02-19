@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dit0ixxyrcvvp"]
+[gd_scene format=3 uid="uid://dit0ixxyrcvvp"]
 
 [ext_resource type="Script" uid="uid://b6lx1v1uloe0u" path="res://Objects/target.gd" id="1_d628h"]
 [ext_resource type="PackedScene" uid="uid://x8yy7j5u1kig" path="res://Models/v2/snakehead.glb" id="2_jge0a"]
@@ -10,21 +10,22 @@ height = 1.75
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_jge0a"]
 material = ExtResource("2_k0c6r")
 
-[node name="Target" type="StaticBody3D"]
+[node name="Target" type="StaticBody3D" unique_id=624742187]
+collision_layer = 4
 script = ExtResource("1_d628h")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1702485276]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12036133, 0)
 shape = SubResource("CapsuleShape3D_by6mq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1012622036]
 visible = false
 mesh = SubResource("CapsuleMesh_jge0a")
 
-[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="."]
+[node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="." unique_id=501371475]
 aabb = AABB(-0.5, -1, -0.5, 1, 2, 1)
 
-[node name="snakehead" parent="." instance=ExtResource("2_jge0a")]
+[node name="snakehead" parent="." unique_id=785206275 instance=ExtResource("2_jge0a")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -1, 0)
 
 [connection signal="screen_entered" from="VisibleOnScreenEnabler3D" to="." method="_on_screen_entered"]

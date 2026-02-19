@@ -7,6 +7,7 @@
 size = Vector3(2, 2.5, 0.2)
 
 [node name="Wall" type="StaticBody3D" unique_id=2065413667]
+collision_layer = 2
 
 [node name="wall2" parent="." unique_id=567756488 instance=ExtResource("1_tk1tl")]
 visible = false

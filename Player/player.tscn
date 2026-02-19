@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dry5s7ff6a5i0"]
+[gd_scene format=3 uid="uid://dry5s7ff6a5i0"]
 
 [ext_resource type="Script" uid="uid://da6fx643tjv3k" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="PackedScene" uid="uid://cv1aslicjxyuo" path="res://Models/weapon.glb" id="2_4ntmi"]
@@ -14,33 +14,37 @@ height = 1.8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_l8h54"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=302627763]
+collision_mask = 14
 script = ExtResource("1_l8h54")
 movement_speed = 300.0
 default_mouse_sensivity = 0.003
 jump_force = 2.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=750546997]
 shape = SubResource("CapsuleShape3D_hvfyp")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=12777051]
+layers = 2
 mesh = SubResource("CapsuleMesh_hvfyp")
 
-[node name="Camera" type="Camera3D" parent="."]
+[node name="Camera" type="Camera3D" parent="." unique_id=89155029]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
-[node name="weapon" parent="Camera" instance=ExtResource("2_4ntmi")]
+[node name="weapon" parent="Camera" unique_id=1704117239 instance=ExtResource("2_4ntmi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06343359, -0.30052105)
 visible = false
 
-[node name="ShootCast" type="RayCast3D" parent="Camera"]
+[node name="ShootCast" type="RayCast3D" parent="Camera" unique_id=1613259716]
 target_position = Vector3(0, 0, -50)
+collision_mask = 4
 hit_back_faces = false
 debug_shape_custom_color = Color(1, 0, 0, 1)
 
-[node name="InteractionCast" type="ShapeCast3D" parent="Camera"]
+[node name="InteractionCast" type="ShapeCast3D" parent="Camera" unique_id=234895874]
 shape = SubResource("SphereShape3D_l8h54")
 target_position = Vector3(0, 0, -2)
+collision_mask = 8
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
-[node name="Hud" parent="." instance=ExtResource("3_btcbx")]
+[node name="Hud" parent="." unique_id=1603059549 instance=ExtResource("3_btcbx")]

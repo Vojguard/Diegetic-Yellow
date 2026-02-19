@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxed0t0aoghna"]
+[gd_scene format=3 uid="uid://cxed0t0aoghna"]
 
 [ext_resource type="PackedScene" uid="uid://0cr86jin5fkb" path="res://Models/hangar.glb" id="1_eyu3u"]
 
@@ -8,22 +8,23 @@ size = Vector3(52, 10, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_38qua"]
 size = Vector3(1, 10, 82)
 
-[node name="Hangar" type="StaticBody3D"]
+[node name="Hangar" type="StaticBody3D" unique_id=1057886913]
+collision_layer = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=269513753]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -40.5)
 shape = SubResource("BoxShape3D_tfrf4")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1857842244]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 40.5)
 shape = SubResource("BoxShape3D_tfrf4")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=858719868]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5, 5, 0)
 shape = SubResource("BoxShape3D_38qua")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1439104908]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5, 5, 0)
 shape = SubResource("BoxShape3D_38qua")
 
-[node name="hangar" parent="." instance=ExtResource("1_eyu3u")]
+[node name="hangar" parent="." unique_id=997734508 instance=ExtResource("1_eyu3u")]

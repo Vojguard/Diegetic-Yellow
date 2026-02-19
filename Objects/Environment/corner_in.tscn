@@ -1,19 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba3oc244y583w"]
+[gd_scene format=3 uid="uid://ba3oc244y583w"]
 
 [ext_resource type="PackedScene" uid="uid://beruo2b1kbi3q" path="res://Models/v2/corner_in_v2.glb" id="1_44i2q"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fca3b"]
 size = Vector3(2, 2.5, 0.2)
 
-[node name="CornerIn" type="StaticBody3D"]
+[node name="CornerIn" type="StaticBody3D" unique_id=346393868]
+collision_layer = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=815059048]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, -1)
 shape = SubResource("BoxShape3D_fca3b")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=359380260]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 1, 1.25, 0)
 shape = SubResource("BoxShape3D_fca3b")
 
-[node name="corner_in_v2" parent="." instance=ExtResource("1_44i2q")]
+[node name="corner_in_v2" parent="." unique_id=1590469783 instance=ExtResource("1_44i2q")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)

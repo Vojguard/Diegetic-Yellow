@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ciqpw8ehoxobv"]
+[gd_scene format=3 uid="uid://ciqpw8ehoxobv"]
 
 [ext_resource type="PackedScene" uid="uid://is6vicgy41iw" path="res://Models/door.glb" id="1_oqm2c"]
 [ext_resource type="PackedScene" uid="uid://b257heo3t1etw" path="res://Models/v2/door_frame_v2.glb" id="2_q1lg3"]
@@ -9,21 +9,22 @@ size = Vector3(0.6, 2.5, 0.14)
 [sub_resource type="BoxShape3D" id="BoxShape3D_oqm2c"]
 size = Vector3(0.8, 0.4, 0.14)
 
-[node name="Door" type="StaticBody3D"]
+[node name="Door" type="StaticBody3D" unique_id=1038830744]
+collision_layer = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1774216059]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 1.25, 0.05)
 shape = SubResource("BoxShape3D_53t6o")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=262139853]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7, 1.25, 0.05)
 shape = SubResource("BoxShape3D_53t6o")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1746040873]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2949219, 0.05)
 shape = SubResource("BoxShape3D_oqm2c")
 
-[node name="door2" parent="." instance=ExtResource("1_oqm2c")]
+[node name="door2" parent="." unique_id=48446577 instance=ExtResource("1_oqm2c")]
 visible = false
 
-[node name="door_frame_v2" parent="." instance=ExtResource("2_q1lg3")]
+[node name="door_frame_v2" parent="." unique_id=70351981 instance=ExtResource("2_q1lg3")]

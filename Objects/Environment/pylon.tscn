@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bksi84vgmqnd3"]
+
+[ext_resource type="PackedScene" uid="uid://dhyn3r4yjyswr" path="res://Models/v2/pillar_v2.glb" id="1_8e4mp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8e4mp"]
+size = Vector3(0.6, 2, 0.6)
+
+[node name="Pylon" type="StaticBody3D" unique_id=770882524]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2125938321]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_8e4mp")
+
+[node name="pillar_v2" parent="." unique_id=383588913 instance=ExtResource("1_8e4mp")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=55205072]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+light_color = Color(1, 0.38039216, 0, 1)
+light_energy = 2.0
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_attenuation = 2.0
