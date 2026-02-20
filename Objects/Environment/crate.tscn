@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://d0lvx46e2qrnc"]
+
+[ext_resource type="PackedScene" uid="uid://36jmaauh6hlr" path="res://Models/v2/crate_v2.glb" id="1_d77p1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1sqwj"]
+size = Vector3(0.825, 0.825, 0.825)
+
+[node name="Crate" type="StaticBody3D" unique_id=272010298]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1959956436]
+shape = SubResource("BoxShape3D_1sqwj")
+
+[node name="crate_v2" parent="." unique_id=1521462702 instance=ExtResource("1_d77p1")]

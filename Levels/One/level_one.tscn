@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://22k42j4wuk38" path="res://Objects/Environment/column.tscn" id="8_vp3rn"]
 [ext_resource type="PackedScene" uid="uid://16quanjj4w7m" path="res://Objects/Environment/table.tscn" id="9_aol5l"]
 [ext_resource type="PackedScene" uid="uid://bksi84vgmqnd3" path="res://Objects/Environment/pylon.tscn" id="10_7a4fi"]
+[ext_resource type="PackedScene" uid="uid://cjtk16qvvy21a" path="res://Objects/Environment/stack_of_crate.tscn" id="11_1ssyt"]
+[ext_resource type="PackedScene" uid="uid://d0lvx46e2qrnc" path="res://Objects/Environment/crate.tscn" id="12_fhb7y"]
+[ext_resource type="PackedScene" uid="uid://c58r10851kf0p" path="res://Objects/Environment/huge_stack_of_crate.tscn" id="13_fhb7y"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_v3v8q"]
 material = ExtResource("2_hfaxq")
@@ -914,14 +917,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -8)
 [node name="Table" parent="Environment" unique_id=1568790723 instance=ExtResource("9_aol5l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -16)
 
-[node name="Table2" parent="Environment" unique_id=498885512 instance=ExtResource("9_aol5l")]
-transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 50, 0, -17)
-
 [node name="Table4" parent="Environment" unique_id=1121991863 instance=ExtResource("9_aol5l")]
 transform = Transform3D(0.7071067, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.7071067, 46, 0, -17)
 
 [node name="Table3" parent="Environment" unique_id=1213565696 instance=ExtResource("9_aol5l")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 2, 0, -2)
+
+[node name="Table5" parent="Environment" unique_id=500493462 instance=ExtResource("9_aol5l")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, 1)
 
 [node name="Pylon" parent="Environment" unique_id=770882524 instance=ExtResource("10_7a4fi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 0, -31)
@@ -933,16 +936,61 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -11)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -25)
 
 [node name="Pylon4" parent="Environment" unique_id=456619724 instance=ExtResource("10_7a4fi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6, 0, -0.4)
 
 [node name="Pylon5" parent="Environment" unique_id=1192284182 instance=ExtResource("10_7a4fi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -31)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.6, 0, -30.4)
 
 [node name="Pylon6" parent="Environment" unique_id=392808438 instance=ExtResource("10_7a4fi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -41)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6, 0, -41.6)
 
 [node name="Pylon7" parent="Environment" unique_id=1369891202 instance=ExtResource("10_7a4fi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -41)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4, 0, -41.6)
+
+[node name="StackOfCrate" parent="Environment" unique_id=280880390 instance=ExtResource("11_1ssyt")]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, -2, 0, -3)
+
+[node name="StackOfCrate2" parent="Environment" unique_id=1816602382 instance=ExtResource("11_1ssyt")]
+transform = Transform3D(-0.7071067, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, -0.7071067, 14, 0, -1.2)
+
+[node name="StackOfCrate6" parent="Environment" unique_id=149503971 instance=ExtResource("11_1ssyt")]
+transform = Transform3D(0.96592575, 0, -0.25881895, 0, 1, 0, 0.25881895, 0, 0.96592575, 22, 0, -11)
+
+[node name="StackOfCrate3" parent="Environment" unique_id=361582340 instance=ExtResource("11_1ssyt")]
+transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 30, 0, -24.9)
+
+[node name="StackOfCrate4" parent="Environment" unique_id=807145457 instance=ExtResource("11_1ssyt")]
+transform = Transform3D(-0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, -0.70710677, 58, 0, -24.9)
+
+[node name="StackOfCrate5" parent="Environment" unique_id=839847430 instance=ExtResource("11_1ssyt")]
+transform = Transform3D(0.49999997, 0, -0.8660253, 0, 1, 0, 0.8660253, 0, 0.49999997, 50, 0, -17)
+
+[node name="Crate" parent="Environment" unique_id=272010298 instance=ExtResource("12_fhb7y")]
+transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 2.2, 0.4, 1)
+
+[node name="Crate3" parent="Environment" unique_id=1250430966 instance=ExtResource("12_fhb7y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.6, 0.4, -20.6)
+
+[node name="Crate4" parent="Environment" unique_id=236328987 instance=ExtResource("12_fhb7y")]
+transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 48.6, 0.4, -16.6)
+
+[node name="HugeStackOfCrate" parent="Environment" unique_id=1832922500 instance=ExtResource("13_fhb7y")]
+transform = Transform3D(-0.57357645, 0, -0.819152, 0, 1, 0, 0.819152, 0, -0.57357645, 28, 0, -7)
+
+[node name="HugeStackOfCrate2" parent="Environment" unique_id=1250876708 instance=ExtResource("13_fhb7y")]
+transform = Transform3D(-0.8290376, 0, 0.55919284, 0, 1, 0, -0.55919284, 0, -0.8290376, 38, 0, -25)
+
+[node name="HugeStackOfCrate3" parent="Environment" unique_id=707587765 instance=ExtResource("13_fhb7y")]
+transform = Transform3D(0.5591929, 0, 0.8290376, 0, 1, 0, -0.8290376, 0, 0.5591929, 49.8, 0, -15)
+
+[node name="HugeStackOfCrate4" parent="Environment" unique_id=523651369 instance=ExtResource("13_fhb7y")]
+transform = Transform3D(0.8290376, 0, -0.55919296, 0, 1, 0, 0.55919296, 0, 0.8290376, 46, 0, -15)
+
+[node name="HugeStackOfCrate5" parent="Environment" unique_id=1622727667 instance=ExtResource("13_fhb7y")]
+transform = Transform3D(-0.82903767, 0, 0.5591929, 0, 1, 0, -0.5591929, 0, -0.82903767, 43, 0, -31.1)
+
+[node name="Crate2" parent="Environment" unique_id=798328869 instance=ExtResource("12_fhb7y")]
+transform = Transform3D(0.7071068, 0, 0.7071067, 0, 1, 0, -0.7071067, 0, 0.7071068, 15.2, 0.4, -9)
 
 [node name="Lights" type="Node3D" parent="." unique_id=1957034723]
 
@@ -1257,49 +1305,49 @@ transform = Transform3D(-0.70710677, 0, 0.70710695, 0, 1, 0, -0.70710695, 0, -0.
 [node name="Collectible" type="Node3D" parent="." unique_id=235030013]
 
 [node name="Collectible" parent="Collectible" unique_id=1930530466 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.2, -2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.05, -2)
 
 [node name="Collectible2" parent="Collectible" unique_id=25397596 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.25, -7)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.1, -7)
 
 [node name="Collectible5" parent="Collectible" unique_id=195093183 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0.25, -21)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0.1, -21)
 
 [node name="Collectible13" parent="Collectible" unique_id=1979737480 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.25, -23)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0.1, -23)
 
 [node name="Collectible14" parent="Collectible" unique_id=1666956744 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.25, -13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.1, -13)
 
 [node name="Collectible15" parent="Collectible" unique_id=903193639 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -11)
 
 [node name="Collectible9" parent="Collectible" unique_id=962742794 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, 0.25, -31)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 0.9, -30.6)
 
 [node name="Collectible10" parent="Collectible" unique_id=1741134639 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0.25, -35)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 0.1, -35)
 
 [node name="Collectible11" parent="Collectible" unique_id=1069928934 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.25, -45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0.1, -45)
 
 [node name="Collectible12" parent="Collectible" unique_id=1620580890 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.25, -45)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.1, -45)
 
 [node name="Collectible7" parent="Collectible" unique_id=1881248494 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 1.25, -17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 0.1, -17)
 
 [node name="Collectible8" parent="Collectible" unique_id=382776537 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 1.25, -17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 0.1, -17)
 
 [node name="Collectible6" parent="Collectible" unique_id=1951658965 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0.25, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0.1, -11)
 
 [node name="Collectible3" parent="Collectible" unique_id=2136495853 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0.25, -9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0.1, -9)
 
 [node name="Collectible4" parent="Collectible" unique_id=1869501707 instance=ExtResource("8_48c07")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0.25, -3)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0.1, -3)
 
 [node name="Player" parent="." unique_id=2068185920 instance=ExtResource("2_fxbc5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1, 0)

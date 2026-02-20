@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://dit0ixxyrcvvp" path="res://Objects/target.tscn" id="9_wml3p"]
 [ext_resource type="PackedScene" uid="uid://16quanjj4w7m" path="res://Objects/Environment/table.tscn" id="10_tchv8"]
 [ext_resource type="PackedScene" uid="uid://bksi84vgmqnd3" path="res://Objects/Environment/pylon.tscn" id="11_6uy3f"]
+[ext_resource type="PackedScene" uid="uid://d0lvx46e2qrnc" path="res://Objects/Environment/crate.tscn" id="12_iba6n"]
+[ext_resource type="PackedScene" uid="uid://cjtk16qvvy21a" path="res://Objects/Environment/stack_of_crate.tscn" id="13_32i7x"]
+[ext_resource type="PackedScene" uid="uid://c58r10851kf0p" path="res://Objects/Environment/huge_stack_of_crate.tscn" id="14_83ho6"]
 
 [node name="Zoo" type="Node3D" unique_id=983563747]
 
@@ -45,3 +48,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 
 [node name="Pylon" parent="." unique_id=770882524 instance=ExtResource("11_6uy3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -4)
+
+[node name="Crate" parent="." unique_id=272010298 instance=ExtResource("12_iba6n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.5, 4)
+
+[node name="StackOfCrate" parent="." unique_id=149503971 instance=ExtResource("13_32i7x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.5, 0)
+
+[node name="HugeStackOfCrate" parent="." unique_id=1594729383 instance=ExtResource("14_83ho6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -4)
