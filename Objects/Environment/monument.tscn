@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ba56xsm4mh8m3"]
+
+[ext_resource type="PackedScene" uid="uid://ck67xc6gl8ct7" path="res://Models/v2/monument_v2.glb" id="1_gj7hl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3qso"]
+size = Vector3(5, 2, 3)
+
+[node name="monument" type="StaticBody3D" unique_id=1508351457]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=55589258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_r3qso")
+
+[node name="monument_v2" parent="." unique_id=309995732 instance=ExtResource("1_gj7hl")]

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bam20rkby3dsf"]
+
+[ext_resource type="PackedScene" uid="uid://bsx6pyh2up7uc" path="res://Models/v2/pool_v2.glb" id="1_1n8yy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3qso"]
+size = Vector3(5, 0.2, 3)
+
+[node name="Pool" type="StaticBody3D" unique_id=1508351457]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=55589258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+shape = SubResource("BoxShape3D_r3qso")
+
+[node name="pool_v2" parent="." unique_id=1646954087 instance=ExtResource("1_1n8yy")]

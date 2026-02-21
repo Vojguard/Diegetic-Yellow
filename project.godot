@@ -84,6 +84,7 @@ ads={
 
 [layer_names]
 
+3d_render/layer_2="Player"
 3d_render/layer_3="Target"
 3d_render/layer_4="Collectible"
 3d_physics/layer_1="Player"
