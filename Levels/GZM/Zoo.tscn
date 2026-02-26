@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://d0lvx46e2qrnc" path="res://Objects/Environment/crate.tscn" id="12_iba6n"]
 [ext_resource type="PackedScene" uid="uid://cjtk16qvvy21a" path="res://Objects/Environment/stack_of_crate.tscn" id="13_32i7x"]
 [ext_resource type="PackedScene" uid="uid://c58r10851kf0p" path="res://Objects/Environment/huge_stack_of_crate.tscn" id="14_83ho6"]
+[ext_resource type="PackedScene" uid="uid://ba56xsm4mh8m3" path="res://Objects/Environment/monument.tscn" id="15_ltcsw"]
+[ext_resource type="PackedScene" uid="uid://dkars58k0aw83" path="res://Objects/Environment/snakeofage.tscn" id="15_vyodd"]
+[ext_resource type="PackedScene" uid="uid://bam20rkby3dsf" path="res://Objects/Environment/pool.tscn" id="17_wml3p"]
 
 [node name="Zoo" type="Node3D" unique_id=983563747]
 
@@ -44,10 +47,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 4)
 
 [node name="Table" parent="." unique_id=1568790723 instance=ExtResource("10_tchv8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 4)
 
 [node name="Pylon" parent="." unique_id=770882524 instance=ExtResource("11_6uy3f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 
 [node name="Crate" parent="." unique_id=272010298 instance=ExtResource("12_iba6n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.5, 4)
@@ -57,3 +60,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.5, 0)
 
 [node name="HugeStackOfCrate" parent="." unique_id=1594729383 instance=ExtResource("14_83ho6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -4)
+
+[node name="monument" parent="." unique_id=1508351457 instance=ExtResource("15_ltcsw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8, 0, 0)
+
+[node name="Snakeofage" parent="." unique_id=1803683544 instance=ExtResource("15_vyodd")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -8, 0, -4)
+
+[node name="Pool" parent="." unique_id=218010627 instance=ExtResource("17_wml3p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
