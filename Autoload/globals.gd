@@ -10,3 +10,8 @@ class SCENES:
 	const LEVEL_ONE : String = "res://Levels/One/level_one.tscn"
 	## @experimental: empty string, path to level two
 	const LEVEL_TWO : String = ""
+
+class LOGS:
+	const LOG_FOLDER : String = "user://game_logs//"
+	const LOG_FORMAT : String = LOG_FOLDER + "game_log-%02d%02d%02d.txt"
+	static var IS_NEW_LOG : bool = false

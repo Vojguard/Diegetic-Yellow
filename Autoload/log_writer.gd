@@ -20,13 +20,22 @@ var event_dict = {
 
 var log_file = null
 
+func check_andor_create_folder() -> void:
+	if DirAccess.dir_exists_absolute(Globals.LOGS.LOG_FOLDER):
+		print("exists")
+	else:
+		print("create folder")
+		DirAccess.make_dir_absolute(Globals.LOGS.LOG_FOLDER)
+
 func open_log_file(date_time : Dictionary) -> void:
+	check_andor_create_folder()
 	if log_file == null:
-		log_file = FileAccess.open("user://game_log-%02d%02d%02d.txt" % [date_time.day, date_time.month, date_time.year], FileAccess.WRITE)
+		log_file = FileAccess.open(Globals.LOGS.LOG_FORMAT % [date_time.day, date_time.month, date_time.year], FileAccess.WRITE)
 
 func close_log_file() -> void:
 	if log_file != null:
 		log_file.close()
+		Globals.LOGS.IS_NEW_LOG = true
 
 func check_log_open() -> bool:
 	if log_file == null: return false
