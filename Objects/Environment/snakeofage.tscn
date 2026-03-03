@@ -2,14 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://e7e4fh7qwams" path="res://Models/v2/snakeofage.glb" id="1_qke85"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_qke85"]
-size = Vector3(1.3, 3.8, 1.7)
+[node name="Snakeofage" type="Node3D" unique_id=1190705024]
 
-[node name="Snakeofage" type="StaticBody3D" unique_id=1803683544]
-collision_layer = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=848295288]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -0.3)
-shape = SubResource("BoxShape3D_qke85")
-
-[node name="snakeofage2" parent="." unique_id=1522661743 instance=ExtResource("1_qke85")]
+[node name="snakeofage2" parent="." unique_id=2018171918 instance=ExtResource("1_qke85")]

@@ -44,6 +44,13 @@ _subresources={
 "use_external/fallback_path": "res://Materials/cardboard_brown_material.tres",
 "use_external/path": "uid://g0k4iok0c567"
 }
+},
+"nodes": {
+"PATH:snakeofage": {
+"generate/physics": true,
+"physics/layer": 2,
+"physics/shape_type": 1
+}
 }
 }
 gltf/naming_version=2
