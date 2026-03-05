@@ -16,7 +16,9 @@ func _on_play_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	LogWriter.close_log_file()
-	if Globals.LOGS.IS_NEW_LOG:
-		var log_path = ProjectSettings.globalize_path(Globals.LOGS.LOG_FOLDER)
-		OS.shell_open(log_path)
 	get_tree().quit(0)
+
+
+func _on_logs_pressed() -> void:
+	var log_path = ProjectSettings.globalize_path(Globals.LOGS.LOG_FOLDER)
+	OS.shell_open(log_path)
