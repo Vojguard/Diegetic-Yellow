@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://hoolorrkwyom"]
+[gd_scene format=3 uid="uid://hoolorrkwyom"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgfm8"]
 albedo_color = Color(0, 0.4946968, 8.663535e-07, 1)
@@ -9,5 +9,12 @@ emission = Color(0, 1, 0, 1)
 material = SubResource("StandardMaterial3D_jgfm8")
 size = Vector3(0.5, 0.2, 0.1)
 
-[node name="ExitSign" type="MeshInstance3D"]
+[node name="ExitSign" type="MeshInstance3D" unique_id=2146230322]
 mesh = SubResource("BoxMesh_jgfm8")
+
+[node name="Label3D" type="Label3D" parent="." unique_id=1913584976]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.050141454)
+modulate = Color(1, 1, 0.99607843, 1)
+text = "exit"
+outline_size = 0
+uppercase = true
