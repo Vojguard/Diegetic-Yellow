@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d0ow0kj4vnsoe"]
+
+[ext_resource type="PackedScene" uid="uid://djcy0tgsmvjsc" path="res://Models/v2/big_vase_v2.glb" id="1_71tpl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3qso"]
+size = Vector3(0.4, 1.2, 0.4)
+
+[node name="vase" type="StaticBody3D" unique_id=1508351457]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=55589258]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+shape = SubResource("BoxShape3D_r3qso")
+
+[node name="big_vase_v2" parent="." unique_id=79468252 instance=ExtResource("1_71tpl")]
