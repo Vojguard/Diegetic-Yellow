@@ -1,14 +1,14 @@
-[gd_scene format=3 uid="uid://du7a4g7j3pm7b"]
+[gd_scene format=3 uid="uid://isd2j8h0mbp3"]
 
-[ext_resource type="Script" uid="uid://dc7gyrty7hjwp" path="res://Objects/Interactible/collectible.gd" id="1_hjhql"]
-[ext_resource type="PackedScene" uid="uid://btwcw7l66xqt2" path="res://Models/v2/colect_cube_v2.glb" id="2_6x32e"]
+[ext_resource type="Script" uid="uid://dc7gyrty7hjwp" path="res://Objects/Interactible/collectible.gd" id="1_6fhin"]
+[ext_resource type="PackedScene" uid="uid://cjbsj8et08ftt" path="res://Models/v2/alt/alt_colect_cube_v2.glb" id="3_kppk8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o8e5b"]
 size = Vector3(0.25, 0.25, 0.25)
 
-[node name="Collectible" type="StaticBody3D" unique_id=1930530466]
+[node name="AltCollectible" type="StaticBody3D" unique_id=1930530466]
 collision_layer = 8
-script = ExtResource("1_hjhql")
+script = ExtResource("1_6fhin")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1551512068]
 shape = SubResource("BoxShape3D_o8e5b")
@@ -16,8 +16,15 @@ shape = SubResource("BoxShape3D_o8e5b")
 [node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="." unique_id=368236857]
 aabb = AABB(-0.125, -0.125, -0.125, 0.25, 0.25, 0.25)
 
-[node name="colect_cube_v2" parent="." unique_id=514077769 instance=ExtResource("2_6x32e")]
+[node name="alt_colect_cube_v2" parent="." unique_id=649092110 instance=ExtResource("3_kppk8")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=886390082]
+layers = 8
+light_color = Color(1, 1, 0, 1)
+light_size = 0.1
+light_cull_mask = 4294967293
+omni_range = 1.0
 
 [connection signal="screen_entered" from="VisibleOnScreenEnabler3D" to="." method="_on_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler3D" to="." method="_on_screen_exited"]
