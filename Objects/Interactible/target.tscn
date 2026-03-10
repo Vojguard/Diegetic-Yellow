@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dit0ixxyrcvvp"]
 
-[ext_resource type="Script" uid="uid://b6lx1v1uloe0u" path="res://Objects/target.gd" id="1_d628h"]
+[ext_resource type="Script" uid="uid://b6lx1v1uloe0u" path="res://Objects/Interactible/target.gd" id="1_d628h"]
 [ext_resource type="PackedScene" uid="uid://x8yy7j5u1kig" path="res://Models/v2/snakehead.glb" id="2_jge0a"]
 [ext_resource type="Material" uid="uid://dus5e3m7i528s" path="res://Materials/target_red_material.tres" id="2_k0c6r"]
 

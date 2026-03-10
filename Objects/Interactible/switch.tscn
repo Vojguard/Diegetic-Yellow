@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://xojga2b86md2"]
+
+[ext_resource type="Script" uid="uid://bpd4st4scxpg7" path="res://Objects/Interactible/switch.gd" id="1_yyvnn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_en4se"]
+
+[node name="Switch" type="StaticBody3D" unique_id=1125735965]
+script = ExtResource("1_yyvnn")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=446247364]
+shape = SubResource("SphereShape3D_en4se")

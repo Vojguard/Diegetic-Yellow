@@ -8,8 +8,10 @@ class SCENES:
 	const ARENA : String = "res://Levels/Arena/arena_scene.tscn" 
 	## path to level one
 	const LEVEL_ONE : String = "res://Levels/One/level_one.tscn"
-	## @experimental: empty string, path to level two
-	const LEVEL_TWO : String = "res://Levels/One/level_two.tscn"
+	const LEVEL_ONE_ALT : String = "res://Levels/One/level_one_alt.tscn"
+	## path to level two
+	const LEVEL_TWO : String = "res://Levels/Two/level_two.tscn"
+	const LEVEL_TWO_ALT : String = ""
 
 class LOGS:
 	const LOG_FOLDER : String = "user://game_logs//"

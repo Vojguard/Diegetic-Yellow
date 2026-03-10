@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://du7a4g7j3pm7b"]
 
-[ext_resource type="Script" uid="uid://dc7gyrty7hjwp" path="res://Objects/collectible.gd" id="1_hjhql"]
+[ext_resource type="Script" uid="uid://dc7gyrty7hjwp" path="res://Objects/Interactible/collectible.gd" id="1_hjhql"]
 [ext_resource type="PackedScene" uid="uid://btwcw7l66xqt2" path="res://Models/v2/colect_cube_v2.glb" id="2_6x32e"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o8e5b"]
