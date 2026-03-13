@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://d0ow0kj4vnsoe" path="res://Objects/Environment/big_vase.tscn" id="19_7xq88"]
 [ext_resource type="PackedScene" uid="uid://nq7b86ftvnbd" path="res://Objects/Environment/triple_vases.tscn" id="20_qk8ut"]
 [ext_resource type="PackedScene" uid="uid://dit0ixxyrcvvp" path="res://Objects/Interactible/target.tscn" id="21_rhme0"]
-[ext_resource type="PackedScene" uid="uid://du7a4g7j3pm7b" path="res://Objects/Interactible/collectible.tscn" id="22_g5m1o"]
+[ext_resource type="PackedScene" uid="uid://isd2j8h0mbp3" path="res://Objects/Interactible/alt_collectible.tscn" id="22_28gfo"]
 [ext_resource type="PackedScene" uid="uid://hoolorrkwyom" path="res://Objects/Environment/exit_sign.tscn" id="23_purtj"]
 [ext_resource type="PackedScene" uid="uid://dry5s7ff6a5i0" path="res://Player/player.tscn" id="24_8pkc5"]
 
@@ -1571,53 +1571,53 @@ transform = Transform3D(-0.70710677, 0, 0.70710695, 0, 1, 0, -0.70710695, 0, -0.
 
 [node name="Collectible" type="Node3D" parent="." unique_id=235030013]
 
-[node name="Collectible" parent="Collectible" unique_id=1930530466 instance=ExtResource("22_g5m1o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 1.18)
-
-[node name="Collectible16" parent="Collectible" unique_id=1577505069 instance=ExtResource("22_g5m1o")]
+[node name="AltCollectible2" parent="Collectible" unique_id=1930530466 instance=ExtResource("22_28gfo")]
 transform = Transform3D(0.64278764, 0, 0.76604444, 0, 1, 0, -0.76604444, 0, 0.64278764, -0.4, 0.9, -33.3)
 
-[node name="Collectible2" parent="Collectible" unique_id=25397596 instance=ExtResource("22_g5m1o")]
+[node name="AltCollectible3" parent="Collectible" unique_id=1725100898 instance=ExtResource("22_28gfo")]
 transform = Transform3D(0.8660254, 0, -0.5, 0, 1, 0, 0.5, 0, 0.8660254, 9.6, 0.1, -7.1)
 
-[node name="Collectible5" parent="Collectible" unique_id=195093183 instance=ExtResource("22_g5m1o")]
+[node name="AltCollectible4" parent="Collectible" unique_id=321403500 instance=ExtResource("22_28gfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0.1, -21)
 
-[node name="Collectible13" parent="Collectible" unique_id=1979737480 instance=ExtResource("22_g5m1o")]
+[node name="AltCollectible5" parent="Collectible" unique_id=847397351 instance=ExtResource("22_28gfo")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -2.2, 0.89, -23)
 
-[node name="Collectible14" parent="Collectible" unique_id=1666956744 instance=ExtResource("22_g5m1o")]
+[node name="AltCollectible6" parent="Collectible" unique_id=906365784 instance=ExtResource("22_28gfo")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 8.2, 1.05, -13.5)
 
-[node name="Collectible15" parent="Collectible" unique_id=903193639 instance=ExtResource("22_g5m1o")]
+[node name="AltCollectible7" parent="Collectible" unique_id=1785702693 instance=ExtResource("22_28gfo")]
 transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, 0.25, 0.1, -11.15)
 
-[node name="Collectible9" parent="Collectible" unique_id=962742794 instance=ExtResource("22_g5m1o")]
+[node name="AltCollectible8" parent="Collectible" unique_id=2024177737 instance=ExtResource("22_28gfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5, 0.9, -30.6)
 
-[node name="Collectible10" parent="Collectible" unique_id=1741134639 instance=ExtResource("22_g5m1o")]
+[node name="AltCollectible9" parent="Collectible" unique_id=492996619 instance=ExtResource("22_28gfo")]
 transform = Transform3D(0.9353179, -0.13008143, 0.32902855, 0.12183182, 0.9914999, 0.045662608, -0.33217156, -0.0026229033, 0.9432154, 31.75, 0.85, -35.25)
 
-[node name="Collectible11" parent="Collectible" unique_id=1069928934 instance=ExtResource("22_g5m1o")]
+[node name="AltCollectible10" parent="Collectible" unique_id=1658277509 instance=ExtResource("22_28gfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.4, 0.9, -45.4)
 
-[node name="Collectible12" parent="Collectible" unique_id=1620580890 instance=ExtResource("22_g5m1o")]
+[node name="AltCollectible11" parent="Collectible" unique_id=960810168 instance=ExtResource("22_28gfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.05, -45)
 
-[node name="Collectible7" parent="Collectible" unique_id=1881248494 instance=ExtResource("22_g5m1o")]
+[node name="AltCollectible12" parent="Collectible" unique_id=1840552321 instance=ExtResource("22_28gfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 1.06, -17)
 
-[node name="Collectible8" parent="Collectible" unique_id=382776537 instance=ExtResource("22_g5m1o")]
+[node name="AltCollectible13" parent="Collectible" unique_id=756748207 instance=ExtResource("22_28gfo")]
 transform = Transform3D(0.8660254, 0, 0.5, 0, 1, 0, -0.5, 0, 0.8660254, 50, 0.89, -17.4)
 
-[node name="Collectible6" parent="Collectible" unique_id=1951658965 instance=ExtResource("22_g5m1o")]
+[node name="AltCollectible14" parent="Collectible" unique_id=140379546 instance=ExtResource("22_28gfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0.1, -11)
 
-[node name="Collectible3" parent="Collectible" unique_id=2136495853 instance=ExtResource("22_g5m1o")]
+[node name="AltCollectible15" parent="Collectible" unique_id=1077823538 instance=ExtResource("22_28gfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0.1, -9)
 
-[node name="Collectible4" parent="Collectible" unique_id=1869501707 instance=ExtResource("22_g5m1o")]
+[node name="AltCollectible16" parent="Collectible" unique_id=892183380 instance=ExtResource("22_28gfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0.1, -3)
+
+[node name="AltCollectible" parent="Collectible" unique_id=377550532 instance=ExtResource("22_28gfo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05, 1.18)
 
 [node name="Exit" type="Node3D" parent="." unique_id=1125571559]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.25, -13)
