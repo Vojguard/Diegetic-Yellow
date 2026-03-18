@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://c1i5dyjheyrg4" path="res://Objects/Environment/vase.tscn" id="18_u16fr"]
 [ext_resource type="PackedScene" uid="uid://d0ow0kj4vnsoe" path="res://Objects/Environment/big_vase.tscn" id="19_7xq88"]
 [ext_resource type="PackedScene" uid="uid://nq7b86ftvnbd" path="res://Objects/Environment/triple_vases.tscn" id="20_qk8ut"]
-[ext_resource type="PackedScene" uid="uid://dit0ixxyrcvvp" path="res://Objects/Interactible/target.tscn" id="21_rhme0"]
+[ext_resource type="PackedScene" uid="uid://boi5dvu0mvobg" path="res://Objects/Interactible/alt_target.tscn" id="21_mvpsa"]
 [ext_resource type="PackedScene" uid="uid://isd2j8h0mbp3" path="res://Objects/Interactible/alt_collectible.tscn" id="22_28gfo"]
 [ext_resource type="PackedScene" uid="uid://hoolorrkwyom" path="res://Objects/Environment/exit_sign.tscn" id="23_purtj"]
 [ext_resource type="PackedScene" uid="uid://dry5s7ff6a5i0" path="res://Player/player.tscn" id="24_8pkc5"]
@@ -1509,64 +1509,64 @@ shadow_caster_mask = 4294967293
 
 [node name="Targets" type="Node3D" parent="." unique_id=930413730]
 
-[node name="Target" parent="Targets" unique_id=131930755 instance=ExtResource("21_rhme0")]
+[node name="AltTarget" parent="Targets" unique_id=624742187 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -7)
 
-[node name="Target2" parent="Targets" unique_id=1095372588 instance=ExtResource("21_rhme0")]
+[node name="AltTarget2" parent="Targets" unique_id=906277077 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 6, 1, -9)
 
-[node name="Target5" parent="Targets" unique_id=1565645120 instance=ExtResource("21_rhme0")]
+[node name="AltTarget3" parent="Targets" unique_id=854004143 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(0.49999997, 0, -0.86602545, 0, 1, 0, 0.86602545, 0, 0.49999997, 32, 1, -7)
 
-[node name="Target6" parent="Targets" unique_id=1960494761 instance=ExtResource("21_rhme0")]
+[node name="AltTarget5" parent="Targets" unique_id=2071021374 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(-0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.7071068, 32, 1, -3)
 
-[node name="Target7" parent="Targets" unique_id=1357787843 instance=ExtResource("21_rhme0")]
+[node name="AltTarget6" parent="Targets" unique_id=1534391060 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(-0.7071067, 0, 0.7071069, 0, 1, 0, -0.7071069, 0, -0.7071067, 32, 1, -19)
 
-[node name="Target9" parent="Targets" unique_id=192923776 instance=ExtResource("21_rhme0")]
+[node name="AltTarget7" parent="Targets" unique_id=1976711266 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(-0.7071067, 0, 0.7071069, 0, 1, 0, -0.7071069, 0, -0.7071067, 20, 1, -11)
 
-[node name="Target11" parent="Targets" unique_id=558607376 instance=ExtResource("21_rhme0")]
+[node name="AltTarget8" parent="Targets" unique_id=1917525707 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(-1, 0, 1.1920929e-07, 0, 1, 0, -1.1920929e-07, 0, -1, 48, 1, -15)
 
-[node name="Target8" parent="Targets" unique_id=584215092 instance=ExtResource("21_rhme0")]
+[node name="AltTarget9" parent="Targets" unique_id=551745264 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(0.70710695, 0, 0.70710665, 0, 1, 0, -0.70710665, 0, 0.70710695, 32, 1, -25)
 
-[node name="Target14" parent="Targets" unique_id=713800167 instance=ExtResource("21_rhme0")]
+[node name="AltTarget10" parent="Targets" unique_id=279004968 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(-0.7071067, 0, 0.7071069, 0, 1, 0, -0.7071069, 0, -0.7071067, 16, 1, -29)
 
-[node name="Target15" parent="Targets" unique_id=600349367 instance=ExtResource("21_rhme0")]
+[node name="AltTarget11" parent="Targets" unique_id=827339933 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(0.70710695, 0, 0.70710665, 0, 1, 0, -0.70710665, 0, 0.70710695, 16, 1, -35)
 
-[node name="Target18" parent="Targets" unique_id=353635322 instance=ExtResource("21_rhme0")]
+[node name="AltTarget12" parent="Targets" unique_id=555674509 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(-0.7071067, 0, 0.7071069, 0, 1, 0, -0.7071069, 0, -0.7071067, 8, 1, -17)
 
-[node name="Target19" parent="Targets" unique_id=1453812667 instance=ExtResource("21_rhme0")]
+[node name="AltTarget13" parent="Targets" unique_id=1833728860 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(0.70710695, 0, 0.70710665, 0, 1, 0, -0.70710665, 0, 0.70710695, 8, 1, -23)
 
-[node name="Target16" parent="Targets" unique_id=192748711 instance=ExtResource("21_rhme0")]
+[node name="AltTarget14" parent="Targets" unique_id=167358143 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(0.70710665, 0, -0.70710695, 0, 1, 0, 0.70710695, 0, 0.70710665, 24, 1, -35)
 
-[node name="Target17" parent="Targets" unique_id=133474474 instance=ExtResource("21_rhme0")]
+[node name="AltTarget15" parent="Targets" unique_id=844181164 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(-0.707107, 0, -0.7071066, 0, 1, 0, 0.7071066, 0, -0.707107, 24, 1, -29)
 
-[node name="Target12" parent="Targets" unique_id=275054051 instance=ExtResource("21_rhme0")]
+[node name="AltTarget16" parent="Targets" unique_id=1506732183 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(1, 0, -2.0861626e-07, 0, 1, 0, 2.0861626e-07, 0, 1, 48, 1, -39)
 
-[node name="Target13" parent="Targets" unique_id=675668076 instance=ExtResource("21_rhme0")]
+[node name="AltTarget17" parent="Targets" unique_id=957177586 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(1, 0, -2.0861626e-07, 0, 1, 0, 2.0861626e-07, 0, 1, 28, 1, -39)
 
-[node name="Target10" parent="Targets" unique_id=695487855 instance=ExtResource("21_rhme0")]
+[node name="AltTarget18" parent="Targets" unique_id=1720104773 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(-1, 0, 2.0861626e-07, 0, 1, 0, -2.0861626e-07, 0, -1, 56, 1, -23)
 
-[node name="Target3" parent="Targets" unique_id=583680419 instance=ExtResource("21_rhme0")]
+[node name="AltTarget19" parent="Targets" unique_id=62121279 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 10, 1, -5)
 
-[node name="Target4" parent="Targets" unique_id=1112600588 instance=ExtResource("21_rhme0")]
+[node name="AltTarget20" parent="Targets" unique_id=10105442 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(-0.70710677, 0, 0.70710695, 0, 1, 0, -0.70710695, 0, -0.70710677, 6, 1, -1)
 
-[node name="Target20" parent="Targets" unique_id=500297341 instance=ExtResource("21_rhme0")]
+[node name="AltTarget4" parent="Targets" unique_id=605579969 instance=ExtResource("21_mvpsa")]
 transform = Transform3D(-0.70710677, 0, 0.70710695, 0, 1, 0, -0.70710695, 0, -0.70710677, -2, 1, -11)
 
 [node name="Collectible" type="Node3D" parent="." unique_id=235030013]

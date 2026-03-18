@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://clg16ykxgsjbm"]
+
+[ext_resource type="Shader" uid="uid://cc13wm28mvdyr" path="res://Shaders/color_target_vs.tres" id="1_r46fb"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_r46fb")
+shader_parameter/BaseColor = Color(0, 0, 0, 1)
+shader_parameter/FresnelQoef = 2.0
+shader_parameter/FresnelColor = Color(1, 0, 0, 1)
