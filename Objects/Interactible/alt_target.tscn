@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://boi5dvu0mvobg"]
+[gd_scene format=3 uid="uid://4ljlku3e55ea"]
 
 [ext_resource type="Script" uid="uid://b6lx1v1uloe0u" path="res://Objects/Interactible/target.gd" id="1_3son6"]
 [ext_resource type="Material" uid="uid://dus5e3m7i528s" path="res://Materials/target_red_material.tres" id="2_tcego"]
-[ext_resource type="PackedScene" uid="uid://dv76h8t4lo3ho" path="res://Models/v2/alt/alt_snakehead.glb" id="3_3son6"]
+[ext_resource type="PackedScene" uid="uid://2hxq0ebj2c75" path="res://Models/v2/alt/alt_snakehead_new.glb" id="4_tcego"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_by6mq"]
 height = 1.75
@@ -25,7 +25,7 @@ mesh = SubResource("CapsuleMesh_jge0a")
 [node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="." unique_id=501371475]
 aabb = AABB(-0.5, -1, -0.5, 1, 2, 1)
 
-[node name="alt_snakehead" parent="." unique_id=857922408 instance=ExtResource("3_3son6")]
+[node name="alt_snakehead_new" parent="." unique_id=778026311 instance=ExtResource("4_tcego")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -1, 0)
 
 [connection signal="screen_entered" from="VisibleOnScreenEnabler3D" to="." method="_on_screen_entered"]
