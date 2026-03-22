@@ -1,15 +1,18 @@
 class_name GameManager
 extends Node3D
 
-const TARGET_HIT_SCORE = 10
-const COLLECTABLE_SCORE = 2
+const target_hit_score = Globals.GAME.TARGET_HIT_SCORE
+const collectable_score = Globals.GAME.COLLECTABLE_SCORE
 
 var player: PlayerController = null
 
 var start_time = 0
 var score: int = 0
 
+@export var next_level : Globals.LEVELS
+
 func _ready() -> void:
+	LogWriter.print_header_to_log(Time.get_datetime_dict_from_system(), LogWriter.EVENT_TAG.EL)
 	_connect_signals()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -36,12 +39,12 @@ func _on_player_loaded(p : PlayerController) -> void:
 	print("player_loaded")
 
 func _on_target_hit(_t : Target) -> void:
-	_update_score(TARGET_HIT_SCORE)
+	_update_score(target_hit_score)
 	LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.TH, score)
 	print("target hit %d" % score)
 
 func _on_item_collected(_ci : Collectible) -> void:
-	_update_score(COLLECTABLE_SCORE)
+	_update_score(collectable_score)
 	LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.IC, score)
 	print("item collected %d" % score)
 
@@ -51,13 +54,26 @@ func _update_score(score_update : int) -> void:
 
 func _on_exit_body_entered(body: Node3D) -> void:
 	if body is PlayerController:
-		call_deferred("_return_to_main_menu")
+		var next_level_string : String = ""
+		if next_level == Globals.LEVELS.MAIN:
+			next_level_string = Globals.SCENES.MAIN_MENU
+		elif next_level == Globals.LEVELS.ONE:
+			next_level_string = Globals.GAME.get_chosen_pair_scene(0)
+		elif next_level == Globals.LEVELS.TWO:
+			next_level_string = Globals.GAME.get_chosen_pair_scene(1)
+		else:
+			printerr("Unspecified next level")
+		call_deferred("_load_next_scene", next_level_string)
+		
 
-func _return_to_main_menu() -> void:
-	LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.PE, score)
+func _load_next_scene(next : String) -> void:
+	LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.FL, score)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	_disconnect_signals()
-	get_tree().change_scene_to_file(Globals.SCENES.MAIN_MENU)
+	get_tree().change_scene_to_file(next)
+
+func _return_to_main_menu() -> void:
+	_load_next_scene(Globals.SCENES.MAIN_MENU)
 
 func get_time() -> int:
 	return (Time.get_ticks_msec() - start_time) / 1000

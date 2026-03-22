@@ -2,8 +2,9 @@ extends Node
 
 enum EVENT_TAG {
 	NG,
+	EL,
+	FL,
 	PL,
-	PE,
 	IC,
 	TH
 }
@@ -12,8 +13,9 @@ const HEADER_LINE = "-----------------------------"
 
 var event_dict = {
 	EVENT_TAG.NG : "New Game Start",
+	EVENT_TAG.EL : "Entered Level",
+	EVENT_TAG.FL : "Finished Level",
 	EVENT_TAG.PL : "Player Loaded",
-	EVENT_TAG.PE : "Player Exited",
 	EVENT_TAG.IC : "Item Collected",
 	EVENT_TAG.TH : "Target Hit"
 }
