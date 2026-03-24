@@ -1093,6 +1093,16 @@ shadow_enabled = true
 shadow_caster_mask = 4294967293
 omni_range = 3.0
 
+[node name="OmniLight3D27" type="OmniLight3D" parent="Lights" unique_id=237088360]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 1.25, -41)
+light_color = Color(1, 0.64705884, 0, 1)
+light_energy = 5.0
+light_bake_mode = 1
+light_cull_mask = 4294967293
+shadow_enabled = true
+shadow_caster_mask = 4294967293
+omni_range = 3.0
+
 [node name="OmniLight3D25" type="OmniLight3D" parent="Lights" unique_id=1035360378]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.25, -14)
 light_color = Color(1, 0.64705884, 0, 1)
