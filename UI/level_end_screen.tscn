@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://ire1siuicjf8"]
+
+[ext_resource type="Script" uid="uid://dc63qcptjdjok" path="res://UI/level_end_screen.gd" id="1_0yx8w"]
+[ext_resource type="Texture2D" uid="uid://dr71664dx501s" path="res://UI/menu_bg_3.png" id="2_45ucn"]
+
+[node name="LevelEndScreen" type="CanvasLayer" unique_id=723218962]
+script = ExtResource("1_0yx8w")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1837778841]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_45ucn")

@@ -17,6 +17,12 @@
 [ext_resource type="PackedScene" uid="uid://ba56xsm4mh8m3" path="res://Objects/Environment/monument.tscn" id="15_ltcsw"]
 [ext_resource type="PackedScene" uid="uid://dkars58k0aw83" path="res://Objects/Environment/snakeofage.tscn" id="15_vyodd"]
 [ext_resource type="PackedScene" uid="uid://bam20rkby3dsf" path="res://Objects/Environment/pool.tscn" id="17_wml3p"]
+[ext_resource type="PackedScene" uid="uid://4ljlku3e55ea" path="res://Objects/Interactible/alt_target.tscn" id="18_7ji6i"]
+[ext_resource type="PackedScene" uid="uid://isd2j8h0mbp3" path="res://Objects/Interactible/alt_collectible.tscn" id="19_bvmcl"]
+[ext_resource type="PackedScene" uid="uid://c1i5dyjheyrg4" path="res://Objects/Environment/vase.tscn" id="20_78pfn"]
+[ext_resource type="PackedScene" uid="uid://d0ow0kj4vnsoe" path="res://Objects/Environment/big_vase.tscn" id="21_mtc8x"]
+[ext_resource type="PackedScene" uid="uid://nq7b86ftvnbd" path="res://Objects/Environment/triple_vases.tscn" id="22_2krxj"]
+[ext_resource type="PackedScene" uid="uid://dsln4jxb2do5h" path="res://Objects/Environment/chest.tscn" id="23_bvmcl"]
 
 [node name="Zoo" type="Node3D" unique_id=983563747]
 
@@ -69,3 +75,21 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -8, 
 
 [node name="Pool" parent="." unique_id=218010627 instance=ExtResource("17_wml3p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4)
+
+[node name="AltTarget" parent="." unique_id=624742187 instance=ExtResource("18_7ji6i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 7)
+
+[node name="AltCollectible" parent="." unique_id=805964838 instance=ExtResource("19_bvmcl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7)
+
+[node name="vase" parent="." unique_id=1497016720 instance=ExtResource("20_78pfn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 7)
+
+[node name="vase2" parent="." unique_id=574979248 instance=ExtResource("21_mtc8x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 7)
+
+[node name="TripleVases" parent="." unique_id=256579930 instance=ExtResource("22_2krxj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 7)
+
+[node name="chest" parent="." unique_id=340447103 instance=ExtResource("23_bvmcl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 7)

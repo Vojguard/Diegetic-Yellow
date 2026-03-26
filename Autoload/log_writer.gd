@@ -11,9 +11,9 @@ enum EVENT_TAG {
 
 const HEADER_LINE = "-----------------------------"
 
-var event_dict = {
+var event_dict = { # More events
 	EVENT_TAG.NG : "New Game Start",
-	EVENT_TAG.EL : "Entered Level",
+	EVENT_TAG.EL : "Entered Level", # TODO: + jméno levelu
 	EVENT_TAG.FL : "Finished Level",
 	EVENT_TAG.PL : "Player Loaded",
 	EVENT_TAG.IC : "Item Collected",
