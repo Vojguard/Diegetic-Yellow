@@ -9,9 +9,15 @@ var player: PlayerController = null
 var start_time = 0
 var score: int = 0
 
-@export var next_level : Globals.LEVELS
+var max_targets : int = 1
+var max_items : int = 1
+
+var targets_hit : int = 0
+var items_collected : int = 0
 
 func _ready() -> void:
+	max_targets = $"../Targets".get_child_count()
+	max_items = $"../Collectible".get_child_count()
 	LogWriter.print_header_to_log(Time.get_datetime_dict_from_system(), LogWriter.EVENT_TAG.EL)
 	_connect_signals()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -39,11 +45,13 @@ func _on_player_loaded(p : PlayerController) -> void:
 	print("player_loaded")
 
 func _on_target_hit(_t : Target) -> void:
+	targets_hit += 1
 	_update_score(target_hit_score)
 	LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.TH, score)
 	print("target hit %d" % score)
 
 func _on_item_collected(_ci : Collectible) -> void:
+	items_collected += 1
 	_update_score(collectable_score)
 	LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.IC, score)
 	print("item collected %d" % score)
@@ -53,17 +61,12 @@ func _update_score(score_update : int) -> void:
 	SignalBus.score_updated.emit(score)
 
 func _on_exit_body_entered(body: Node3D) -> void:
-	if body is PlayerController:
-		var next_level_string : String = ""
-		if next_level == Globals.LEVELS.MAIN:
-			next_level_string = Globals.SCENES.MAIN_MENU
-		elif next_level == Globals.LEVELS.ONE:
-			next_level_string = Globals.GAME.get_chosen_pair_scene(0)
-		elif next_level == Globals.LEVELS.TWO:
-			next_level_string = Globals.GAME.get_chosen_pair_scene(1)
-		else:
-			printerr("Unspecified next level")
-		call_deferred("_load_next_scene", next_level_string)
+	if body is PlayerController: 
+		var perc_th = targets_hit / (max_targets * 1.0)
+		var perc_ic = items_collected / (max_items * 1.0)
+		Globals.LEVEL.set_level_stats(score, perc_th, perc_ic, get_time())
+		Globals.GAME.progress_walkthrough()
+		call_deferred("_load_next_scene", Globals.SCENES.END_LEVEL)
 		
 
 func _load_next_scene(next : String) -> void:

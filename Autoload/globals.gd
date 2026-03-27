@@ -1,30 +1,73 @@
 extends Node
 
-enum LEVELS {
-	MAIN,
-	ONE,
-	TWO
-}
-
 class GAME:
 	const TARGET_HIT_SCORE = 10
 	const COLLECTABLE_SCORE = 2
 	
-	static var chosen_pair := SCENES.PAIR_DEF
+	static var version_walkthrough := SCENES.WALKTHROUGH_ONE
+	static var location_at_walkthrough : int = 0
 	
-	static func set_chosen_pair(one : bool) -> void:
+	static func set_chosen_walkthrough(one : bool) -> void:
 		if one:
-			chosen_pair = SCENES.PAIR_ONE
+			version_walkthrough = SCENES.WALKTHROUGH_ONE
 		else:
-			chosen_pair = SCENES.PAIR_TWO
+			version_walkthrough = SCENES.WALKTHROUGH_TWO
 	
-	static func get_chosen_pair_scene(level : int) -> String:
-		return chosen_pair[level]
+	static func progress_walkthrough() -> void:
+		location_at_walkthrough += 1
+	
+	static  func get_current_walkthrough_location() -> int:
+		return location_at_walkthrough
+	
+	static func get_scene_at_current_location() -> String:
+		if location_at_walkthrough < version_walkthrough.size():
+			return version_walkthrough[location_at_walkthrough]
+		else:
+			location_at_walkthrough = 0
+			return SCENES.MAIN_MENU
+	
+	static func get_chosen_walkthrough_scene(level : int) -> String:
+		return version_walkthrough[level]
+
+class LEVEL:
+	static var score : int = 0
+	static var percent_targets_destroyed : float = 0
+	static var percent_collectibles_collected : float = 0
+	static var time_spend : int = 0
+	
+	## Takes [param ptd] for the percentage of targets destroyed [br]
+	## [param scr] for the score
+	## [param pcc] for the percentage of cubes collected [br]
+	## [param ts] for the time spent in the level [br]
+	## [i]percentages are in a value of 0-1[/i]
+	static func set_level_stats(scr : int, ptd : float, pcc : float, ts: float) -> void:
+		score = scr
+		percent_targets_destroyed = ptd
+		percent_collectibles_collected = pcc
+		time_spend = ts
+	
+	static func reset_level_stats() -> void:
+		score = 0
+		percent_targets_destroyed = 0
+		percent_collectibles_collected = 0
+		time_spend = 0
+	
+	## returns array as follows: [br]
+	## percentage of targets destroyed [br]
+	## percentage of items collected [br]
+	## time spent [br]
+	## score
+	static func get_level_stats() -> Array:
+		return [percent_targets_destroyed, percent_collectibles_collected, time_spend, score]
 
 ## holds the const strings of scenes
 class SCENES:
 	## path to main menu
 	const MAIN_MENU : String = "res://UI/main_menu.tscn"
+	
+	## path to end level screen
+	const END_LEVEL : String = "res://UI/level_end_screen.tscn"
+	
 	## @deprecated: will not be used in final build. replaced by [member LEVEL_ONE]
 	const ARENA : String = "res://Levels/Arena/arena_scene.tscn" 
 	## path to level one
@@ -34,9 +77,9 @@ class SCENES:
 	const LEVEL_TWO : String = "res://Levels/Two/level_two.tscn"
 	const LEVEL_TWO_ALT : String = "res://Levels/Two/level_two_alt.tscn"
 	
-	const PAIR_ONE : Array[String] = [LEVEL_ONE, LEVEL_TWO_ALT]
-	const PAIR_TWO : Array[String] = [LEVEL_ONE_ALT, LEVEL_TWO]
-	const PAIR_DEF : Array[String] = [LEVEL_ONE, LEVEL_TWO]
+	
+	const WALKTHROUGH_ONE : Array[String] = [LEVEL_ONE, LEVEL_TWO_ALT, LEVEL_ONE_ALT, LEVEL_TWO]
+	const WALKTHROUGH_TWO : Array[String] = [LEVEL_ONE_ALT, LEVEL_TWO, LEVEL_ONE, LEVEL_TWO_ALT]
 
 class LOGS:
 	const LOG_FOLDER : String = "user://game_logs//"

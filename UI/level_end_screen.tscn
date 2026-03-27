@@ -13,3 +13,79 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_45ucn")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="." unique_id=807340556]
+custom_minimum_size = Vector2(560, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -211.5
+offset_right = 280.0
+offset_bottom = 211.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer3" unique_id=1830995449]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "LEVEL FINISHED"
+horizontal_alignment = 1
+
+[node name="Time" type="Label" parent="VBoxContainer3" unique_id=1623020357]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "00:00"
+horizontal_alignment = 1
+
+[node name="HSplitContainer" type="HSplitContainer" parent="VBoxContainer3" unique_id=1475971862]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer3/HSplitContainer" unique_id=64779686]
+layout_mode = 2
+text = "TARGETS DESTROYED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TargetsBar" type="ProgressBar" parent="VBoxContainer3/HSplitContainer" unique_id=2050438452]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="VBoxContainer3" unique_id=530355257]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer3/HSplitContainer2" unique_id=1589789566]
+layout_mode = 2
+text = "ITEMS COLLECTED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Collectibles" type="ProgressBar" parent="VBoxContainer3/HSplitContainer2" unique_id=805828344]
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+
+[node name="Continue" type="Button" parent="VBoxContainer3" unique_id=1247867565]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "CONTINUE"
+
+[node name="Return" type="Button" parent="VBoxContainer3" unique_id=786305824]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "RETURN"
+
+[node name="Quit" type="Button" parent="VBoxContainer3" unique_id=1120662600]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "QUIT"
+
+[connection signal="pressed" from="VBoxContainer3/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="VBoxContainer3/Return" to="." method="_on_return_pressed"]
+[connection signal="pressed" from="VBoxContainer3/Quit" to="." method="_on_quit_pressed"]

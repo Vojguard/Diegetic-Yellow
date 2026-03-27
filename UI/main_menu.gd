@@ -12,7 +12,8 @@ func _on_play_pressed() -> void:
 	date_time = Time.get_datetime_dict_from_system()
 	LogWriter.open_log_file(date_time)
 	LogWriter.print_header_to_log(date_time, LogWriter.EVENT_TAG.NG)
-	get_tree().change_scene_to_file(Globals.SCENES.LEVEL_ONE)
+	var scene_to_load = Globals.GAME.get_scene_at_current_location()
+	get_tree().change_scene_to_file(scene_to_load)
 
 func _on_quit_pressed() -> void:
 	LogWriter.close_log_file()

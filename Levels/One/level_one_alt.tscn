@@ -38,7 +38,6 @@ size = Vector3(2, 2.5, 2)
 [node name="LevelOneAlt" type="Node3D" unique_id=354133344]
 
 [node name="GameManager" parent="." unique_id=1524494782 instance=ExtResource("1_28gfo")]
-next_level = 2
 
 [node name="Environment" type="Node3D" parent="." unique_id=601395717]
 
