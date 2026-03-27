@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://eicolptfoh2g"]
+
+[ext_resource type="PackedScene" uid="uid://cv1aslicjxyuo" path="res://Models/weapon.glb" id="1_016xb"]
+
+[node name="weapon" unique_id=392149175 instance=ExtResource("1_016xb")]
+
+[node name="Stock_002" parent="." index="1" unique_id=1352226125]
+layers = 2
