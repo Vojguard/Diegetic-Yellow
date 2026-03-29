@@ -65,6 +65,8 @@ func _handle_actions() -> void:
 		_current_mouse_sensivity = default_mouse_sensivity
 	
 	if Input.is_action_just_pressed("shoot"):
+		# await RenderingServer.frame_post_draw
+		# $Camera.get_viewport().get_texture().get_image().save_png("user://Screenshot.png")
 		print("pew pew")
 		_shoot_cast.set_enabled(true)
 		_shoot_cast.force_raycast_update()
