@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://hoolorrkwyom" path="res://Objects/Environment/exit_sign.tscn" id="19_fu8tu"]
 [ext_resource type="PackedScene" uid="uid://d0ow0kj4vnsoe" path="res://Objects/Environment/big_vase.tscn" id="19_hb0du"]
 [ext_resource type="PackedScene" uid="uid://nq7b86ftvnbd" path="res://Objects/Environment/triple_vases.tscn" id="20_6s8yg"]
+[ext_resource type="ArrayOccluder3D" uid="uid://dc0e8uwb4xf7i" path="res://Levels/One/level_one.occ" id="25_vkut2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_v3v8q"]
 material = ExtResource("2_hfaxq")
@@ -38,7 +39,6 @@ size = Vector3(2, 2.5, 2)
 [node name="LevelOne" type="Node3D" unique_id=354133344]
 
 [node name="GameManager" parent="." unique_id=1524494782 instance=ExtResource("1_cb347")]
-next_level = 2
 
 [node name="Environment" type="Node3D" parent="." unique_id=601395717]
 
@@ -1668,5 +1668,9 @@ text = "LMB to shoot"
 font_size = 36
 outline_size = 0
 uppercase = true
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=669039508]
+occluder = ExtResource("25_vkut2")
+bake_mask = 4294967293
 
 [connection signal="body_entered" from="Exit/Area3D" to="GameManager" method="_on_exit_body_entered"]

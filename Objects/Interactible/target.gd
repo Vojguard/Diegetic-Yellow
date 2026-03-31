@@ -15,9 +15,9 @@ func take_hit() -> void:
 	
 func _on_screen_entered() -> void:
 	if !hit:
-		print("bonjour")
+		print("bonjour"+ self.to_string())
 
 
 func _on_screen_exited() -> void:
 	if !hit:
-		print("adios")
+		print("adios" + self.to_string())
