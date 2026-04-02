@@ -18,7 +18,7 @@ var items_collected : int = 0
 func _ready() -> void:
 	max_targets = $"../Targets".get_child_count()
 	max_items = $"../Collectible".get_child_count()
-	LogWriter.print_header_to_log(Time.get_datetime_dict_from_system(), LogWriter.EVENT_TAG.EL)
+	LogWriter.print_header_to_log(Time.get_datetime_dict_from_system(), LogWriter.EVENT_TAG.EL, Globals.GAME.get_scene_at_current_location())
 	_connect_signals()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
@@ -47,8 +47,8 @@ func _on_player_loaded(p : PlayerController) -> void:
 func _on_target_hit(_t : Target) -> void:
 	targets_hit += 1
 	_update_score(target_hit_score)
-	# LogWriter.print_interaction_to_log(get_time(), LogWriter.EVENT_TAG.IC, score, _t)
-	LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.TH, score)
+	LogWriter.print_interaction_to_log(get_time(), LogWriter.EVENT_TAG.TH, score, _t)
+	# LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.TH, score)
 	print("target hit %d" % score)
 
 func _on_item_collected(_ci : Collectible) -> void:
@@ -68,11 +68,14 @@ func _on_exit_body_entered(body: Node3D) -> void:
 		var perc_ic = items_collected / (max_items * 1.0)
 		Globals.LEVEL.set_level_stats(score, perc_th, perc_ic, get_time())
 		Globals.GAME.progress_walkthrough()
+		var thp = perc_th * 100.0
+		var icp = perc_ic * 100.0
+		var finished_level_info = (" > Targets: %3d%% | Collectibles: %3d%%" % [thp, icp])
+		LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.FL, score, finished_level_info)
 		call_deferred("_load_next_scene", Globals.SCENES.END_LEVEL)
 		
 
 func _load_next_scene(next : String) -> void:
-	LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.FL, score)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	_disconnect_signals()
 	get_tree().change_scene_to_file(next)
