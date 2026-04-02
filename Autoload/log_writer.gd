@@ -59,3 +59,9 @@ func print_event_to_log(time_stamp : int, event_tag : EVENT_TAG, score : int) ->
 	var event_name = event_dict[event_tag]
 	var string_to_store = ("(%s)[%02d:%02d] %-15s -> Score: %3d" % [event_tag, mins, sec, event_name, score])
 	log_file.store_line(string_to_store)
+
+func print_interaction_to_log(time_stamp : int, event_tag : EVENT_TAG, score : int, interactible : Interactable) -> void:
+	print_event_to_log(time_stamp, event_tag, score)
+	var string_to_store = ("--: %s > time: %dms count: %d" % [interactible.name, interactible.on_screen_time, interactible.on_screen_appearance])
+	log_file.store_line(string_to_store)
+	

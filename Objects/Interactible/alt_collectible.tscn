@@ -15,6 +15,7 @@ shape = SubResource("BoxShape3D_o8e5b")
 
 [node name="VisibleOnScreenEnabler3D" type="VisibleOnScreenEnabler3D" parent="." unique_id=368236857]
 aabb = AABB(-0.125, -0.125, -0.125, 0.25, 0.25, 0.25)
+enable_node_path = NodePath("../alt_colect_cube_v2")
 
 [node name="alt_colect_cube_v2" parent="." unique_id=649092110 instance=ExtResource("3_kppk8")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

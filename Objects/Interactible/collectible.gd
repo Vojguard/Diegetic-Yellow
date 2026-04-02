@@ -15,5 +15,5 @@ func _on_screen_entered() -> void:
 
 
 func _on_screen_exited() -> void:
-	on_screen_time = (Time.get_ticks_msec() - _time_appeared) / 1000.0
+	on_screen_time = (Time.get_ticks_msec() - _time_appeared)
 	print("byea" + name)
