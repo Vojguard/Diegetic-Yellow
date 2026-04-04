@@ -32,7 +32,8 @@ func check_andor_create_folder() -> void:
 func open_log_file(date_time : Dictionary) -> void:
 	check_andor_create_folder()
 	if log_file == null:
-		log_file = FileAccess.open(Globals.LOGS.LOG_FORMAT % [date_time.day, date_time.month, date_time.year], FileAccess.WRITE)
+		log_file = FileAccess.open(Globals.LOGS.LOG_FORMAT % [date_time.day, date_time.month, date_time.year], FileAccess.READ_WRITE)
+		log_file.seek_end()
 
 func close_log_file() -> void:
 	if log_file != null:

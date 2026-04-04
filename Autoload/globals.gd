@@ -1,17 +1,28 @@
 extends Node
 
+enum GAME_VERSIONS {
+	HEADS,
+	TAILS
+}
+
+const HEADS_STRING_NAME = "HEADS VERSION"
+const TAILS_STRING_NAME = "TAILS VERSION"
+
 class GAME:
 	const TARGET_HIT_SCORE = 10
 	const COLLECTABLE_SCORE = 2
 	
-	static var version_walkthrough := SCENES.WALKTHROUGH_ONE
+	static var version_walkthrough := SCENES.WALKTHROUGH_HEADS
+	static var version_string_name = HEADS_STRING_NAME
 	static var location_at_walkthrough : int = 0
 	
-	static func set_chosen_walkthrough(one : bool) -> void:
-		if one:
-			version_walkthrough = SCENES.WALKTHROUGH_ONE
-		else:
-			version_walkthrough = SCENES.WALKTHROUGH_TWO
+	static func set_chosen_game_version(version : GAME_VERSIONS) -> void:
+		if version == GAME_VERSIONS.HEADS:
+			version_walkthrough = SCENES.WALKTHROUGH_HEADS
+			version_string_name = HEADS_STRING_NAME
+		elif version == GAME_VERSIONS.TAILS:
+			version_walkthrough = SCENES.WALKTHROUGH_TAILS
+			version_string_name = TAILS_STRING_NAME
 	
 	static func progress_walkthrough() -> void:
 		location_at_walkthrough += 1
@@ -78,8 +89,8 @@ class SCENES:
 	const LEVEL_TWO_ALT : String = "res://Levels/Two/level_two_alt.tscn"
 	
 	
-	const WALKTHROUGH_ONE : Array[String] = [LEVEL_ONE, LEVEL_TWO_ALT, LEVEL_ONE_ALT, LEVEL_TWO]
-	const WALKTHROUGH_TWO : Array[String] = [LEVEL_ONE_ALT, LEVEL_TWO, LEVEL_ONE, LEVEL_TWO_ALT]
+	const WALKTHROUGH_HEADS : Array[String] = [LEVEL_ONE, LEVEL_TWO_ALT, LEVEL_ONE_ALT, LEVEL_TWO]
+	const WALKTHROUGH_TAILS : Array[String] = [LEVEL_ONE_ALT, LEVEL_TWO, LEVEL_ONE, LEVEL_TWO_ALT]
 
 class LOGS:
 	const LOG_FOLDER : String = "user://game_logs//"

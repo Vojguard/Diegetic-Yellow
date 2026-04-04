@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://d2qtfrbhsxi11" path="res://UI/main_menu.gd" id="1_tk8dj"]
 [ext_resource type="Texture2D" uid="uid://dr71664dx501s" path="res://UI/menu_bg_3.png" id="2_d8nwk"]
 
-[node name="CanvasLayer" type="CanvasLayer" unique_id=411992664]
+[node name="MainMenu" type="CanvasLayer" unique_id=411992664]
 script = ExtResource("1_tk8dj")
 
 [node name="Background" type="TextureRect" parent="." unique_id=530855572]
@@ -84,6 +84,13 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "OPEN LOGS FOLDER"
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=721015073]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "HEADS VERSION"
+horizontal_alignment = 2
+uppercase = true
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer3/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer3/Quit" to="." method="_on_quit_pressed"]
