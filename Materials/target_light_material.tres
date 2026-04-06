@@ -6,4 +6,5 @@
 [resource]
 albedo_texture = ExtResource("1_cp63p")
 emission_enabled = true
+emission_energy_multiplier = 10.0
 emission_texture = ExtResource("2_47ii5")

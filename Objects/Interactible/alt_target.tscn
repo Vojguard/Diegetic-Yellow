@@ -26,7 +26,7 @@ mesh = SubResource("CapsuleMesh_jge0a")
 aabb = AABB(-0.5, -1, -0.5, 1, 2, 1)
 enable_node_path = NodePath(".")
 
-[node name="alt_snakehead_new" parent="." unique_id=778026311 instance=ExtResource("4_tcego")]
+[node name="alt_snakehead_new" parent="." unique_id=332779071 instance=ExtResource("4_tcego")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, -1, 0)
 
 [connection signal="screen_entered" from="VisibleOnScreenEnabler3D" to="." method="_on_screen_entered"]

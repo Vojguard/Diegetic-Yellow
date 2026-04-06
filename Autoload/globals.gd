@@ -9,8 +9,8 @@ const HEADS_STRING_NAME = "HEADS VERSION"
 const TAILS_STRING_NAME = "TAILS VERSION"
 
 class GAME:
-	const TARGET_HIT_SCORE = 10
-	const COLLECTABLE_SCORE = 2
+	const TARGET_HIT_SCORE = 20
+	const COLLECTABLE_SCORE = 50
 	
 	static var version_walkthrough := SCENES.WALKTHROUGH_HEADS
 	static var version_string_name = HEADS_STRING_NAME

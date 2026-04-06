@@ -5,6 +5,7 @@
 
 [node name="MainMenu" type="CanvasLayer" unique_id=411992664]
 script = ExtResource("1_tk8dj")
+game_version = 1
 
 [node name="Background" type="TextureRect" parent="." unique_id=530855572]
 offset_right = 40.0

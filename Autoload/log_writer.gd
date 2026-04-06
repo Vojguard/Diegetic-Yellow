@@ -11,9 +11,9 @@ enum EVENT_TAG {
 
 const HEADER_LINE = "-----------------------------"
 
-var event_dict = { # More events
+var event_dict = {
 	EVENT_TAG.NG : "New Game Start",
-	EVENT_TAG.EL : "Entered Level", # TODO: + jméno levelu
+	EVENT_TAG.EL : "Entered Level",
 	EVENT_TAG.FL : "Finished Level",
 	EVENT_TAG.PL : "Player Loaded",
 	EVENT_TAG.IC : "Item Collected",
@@ -32,8 +32,12 @@ func check_andor_create_folder() -> void:
 func open_log_file(date_time : Dictionary) -> void:
 	check_andor_create_folder()
 	if log_file == null:
-		log_file = FileAccess.open(Globals.LOGS.LOG_FORMAT % [date_time.day, date_time.month, date_time.year], FileAccess.READ_WRITE)
-		log_file.seek_end()
+		var path : String = Globals.LOGS.LOG_FORMAT % [date_time.day, date_time.month, date_time.year]
+		if FileAccess.file_exists(path):
+			log_file = FileAccess.open(path, FileAccess.READ_WRITE)
+			log_file.seek_end()
+		else:
+			log_file = FileAccess.open(path, FileAccess.WRITE)
 
 func close_log_file() -> void:
 	if log_file != null:

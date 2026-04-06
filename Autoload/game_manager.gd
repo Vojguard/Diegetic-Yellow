@@ -46,14 +46,17 @@ func _on_player_loaded(p : PlayerController) -> void:
 
 func _on_target_hit(_t : Target) -> void:
 	targets_hit += 1
-	_update_score(target_hit_score)
+	var add_score : int = target_hit_score + roundi(target_hit_score * 1.0/_t.on_screen_appearance)
+	print(add_score)
+	_update_score(add_score)
 	LogWriter.print_interaction_to_log(get_time(), LogWriter.EVENT_TAG.TH, score, _t)
 	# LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.TH, score)
 	print("target hit %d" % score)
 
 func _on_item_collected(_ci : Collectible) -> void:
 	items_collected += 1
-	_update_score(collectable_score)
+	var add_score : int = collectable_score + roundi(collectable_score * 1.0/_ci.on_screen_appearance)
+	_update_score(add_score)
 	LogWriter.print_interaction_to_log(get_time(), LogWriter.EVENT_TAG.IC, score, _ci)
 	# LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.IC, score)
 	print("item collected %d" % score)

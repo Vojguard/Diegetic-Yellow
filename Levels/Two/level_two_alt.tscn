@@ -25,6 +25,10 @@
 [ext_resource type="PackedScene" uid="uid://isd2j8h0mbp3" path="res://Objects/Interactible/alt_collectible.tscn" id="22_6c5xs"]
 [ext_resource type="PackedScene" uid="uid://dry5s7ff6a5i0" path="res://Player/player.tscn" id="23_nyt1d"]
 
+[sub_resource type="Environment" id="Environment_6c5xs"]
+glow_enabled = true
+glow_bloom = 0.25
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_v3v8q"]
 material = ExtResource("2_6c5xs")
 size = Vector2(66, 54)
@@ -36,6 +40,9 @@ size = Vector3(66, 0.1, 54)
 size = Vector3(2, 2.5, 2)
 
 [node name="LevelTwo" type="Node3D" unique_id=354133344]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=695494227]
+environment = SubResource("Environment_6c5xs")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=759934641]
 occluder = ExtResource("1_6c5xs")
@@ -1958,67 +1965,67 @@ shadow_caster_mask = 4294967293
 [node name="AltTarget" parent="Targets" unique_id=624742187 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1, -1)
 
-[node name="AltTarget2" parent="Targets" unique_id=221494823 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget2" parent="Targets" unique_id=561435214 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 6, 1, -9)
 
-[node name="AltTarget3" parent="Targets" unique_id=328867522 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget3" parent="Targets" unique_id=1242999725 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(0.70710677, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.70710677, 14, 1, -9)
 
-[node name="AltTarget4" parent="Targets" unique_id=368256773 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget4" parent="Targets" unique_id=1124880519 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(0.7071068, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.7071068, 50, 1, -9)
 
-[node name="AltTarget5" parent="Targets" unique_id=1568116772 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget5" parent="Targets" unique_id=1654608376 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(-2.9802322e-08, 0, 1, 0, 1, 0, -1, 0, -2.9802322e-08, 42, 1, 0)
 
-[node name="AltTarget6" parent="Targets" unique_id=323110565 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget6" parent="Targets" unique_id=749099258 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(0.70710695, 0, 0.70710665, 0, 1, 0, -0.70710665, 0, 0.70710695, 28, 1, -19)
 
-[node name="AltTarget7" parent="Targets" unique_id=1425793726 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget7" parent="Targets" unique_id=1118248135 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(-0.7071067, 0, 0.7071069, 0, 1, 0, -0.7071069, 0, -0.7071067, 24, 1, -11)
 
-[node name="AltTarget8" parent="Targets" unique_id=326224945 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget8" parent="Targets" unique_id=1415530345 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(-1, 0, 1.1920929e-07, 0, 1, 0, -1.1920929e-07, 0, -1, 40, 1, -5)
 
-[node name="AltTarget9" parent="Targets" unique_id=302756075 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget9" parent="Targets" unique_id=2072893676 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(0.70710665, 0, -0.7071069, 0, 1, 0, 0.7071069, 0, 0.70710665, 42, 1, -21)
 
-[node name="AltTarget10" parent="Targets" unique_id=1693324221 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget10" parent="Targets" unique_id=1259874036 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(0.70710695, 0, 0.70710665, 0, 1, 0, -0.70710665, 0, 0.70710695, 8, 1, -41)
 
-[node name="AltTarget11" parent="Targets" unique_id=2058076717 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget11" parent="Targets" unique_id=119060847 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(0.70710695, 0, 0.70710665, 0, 1, 0, -0.70710665, 0, 0.70710695, 2, 1, -37)
 
-[node name="AltTarget12" parent="Targets" unique_id=1574539315 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget12" parent="Targets" unique_id=1317356104 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(0.70710677, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.70710677, -2, 1, -21)
 
-[node name="AltTarget13" parent="Targets" unique_id=1768485363 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget13" parent="Targets" unique_id=1210195192 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(0.70710695, 0, 0.70710665, 0, 1, 0, -0.70710665, 0, 0.70710695, 12, 1, -21)
 
-[node name="AltTarget14" parent="Targets" unique_id=1481419949 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget14" parent="Targets" unique_id=1892877935 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(0.70710665, 0, -0.70710695, 0, 1, 0, 0.70710695, 0, 0.70710665, 22, 1, -21)
 
-[node name="AltTarget15" parent="Targets" unique_id=1079020457 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget15" parent="Targets" unique_id=850245027 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(-0.707107, 0, -0.7071066, 0, 1, 0, 0.7071066, 0, -0.707107, 14, 1, -31)
 
-[node name="AltTarget16" parent="Targets" unique_id=723036211 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget16" parent="Targets" unique_id=935523737 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(-0.70710695, 0, -0.70710665, 0, 1, 0, 0.70710665, 0, -0.70710695, 36, 1, -29)
 
-[node name="AltTarget17" parent="Targets" unique_id=612477811 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget17" parent="Targets" unique_id=471862547 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(0.7071069, 0, 0.70710665, 0, 1, 0, -0.70710665, 0, 0.7071069, 26, 1, -43)
 
-[node name="AltTarget18" parent="Targets" unique_id=340546918 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget18" parent="Targets" unique_id=1941828522 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(0.70710665, 0, -0.7071069, 0, 1, 0, 0.7071069, 0, 0.70710665, 58, 1, -23)
 
-[node name="AltTarget19" parent="Targets" unique_id=1879571400 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget19" parent="Targets" unique_id=16101910 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(1.4901161e-07, 0, 1, 0, 1, 0, -1, 0, 1.4901161e-07, 48, 1, -23)
 
-[node name="AltTarget20" parent="Targets" unique_id=509545209 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget20" parent="Targets" unique_id=117424206 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 32, 1, -7)
 
-[node name="AltTarget21" parent="Targets" unique_id=533158764 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget21" parent="Targets" unique_id=557010434 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(-0.70710677, 0, 0.70710695, 0, 1, 0, -0.70710695, 0, -0.70710677, 6, 1, 1)
 
-[node name="AltTarget22" parent="Targets" unique_id=1270092674 instance=ExtResource("20_mqkyp")]
+[node name="AltTarget22" parent="Targets" unique_id=502074306 instance=ExtResource("20_mqkyp")]
 transform = Transform3D(1.0530022e-07, 0, 1.0000001, 0, 1, 0, -1.0000001, 0, 1.0530022e-07, -4, 1, -15)
 
 [node name="Collectible" type="Node3D" parent="." unique_id=235030013]
