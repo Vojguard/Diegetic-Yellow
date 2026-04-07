@@ -48,4 +48,13 @@ target_position = Vector3(0, 0, -2)
 collision_mask = 8
 debug_shape_custom_color = Color(0, 1, 0, 1)
 
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera" unique_id=1067775296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.34568858, 0)
+layers = 2
+light_color = Color(1, 1, 0.68235296, 1)
+light_energy = 1.5
+light_cull_mask = 4294967293
+spot_attenuation = 2.0
+spot_angle = 20.0
+
 [node name="Hud" parent="." unique_id=1603059549 instance=ExtResource("3_btcbx")]

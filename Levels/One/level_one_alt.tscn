@@ -970,6 +970,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 0, -11)
 [node name="Pylon3" parent="Environment" unique_id=1424165069 instance=ExtResource("10_u4u8x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -25)
 
+[node name="Pylon12" parent="Environment" unique_id=2117835314 instance=ExtResource("10_u4u8x")]
+transform = Transform3D(0.99999994, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 0.99999994, 1.4, 0, -6.4)
+
 [node name="Pylon4" parent="Environment" unique_id=456619724 instance=ExtResource("10_u4u8x")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6, 0, -0.4)
 

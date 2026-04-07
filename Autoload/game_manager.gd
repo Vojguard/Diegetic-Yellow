@@ -25,6 +25,8 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_key_pressed(KEY_ESCAPE):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	if Input.is_action_just_pressed("reload"):
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _connect_signals() -> void:
 	print("connection")
@@ -46,7 +48,7 @@ func _on_player_loaded(p : PlayerController) -> void:
 
 func _on_target_hit(_t : Target) -> void:
 	targets_hit += 1
-	var add_score : int = target_hit_score + roundi(target_hit_score * 1.0/_t.on_screen_appearance)
+	var add_score : int = target_hit_score + roundi(target_hit_score * 1.0/maxi(1, _t.on_screen_appearance))
 	print(add_score)
 	_update_score(add_score)
 	LogWriter.print_interaction_to_log(get_time(), LogWriter.EVENT_TAG.TH, score, _t)
@@ -55,7 +57,7 @@ func _on_target_hit(_t : Target) -> void:
 
 func _on_item_collected(_ci : Collectible) -> void:
 	items_collected += 1
-	var add_score : int = collectable_score + roundi(collectable_score * 1.0/_ci.on_screen_appearance)
+	var add_score : int = collectable_score + roundi(collectable_score * 1.0/maxi(1,_ci.on_screen_appearance))
 	_update_score(add_score)
 	LogWriter.print_interaction_to_log(get_time(), LogWriter.EVENT_TAG.IC, score, _ci)
 	# LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.IC, score)
