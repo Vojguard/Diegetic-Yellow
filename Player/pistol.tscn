@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bojlq0igv4i33"]
+
+[ext_resource type="PackedScene" uid="uid://bp4mja0yqklcx" path="res://Models/pistol.glb" id="1_kx4sf"]
+
+[node name="pistol" unique_id=1135315234 instance=ExtResource("1_kx4sf")]
+
+[node name="PISTOL" parent="." index="0" unique_id=749042815]
+layers = 2
