@@ -9,6 +9,7 @@ var _last_time_appeared : float = 0
 func take_hit() -> void:
 	if !hit:
 		hit = true
+		on_screen_time += (Time.get_ticks_msec() - _last_time_appeared)
 		SignalBus.target_hit.emit(self)
 		print("ouch")
 		#_mesh.get_active_material(0).albedo_color = hit_color

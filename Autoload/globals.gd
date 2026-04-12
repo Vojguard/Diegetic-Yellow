@@ -12,6 +12,8 @@ class GAME:
 	const TARGET_HIT_SCORE = 20
 	const COLLECTABLE_SCORE = 50
 	
+	static var mouse_sens_modifier : float = 1.0
+	
 	static var version_walkthrough := SCENES.WALKTHROUGH_HEADS
 	static var version_string_name = HEADS_STRING_NAME
 	static var location_at_walkthrough : int = 0

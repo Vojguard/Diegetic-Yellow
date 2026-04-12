@@ -4,6 +4,7 @@ extends Interactable
 var _last_time_appeared : float = 0
 
 func interact():
+	on_screen_time += (Time.get_ticks_msec() - _last_time_appeared)
 	SignalBus.item_collected.emit(self)
 	queue_free()
 

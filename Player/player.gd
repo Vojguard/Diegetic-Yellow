@@ -10,21 +10,28 @@ const DEF_FOV = 75
 @export var ads_mouse_sensivity : float = 0.001
 @export var camera_vertical_limit : float = 45
 @export var jump_force : float = 5
+@export var tween_duration : float = 0.1
 
 var _ads : bool = false
 var _current_mouse_sensivity
+var _pistol_tween : Tween
 
 @onready var _camera : Camera3D = $Camera
 @onready var _interaction_cast : ShapeCast3D = $Camera/InteractionCast
 @onready var _shoot_cast : RayCast3D = $Camera/ShootCast
 
+@onready var pistol: Node3D = $Camera/pistol
+@onready var ads_pos: Node3D = $Camera/AdsPos
+@onready var hipfire_pos: Node3D = $Camera/HipfirePos
+
 func _ready() -> void:
 	_camera.fov = DEF_FOV
-	_current_mouse_sensivity = default_mouse_sensivity
+	_current_mouse_sensivity = default_mouse_sensivity * Globals.GAME.mouse_sens_modifier
 	_interaction_cast.add_exception(self)
 	_interaction_cast.set_enabled(false)
 	_shoot_cast.set_enabled(false)
 	SignalBus.player_loaded.emit(self)
+	pistol.position = hipfire_pos.position
 
 func _physics_process(delta: float) -> void:
 	
@@ -57,12 +64,14 @@ func _handle_vertical_movement(delta: float) -> void:
 func _handle_actions() -> void:
 	if Input.is_action_just_pressed("ads") and !_ads:
 		_ads = true
-		_camera.fov = ADS_FOV
-		_current_mouse_sensivity = ads_mouse_sensivity
+		_anim_pistol_focus(ads_pos.position, ADS_FOV)
+		#_camera.fov = ADS_FOV
+		_current_mouse_sensivity = ads_mouse_sensivity * Globals.GAME.mouse_sens_modifier
 	if Input.is_action_just_released("ads") and _ads:
 		_ads = false
-		_camera.fov = DEF_FOV
-		_current_mouse_sensivity = default_mouse_sensivity
+		_anim_pistol_focus(hipfire_pos.position, DEF_FOV)
+		#_camera.fov = DEF_FOV
+		_current_mouse_sensivity = default_mouse_sensivity * Globals.GAME.mouse_sens_modifier
 	
 	if Input.is_action_just_pressed("shoot"):
 		# await RenderingServer.frame_post_draw
@@ -114,3 +123,12 @@ func _shoot_ray_from_camera() -> Dictionary:
 		
 	var result : Dictionary = space_state.intersect_ray(query)
 	return result
+
+func _anim_pistol_focus(new_pos : Vector3, new_fov : float) -> void:
+	if _pistol_tween:
+		_pistol_tween.kill()
+	_pistol_tween = get_tree().create_tween()
+	_pistol_tween.tween_property(pistol, "position", new_pos, tween_duration)
+	_pistol_tween.set_parallel()
+	_pistol_tween.tween_property(_camera, "fov", new_fov, tween_duration)
+	pass

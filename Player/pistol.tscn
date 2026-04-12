@@ -7,9 +7,11 @@
 [node name="PISTOL_001" parent="." index="0" unique_id=335675198]
 layers = 16
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." index="1" unique_id=1689989321]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.05, 0.05)
-visible = false
-light_cull_mask = 4294967282
-omni_range = 1.0
-omni_attenuation = 0.0
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="1" unique_id=1259532583]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.4901161e-08, -0.03202796, 0.13037334)
+layers = 2
+light_color = Color(1, 1, 0.68235296, 1)
+light_energy = 1.5
+light_cull_mask = 4294967293
+spot_attenuation = 2.0
+spot_angle = 20.0
