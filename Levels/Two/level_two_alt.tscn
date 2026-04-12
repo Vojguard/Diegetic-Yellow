@@ -1702,7 +1702,7 @@ light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 
 [node name="OmniLight3D13" type="OmniLight3D" parent="Lights" unique_id=761805376]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 1.25, -38)
@@ -1711,7 +1711,7 @@ light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 
 [node name="OmniLight3D20" type="OmniLight3D" parent="Lights" unique_id=1569402173]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.25, -33)
@@ -1720,7 +1720,7 @@ light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 
 [node name="OmniLight3D21" type="OmniLight3D" parent="Lights" unique_id=832804585]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1.25, -37)
@@ -1729,7 +1729,7 @@ light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 
 [node name="OmniLight3D14" type="OmniLight3D" parent="Lights" unique_id=1313014092]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 1.25, -40)
@@ -1738,7 +1738,7 @@ light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 omni_range = 3.0
 
 [node name="OmniLight3D27" type="OmniLight3D" parent="Lights" unique_id=237088360]
@@ -1748,7 +1748,7 @@ light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 omni_range = 3.0
 
 [node name="OmniLight3D25" type="OmniLight3D" parent="Lights" unique_id=1035360378]
@@ -1758,7 +1758,7 @@ light_energy = 3.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 omni_range = 3.0
 
 [node name="OmniLight3D26" type="OmniLight3D" parent="Lights" unique_id=422575168]
@@ -1768,7 +1768,7 @@ light_energy = 7.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 omni_range = 7.0
 
 [node name="OmniLight3D17" type="OmniLight3D" parent="Lights" unique_id=485507965]
@@ -1778,7 +1778,7 @@ light_energy = 7.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 omni_range = 7.0
 
 [node name="OmniLight3D18" type="OmniLight3D" parent="Lights" unique_id=104622379]
@@ -1788,7 +1788,7 @@ light_energy = 7.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 omni_range = 7.0
 
 [node name="OmniLight3D19" type="OmniLight3D" parent="Lights" unique_id=1556081804]
@@ -1798,7 +1798,7 @@ light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 
 [node name="OmniLight3D10" type="OmniLight3D" parent="Lights" unique_id=1973174179]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 1.25, -19)
@@ -1807,7 +1807,7 @@ light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 
 [node name="OmniLight3D11" type="OmniLight3D" parent="Lights" unique_id=1376744264]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 1.25, 0)
@@ -1816,7 +1816,7 @@ light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 omni_range = 3.0
 
 [node name="OmniLight3D6" type="OmniLight3D" parent="Lights" unique_id=1712607739]
@@ -1826,7 +1826,7 @@ light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 
 [node name="OmniLight3D7" type="OmniLight3D" parent="Lights" unique_id=1621934777]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 1.25, -19)
@@ -1835,7 +1835,7 @@ light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 
 [node name="OmniLight3D22" type="OmniLight3D" parent="Lights" unique_id=1597488643]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1.25, -34)
@@ -1844,7 +1844,7 @@ light_energy = 7.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 omni_range = 7.0
 
 [node name="OmniLight3D23" type="OmniLight3D" parent="Lights" unique_id=701386081]
@@ -1854,7 +1854,7 @@ light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 
 [node name="OmniLight3D24" type="OmniLight3D" parent="Lights" unique_id=1522445442]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1.25, -18)
@@ -1863,7 +1863,7 @@ light_energy = 7.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 omni_range = 7.0
 
 [node name="OmniLight3D28" type="OmniLight3D" parent="Lights" unique_id=464301655]
@@ -1873,7 +1873,7 @@ light_energy = 3.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 omni_range = 3.0
 
 [node name="OmniLight3D15" type="OmniLight3D" parent="Lights" unique_id=1629870870]
@@ -1883,7 +1883,7 @@ light_energy = 7.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 omni_range = 7.0
 
 [node name="OmniLight3D16" type="OmniLight3D" parent="Lights" unique_id=1223830068]
@@ -1893,7 +1893,7 @@ light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 
 [node name="OmniLight3D12" type="OmniLight3D" parent="Lights" unique_id=329371735]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55, 1.25, -19)
@@ -1902,7 +1902,7 @@ light_energy = 7.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 omni_range = 7.0
 
 [node name="OmniLight3D8" type="OmniLight3D" parent="Lights" unique_id=1165866285]
@@ -1912,7 +1912,7 @@ light_energy = 7.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 omni_range = 7.0
 
 [node name="OmniLight3D9" type="OmniLight3D" parent="Lights" unique_id=376910068]
@@ -1921,7 +1921,7 @@ light_color = Color(1, 0.64705884, 0, 1)
 light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=820323214]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1.25, -4)
@@ -1930,7 +1930,7 @@ light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=1083583038]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 1.25, -6)
@@ -1939,7 +1939,7 @@ light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 
 [node name="OmniLight3D4" type="OmniLight3D" parent="Lights" unique_id=1284296442]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 1.25, -1)
@@ -1948,7 +1948,7 @@ light_energy = 7.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 omni_range = 7.0
 
 [node name="OmniLight3D5" type="OmniLight3D" parent="Lights" unique_id=1343767145]
@@ -1958,7 +1958,7 @@ light_energy = 5.0
 light_bake_mode = 1
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 
 [node name="Targets" type="Node3D" parent="." unique_id=930413730]
 

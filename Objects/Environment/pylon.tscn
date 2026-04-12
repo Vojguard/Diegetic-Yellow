@@ -20,5 +20,5 @@ light_color = Color(1, 0.38039216, 0, 1)
 light_energy = 2.0
 light_cull_mask = 4294967293
 shadow_enabled = true
-shadow_caster_mask = 4294967293
+shadow_caster_mask = 4294967277
 omni_attenuation = 2.0

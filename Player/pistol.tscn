@@ -4,5 +4,12 @@
 
 [node name="pistol" unique_id=1135315234 instance=ExtResource("1_kx4sf")]
 
-[node name="PISTOL" parent="." index="0" unique_id=749042815]
-layers = 2
+[node name="PISTOL_001" parent="." index="0" unique_id=335675198]
+layers = 16
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="1" unique_id=1689989321]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.05, 0.05)
+visible = false
+light_cull_mask = 4294967282
+omni_range = 1.0
+omni_attenuation = 0.0
