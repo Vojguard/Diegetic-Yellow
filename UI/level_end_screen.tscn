@@ -76,14 +76,15 @@ theme_override_font_sizes/font_size = 64
 text = "CONTINUE"
 
 [node name="Return" type="Button" parent="VBoxContainer3" unique_id=786305824]
-visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 52
 text = "RETURN"
 
 [node name="Quit" type="Button" parent="VBoxContainer3" unique_id=1120662600]
 layout_mode = 2
-theme_override_font_sizes/font_size = 64
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
 text = "QUIT"
 
 [connection signal="pressed" from="VBoxContainer3/Continue" to="." method="_on_continue_pressed"]

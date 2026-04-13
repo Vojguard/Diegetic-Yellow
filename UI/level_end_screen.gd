@@ -22,4 +22,4 @@ func _on_quit_pressed() -> void:
 
 
 func _on_return_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file(Globals.SCENES.MAIN_MENU)

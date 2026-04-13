@@ -5,10 +5,21 @@ extends CanvasLayer
 var date_time = null
 
 @onready var datetime_label : Label = $MarginContainer/HBoxContainer/VBoxContainer2/DateTime
+@onready var mouse_sensitivity_val: Label = $MarginContainer/HBoxContainer/Main/Settings/MouseSensitivityVal
+@onready var full_screen: CheckBox = $MarginContainer/HBoxContainer/Main/Settings/HBoxContainer/FullScreen
+@onready var version: Label = $MarginContainer/HBoxContainer/VBoxContainer2/Version
+@onready var main_buttons: VBoxContainer = $MarginContainer/HBoxContainer/Main/MainButtons
+@onready var settings: VBoxContainer = $MarginContainer/HBoxContainer/Main/Settings
+
+
 
 func _ready() -> void:
 	Globals.GAME.set_chosen_game_version(game_version)
-	$MarginContainer/HBoxContainer/VBoxContainer2/Label2.text = Globals.GAME.version_string_name
+	version.text = Globals.GAME.version_string_name
+	mouse_sensitivity_val.text = "MOUSE SENSITIVITY : %f" % Globals.GAME.mouse_sens_modifier
+	full_screen.button_pressed = (
+		DisplayServer.window_get_mode() == DisplayServer.WindowMode.WINDOW_MODE_FULLSCREEN
+	)
 
 func _process(_delta: float) -> void:
 	date_time = Time.get_datetime_dict_from_system()
@@ -29,3 +40,24 @@ func _on_quit_pressed() -> void:
 func _on_logs_pressed() -> void:
 	var log_path = ProjectSettings.globalize_path(Globals.LOGS.LOG_FOLDER)
 	OS.shell_open(log_path)
+
+
+func _on_settings_pressed() -> void:
+	main_buttons.visible = false
+	settings.visible = true
+
+func _on_back_pressed() -> void:
+	settings.visible = false
+	main_buttons.visible = true
+
+
+func _on_full_screen_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
+func _on_mouse_sensitivity_slid_value_changed(value: float) -> void:
+	Globals.GAME.mouse_sens_modifier = value
+	mouse_sensitivity_val.text = "MOUSE SENSITIVITY : %f" % value
