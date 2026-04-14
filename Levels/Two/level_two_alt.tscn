@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d3k5ub10qo4d7"]
 
-[ext_resource type="ArrayOccluder3D" uid="uid://dxb2x5aurfb6p" path="res://Levels/Two/level_two.occ" id="1_6c5xs"]
+[ext_resource type="ArrayOccluder3D" uid="uid://bx1n4h3h6rl2i" path="res://Levels/Two/level_two_alt.occ" id="1_6c5xs"]
 [ext_resource type="PackedScene" uid="uid://dvpgkxr1b6ivc" path="res://Levels/game_manager.tscn" id="1_mqkyp"]
 [ext_resource type="Material" uid="uid://duihj73dofihk" path="res://Materials/floor_material.tres" id="2_6c5xs"]
 [ext_resource type="PackedScene" uid="uid://bniu7fgcine6q" path="res://Objects/Environment/wall.tscn" id="3_nrywy"]

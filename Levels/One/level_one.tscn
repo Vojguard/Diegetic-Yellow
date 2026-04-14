@@ -40,7 +40,7 @@ size = Vector3(2, 2.5, 2)
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=669039508]
 occluder = ExtResource("25_vkut2")
-bake_mask = 4294967293
+bake_mask = 4294967277
 
 [node name="GameManager" parent="." unique_id=1524494782 instance=ExtResource("1_cb347")]
 

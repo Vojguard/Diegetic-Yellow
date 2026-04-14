@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b6tfl4ej72npk"]
 
 [ext_resource type="PackedScene" uid="uid://dvpgkxr1b6ivc" path="res://Levels/game_manager.tscn" id="1_28gfo"]
+[ext_resource type="ArrayOccluder3D" uid="uid://ceom1hcoa7asu" path="res://Levels/One/level_one_alt.occ" id="1_mvpsa"]
 [ext_resource type="Material" uid="uid://duihj73dofihk" path="res://Materials/floor_material.tres" id="2_mvpsa"]
 [ext_resource type="PackedScene" uid="uid://bniu7fgcine6q" path="res://Objects/Environment/wall.tscn" id="3_plvnu"]
 [ext_resource type="PackedScene" uid="uid://ciqpw8ehoxobv" path="res://Objects/Environment/door.tscn" id="4_pam1v"]
@@ -24,7 +25,6 @@
 [ext_resource type="PackedScene" uid="uid://isd2j8h0mbp3" path="res://Objects/Interactible/alt_collectible.tscn" id="22_28gfo"]
 [ext_resource type="PackedScene" uid="uid://hoolorrkwyom" path="res://Objects/Environment/exit_sign.tscn" id="23_purtj"]
 [ext_resource type="PackedScene" uid="uid://dry5s7ff6a5i0" path="res://Player/player.tscn" id="24_8pkc5"]
-[ext_resource type="ArrayOccluder3D" uid="uid://dc0e8uwb4xf7i" path="res://Levels/One/level_one.occ" id="25_mvpsa"]
 
 [sub_resource type="Environment" id="Environment_mvpsa"]
 glow_enabled = true
@@ -46,8 +46,8 @@ size = Vector3(2, 2.5, 2)
 environment = SubResource("Environment_mvpsa")
 
 [node name="OccluderInstance3D" type="OccluderInstance3D" parent="." unique_id=1140907440]
-occluder = ExtResource("25_mvpsa")
-bake_mask = 4294967293
+occluder = ExtResource("1_mvpsa")
+bake_mask = 4294967277
 
 [node name="GameManager" parent="." unique_id=1524494782 instance=ExtResource("1_28gfo")]
 
