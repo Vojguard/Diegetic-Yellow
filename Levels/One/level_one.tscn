@@ -976,7 +976,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6, 0, -41.6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.4, 0, -41.6)
 
 [node name="Pylon12" parent="Environment" unique_id=243296462 instance=ExtResource("10_7a4fi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5999999, 0, -7.5999985)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4, 0, -6.4)
 
 [node name="Pylon8" parent="Environment" unique_id=1315751341 instance=ExtResource("10_7a4fi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.2, 0, -25.8)
@@ -1646,7 +1646,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1
 [node name="Label3D" type="Label3D" parent="Labels" unique_id=148199152]
 transform = Transform3D(-1, 0, -8.742278e-08, -8.742278e-08, -4.371139e-08, 1, -3.821371e-15, 1, 4.371139e-08, 0, 0.95, 0.9)
 layers = 8
-modulate = Color(0.16862746, 0.11372549, 0.03137255, 1)
+modulate = Color(0.61, 0.41236, 0.1159, 1)
 text = "Press 'E' to collect"
 outline_size = 0
 uppercase = true
@@ -1655,7 +1655,7 @@ uppercase = true
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.7, 1.85)
 layers = 8
 double_sided = false
-modulate = Color(0.16862746, 0.11372549, 0.03137255, 1)
+modulate = Color(0.61, 0.41236, 0.1159, 1)
 text = "look around
 with mouse"
 outline_size = 0
@@ -1665,7 +1665,7 @@ uppercase = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2292433, -3.87)
 layers = 8
 double_sided = false
-modulate = Color(0.16862746, 0.11372549, 0.03137255, 1)
+modulate = Color(0.61, 0.41236, 0.1159, 1)
 text = "Left mouse button
 to shoot"
 outline_size = 0
@@ -1675,7 +1675,7 @@ uppercase = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1285532, 1.5417023, -3.87)
 layers = 8
 double_sided = false
-modulate = Color(0.16862746, 0.11372549, 0.03137255, 1)
+modulate = Color(0.61, 0.41236, 0.1159, 1)
 text = "Use W,A,S,D
 to move"
 outline_size = 0

@@ -2,6 +2,6 @@
 
 [resource]
 diffuse_mode = 3
-albedo_color = Color(0.4230989, 0.29269654, 0.11244982, 1)
+albedo_color = Color(0.27058825, 0.22352941, 0.105882354, 1)
 metallic_specular = 0.0
 roughness = 0.9
