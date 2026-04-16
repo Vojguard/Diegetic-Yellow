@@ -1,34 +1,66 @@
 [gd_resource type="VisualShader" format=3 uid="uid://b2ph0nh6bcqw5"]
 
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_lvpvn"]
+default_input_values = [0, Vector3(1, 1, 1), 1, Vector3(0, 0, 0)]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_rdixo"]
+constant = 0.5
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vlyub"]
+noise_type = 2
+frequency = 0.1
+fractal_octaves = 2
+fractal_lacunarity = 3.0
+fractal_gain = 0.3
+fractal_weighted_strength = 0.8
+cellular_distance_function = 1
+cellular_jitter = 0.5
+cellular_return_type = 4
+
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vlyub"]
+noise = SubResource("FastNoiseLite_vlyub")
+seamless = true
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_lvpvn"]
 output_port_for_preview = 0
+expanded_output_ports = [0]
 texture = SubResource("NoiseTexture2D_vlyub")
-texture_type = 1
-
-[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_vlyub"]
-constant = Color(0.4, 0.2784314, 0.10980392, 1)
 
 [sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_lvpvn"]
-constant = Color(0.22749639, 0.15316337, 0.045365885, 1)
+constant = Color(0.6, 0.27058825, 0.011764706, 1)
 
-[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_rdixo"]
-default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(1, 1, 1), 2, 0.5]
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_vlyub"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeClamp" id="VisualShaderNodeClamp_4kyjr"]
+output_port_for_preview = 0
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(0, 0, 0), 2, Vector3(1, 1, 1)]
 op_type = 4
 
-[sub_resource type="VisualShaderNodeSmoothStep" id="VisualShaderNodeSmoothStep_4kyjr"]
-default_input_values = [0, 0.3, 1, 0.5, 2, 0.5]
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_tdudv"]
+default_input_values = [0, Vector3(1, 1, 1), 1, Vector3(0, 0, 0)]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_11s45"]
+constant = 0.1
 
 [resource]
+nodes/fragment/0/position = Vector2(440, 800)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_lvpvn")
-nodes/fragment/2/position = Vector2(-496, 160)
-nodes/fragment/3/node = SubResource("VisualShaderNodeColorConstant_vlyub")
-nodes/fragment/3/position = Vector2(-144, 80)
+nodes/fragment/2/position = Vector2(-900, 660)
 nodes/fragment/4/node = SubResource("VisualShaderNodeColorConstant_lvpvn")
-nodes/fragment/4/position = Vector2(-144, 176)
-nodes/fragment/5/node = SubResource("VisualShaderNodeMix_rdixo")
-nodes/fragment/5/position = Vector2(91.11589, 202.12001)
-nodes/fragment/6/node = SubResource("VisualShaderNodeSmoothStep_4kyjr")
-nodes/fragment/6/position = Vector2(-128, 416)
-nodes/fragment/connections = PackedInt32Array(3, 0, 5, 0, 4, 0, 5, 1, 5, 0, 0, 0, 2, 0, 5, 2)
+nodes/fragment/4/position = Vector2(-420, 700)
+nodes/fragment/6/node = SubResource("VisualShaderNodeVectorOp_vlyub")
+nodes/fragment/6/position = Vector2(180, 740)
+nodes/fragment/7/node = SubResource("VisualShaderNodeClamp_4kyjr")
+nodes/fragment/7/position = Vector2(-140, 860)
+nodes/fragment/8/node = SubResource("VisualShaderNodeVectorOp_tdudv")
+nodes/fragment/8/position = Vector2(-440, 920)
+nodes/fragment/9/node = SubResource("VisualShaderNodeFloatConstant_11s45")
+nodes/fragment/9/position = Vector2(-660, 1060)
+nodes/fragment/10/node = SubResource("VisualShaderNodeVectorOp_lvpvn")
+nodes/fragment/10/position = Vector2(-440, 1100)
+nodes/fragment/11/node = SubResource("VisualShaderNodeFloatConstant_rdixo")
+nodes/fragment/11/position = Vector2(-660, 1180)
+nodes/fragment/connections = PackedInt32Array(4, 0, 6, 0, 6, 0, 0, 0, 7, 0, 6, 1, 8, 0, 7, 1, 9, 0, 8, 1, 11, 0, 10, 1, 10, 0, 7, 2, 2, 0, 7, 0)

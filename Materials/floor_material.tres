@@ -1,5 +1,7 @@
-[gd_resource type="StandardMaterial3D" format=3 uid="uid://duihj73dofihk"]
+[gd_resource type="ShaderMaterial" format=3 uid="uid://duihj73dofihk"]
+
+[ext_resource type="Shader" uid="uid://b2ph0nh6bcqw5" path="res://Shaders/floor_noise_shader.tres" id="1_drhet"]
 
 [resource]
-albedo_color = Color(0.4, 0.27833334, 0.107999995, 1)
-metallic_specular = 0.1
+render_priority = 0
+shader = ExtResource("1_drhet")
