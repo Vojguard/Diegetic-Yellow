@@ -10,10 +10,10 @@ var date_time = null
 @onready var version: Label = $MarginContainer/HBoxContainer/VBoxContainer2/Version
 @onready var main_buttons: VBoxContainer = $MarginContainer/HBoxContainer/Main/MainButtons
 @onready var settings: VBoxContainer = $MarginContainer/HBoxContainer/Main/Settings
-
-
+@onready var instructions: ColorRect = $Instructions
 
 func _ready() -> void:
+	instructions.visible = false
 	Globals.GAME.set_chosen_game_version(game_version)
 	version.text = Globals.GAME.version_string_name
 	mouse_sensitivity_val.text = "MOUSE SENSITIVITY : %f" % Globals.GAME.mouse_sens_modifier
@@ -61,3 +61,14 @@ func _on_full_screen_toggled(toggled_on: bool) -> void:
 func _on_mouse_sensitivity_slid_value_changed(value: float) -> void:
 	Globals.GAME.mouse_sens_modifier = value
 	mouse_sensitivity_val.text = "MOUSE SENSITIVITY : %f" % value
+
+
+func _on_instruction_back_pressed() -> void:
+	instructions.visible = false
+
+
+func _on_main_play_pressed() -> void:
+	if Globals.GAME.get_current_walkthrough_location() > 0:
+		_on_play_pressed()
+	else:
+		instructions.visible = true

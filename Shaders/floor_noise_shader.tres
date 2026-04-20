@@ -5,7 +5,7 @@ default_input_values = [0, Vector3(1, 1, 1), 1, Vector3(0, 0, 0)]
 operator = 2
 
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_rdixo"]
-constant = 0.25
+constant = 0.2
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_vlyub"]
 noise_type = 2
@@ -44,24 +44,24 @@ default_input_values = [0, Vector3(1, 1, 1), 1, Vector3(0, 0, 0)]
 operator = 2
 
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_11s45"]
-constant = 0.1
+constant = 0.15
 
 [resource]
-nodes/fragment/0/position = Vector2(192, 4144)
+nodes/fragment/0/position = Vector2(208, 3776)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_lvpvn")
 nodes/fragment/2/position = Vector2(-896, 3728)
 nodes/fragment/4/node = SubResource("VisualShaderNodeColorConstant_lvpvn")
-nodes/fragment/4/position = Vector2(-288, 4064)
+nodes/fragment/4/position = Vector2(-896, 4320)
 nodes/fragment/6/node = SubResource("VisualShaderNodeVectorOp_vlyub")
-nodes/fragment/6/position = Vector2(-48, 4080)
+nodes/fragment/6/position = Vector2(-48, 4320)
 nodes/fragment/7/node = SubResource("VisualShaderNodeClamp_4kyjr")
-nodes/fragment/7/position = Vector2(-304, 4176)
+nodes/fragment/7/position = Vector2(-304, 4416)
 nodes/fragment/8/node = SubResource("VisualShaderNodeVectorOp_tdudv")
-nodes/fragment/8/position = Vector2(-592, 4208)
+nodes/fragment/8/position = Vector2(-592, 4384)
 nodes/fragment/9/node = SubResource("VisualShaderNodeFloatConstant_11s45")
-nodes/fragment/9/position = Vector2(-896, 4304)
+nodes/fragment/9/position = Vector2(-896, 4480)
 nodes/fragment/10/node = SubResource("VisualShaderNodeVectorOp_lvpvn")
-nodes/fragment/10/position = Vector2(-592, 4400)
+nodes/fragment/10/position = Vector2(-592, 4640)
 nodes/fragment/11/node = SubResource("VisualShaderNodeFloatConstant_rdixo")
-nodes/fragment/11/position = Vector2(-896, 4496)
+nodes/fragment/11/position = Vector2(-896, 4736)
 nodes/fragment/connections = PackedInt32Array(4, 0, 6, 0, 7, 0, 6, 1, 8, 0, 7, 1, 9, 0, 8, 1, 11, 0, 10, 1, 10, 0, 7, 2, 6, 0, 0, 0, 2, 0, 7, 0)
