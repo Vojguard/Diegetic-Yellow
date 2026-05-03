@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dwncb2cfl6x04"]
+
+[ext_resource type="Shader" uid="uid://bt8fm62cfsquh" path="res://Shaders/items_vs.tres" id="1_vq6i0"]
+[ext_resource type="Texture2D" uid="uid://b3ajy1wgeggwe" path="res://Textures/table_diffuse.png" id="2_tnp6i"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_vq6i0")
+shader_parameter/DiffuseTexture = ExtResource("2_tnp6i")
+shader_parameter/Darkest = 0.40000000596048
+shader_parameter/Lightest = 1.0

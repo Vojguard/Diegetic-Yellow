@@ -1,7 +1,6 @@
 [gd_resource type="VisualShader" format=3 uid="uid://bt8fm62cfsquh"]
 
-[ext_resource type="Texture2D" uid="uid://bsy7evf68wdfm" path="res://Textures/crate_diffuse.png" id="1_60ro2"]
-[ext_resource type="Texture2D" uid="uid://decorvaqhjq7p" path="res://Textures/crate_metalic.png" id="2_rad2r"]
+[ext_resource type="Texture2D" uid="uid://decorvaqhjq7p" path="res://Textures/crate_metalic.png" id="1_rodi6"]
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_rad2r"]
 output_port_for_preview = 0
@@ -40,6 +39,28 @@ default_input_values = [0, Vector2(1, 1), 1, Vector2(0, 0)]
 op_type = 0
 operator = 2
 
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_60ro2"]
+parameter_name = "DiffuseTexture"
+texture_type = 1
+color_default = 2
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_b7fon"]
+source = 5
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_tqyqg"]
+parameter_name = "MetalicTexture"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_rodi6"]
+default_input_values = [0, Vector3(1, 1, 1), 1, Vector3(0, 0, 0)]
+operator = 2
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_rodi6"]
+parameter_name = "Darkest"
+hint = 2
+max = 0.5
+step = 0.05
+default_value_enabled = true
+
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_p6oto"]
 output_port_for_preview = 0
 default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(0, 0, 0, 0)]
@@ -49,18 +70,21 @@ operator = 2
 [sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_uon8f"]
 constant = Color(0.27058825, 0.22352941, 0.105882354, 1)
 
-[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_rad2r"]
-texture = ExtResource("1_60ro2")
-
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_p6oto"]
-texture = ExtResource("2_rad2r")
+source = 5
+texture = ExtResource("1_rodi6")
 
 [sub_resource type="VisualShaderNodeClamp" id="VisualShaderNodeClamp_rad2r"]
 default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(0, 0, 0), 2, Vector3(1, 1, 1)]
 op_type = 4
 
-[sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_p6oto"]
-constant = 0.25
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_b7fon"]
+parameter_name = "Lightest"
+hint = 2
+min = 0.25
+step = 0.05
+default_value_enabled = true
+default_value = 0.25
 
 [sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_uon8f"]
 default_input_values = [0, Vector3(1, 1, 1), 1, Vector3(0, 0, 0)]
@@ -68,33 +92,41 @@ operator = 2
 
 [resource]
 nodes/vertex/0/position = Vector2(1080, 160)
-nodes/fragment/0/position = Vector2(840, 100)
+nodes/fragment/0/position = Vector2(1100, 2540)
 nodes/fragment/3/node = SubResource("VisualShaderNodeVectorOp_p6oto")
-nodes/fragment/3/position = Vector2(420, 40)
+nodes/fragment/3/position = Vector2(840, 2480)
 nodes/fragment/4/node = SubResource("VisualShaderNodeColorConstant_uon8f")
 nodes/fragment/4/position = Vector2(-180, 0)
-nodes/fragment/5/node = SubResource("VisualShaderNodeTexture_rad2r")
-nodes/fragment/5/position = Vector2(-580, -60)
 nodes/fragment/6/node = SubResource("VisualShaderNodeTexture_p6oto")
-nodes/fragment/6/position = Vector2(360, 420)
+nodes/fragment/6/position = Vector2(240, 1060)
 nodes/fragment/7/node = SubResource("VisualShaderNodeClamp_rad2r")
-nodes/fragment/7/position = Vector2(-200, 140)
-nodes/fragment/8/node = SubResource("VisualShaderNodeFloatConstant_p6oto")
-nodes/fragment/8/position = Vector2(-800, 340)
+nodes/fragment/7/position = Vector2(580, 2100)
+nodes/fragment/8/node = SubResource("VisualShaderNodeFloatParameter_b7fon")
+nodes/fragment/8/position = Vector2(-180, 2200)
 nodes/fragment/9/node = SubResource("VisualShaderNodeVectorOp_uon8f")
-nodes/fragment/9/position = Vector2(-580, 240)
+nodes/fragment/9/position = Vector2(240, 2100)
 nodes/fragment/10/node = SubResource("VisualShaderNodeVectorOp_rad2r")
-nodes/fragment/10/position = Vector2(100, 120)
+nodes/fragment/10/position = Vector2(840, 2040)
 nodes/fragment/11/node = SubResource("VisualShaderNodeTexture_rwjbu")
-nodes/fragment/11/position = Vector2(-180, 460)
+nodes/fragment/11/position = Vector2(-180, 180)
 nodes/fragment/12/node = SubResource("VisualShaderNodeInput_rad2r")
-nodes/fragment/12/position = Vector2(-1220, 480)
+nodes/fragment/12/position = Vector2(-180, 560)
 nodes/fragment/13/node = SubResource("VisualShaderNodeVectorDecompose_rad2r")
-nodes/fragment/13/position = Vector2(-840, 460)
+nodes/fragment/13/position = Vector2(240, 1760)
 nodes/fragment/14/node = SubResource("VisualShaderNodeVectorCompose_p6oto")
-nodes/fragment/14/position = Vector2(-640, 480)
+nodes/fragment/14/position = Vector2(580, 1780)
 nodes/fragment/17/node = SubResource("VisualShaderNodeFloatConstant_rad2r")
-nodes/fragment/17/position = Vector2(-740, 680)
+nodes/fragment/17/position = Vector2(-180, 760)
 nodes/fragment/18/node = SubResource("VisualShaderNodeVectorOp_rwjbu")
-nodes/fragment/18/position = Vector2(-400, 480)
-nodes/fragment/connections = PackedInt32Array(3, 0, 0, 0, 6, 0, 0, 2, 5, 0, 7, 0, 8, 0, 9, 1, 9, 0, 7, 2, 11, 0, 10, 1, 4, 0, 3, 0, 7, 0, 10, 0, 13, 0, 14, 0, 13, 2, 14, 1, 12, 0, 13, 0, 14, 0, 18, 0, 17, 0, 18, 1, 7, 0, 3, 1)
+nodes/fragment/18/position = Vector2(840, 1760)
+nodes/fragment/19/node = SubResource("VisualShaderNodeTexture2DParameter_60ro2")
+nodes/fragment/19/position = Vector2(-180, 1340)
+nodes/fragment/20/node = SubResource("VisualShaderNodeTexture_b7fon")
+nodes/fragment/20/position = Vector2(240, 1460)
+nodes/fragment/21/node = SubResource("VisualShaderNodeTexture2DParameter_tqyqg")
+nodes/fragment/21/position = Vector2(-180, 940)
+nodes/fragment/22/node = SubResource("VisualShaderNodeVectorOp_rodi6")
+nodes/fragment/22/position = Vector2(240, 2480)
+nodes/fragment/23/node = SubResource("VisualShaderNodeFloatParameter_rodi6")
+nodes/fragment/23/position = Vector2(-180, 2600)
+nodes/fragment/connections = PackedInt32Array(3, 0, 0, 0, 6, 0, 0, 2, 8, 0, 9, 1, 9, 0, 7, 2, 11, 0, 10, 1, 4, 0, 3, 0, 7, 0, 10, 0, 13, 0, 14, 0, 13, 2, 14, 1, 12, 0, 13, 0, 14, 0, 18, 0, 17, 0, 18, 1, 7, 0, 3, 1, 19, 0, 20, 2, 20, 0, 7, 0, 21, 0, 6, 2, 23, 0, 22, 1, 22, 0, 7, 1)
