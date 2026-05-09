@@ -53,9 +53,9 @@ func print_header_to_log(date_time : Dictionary, event_tag : EVENT_TAG, extra : 
 	if !check_log_open(): return
 	log_file.store_line(HEADER_LINE)
 	var event_name = event_dict[event_tag]
-	var string_to_store =("(%s)[%02d-%02d-%04d %02d:%02d:%02d] %-15s " % [event_tag, date_time.day, date_time.month, date_time.year,
+	var string_to_store =("(%s)[%02d-%02d-%04d %02d:%02d:%02d] %-14s " % [event_tag, date_time.day, date_time.month, date_time.year,
 	 date_time.hour, date_time.minute, date_time.second, event_name])
-	var final_line_to_store = str(string_to_store," ", extra)
+	var final_line_to_store = str(string_to_store,extra)
 	log_file.store_line(final_line_to_store)
 
 func print_event_to_log(time_stamp : int, event_tag : EVENT_TAG, score : int, extra : String = "") -> void:
@@ -63,10 +63,12 @@ func print_event_to_log(time_stamp : int, event_tag : EVENT_TAG, score : int, ex
 	var sec = time_stamp % 60
 	var mins = time_stamp / 60
 	var event_name = event_dict[event_tag]
-	var string_to_store = ("(%s)[%02d:%02d] %-15s -> Score: %4d" % [event_tag, mins, sec, event_name, score])
+	var string_to_store = ("(%s)[%02d:%02d] %-14s -> S: %4d" % [event_tag, mins, sec, event_name, score])
 	var final_line_to_store = str(string_to_store, extra)
 	log_file.store_line(final_line_to_store)
 
 func print_interaction_to_log(time_stamp : int, event_tag : EVENT_TAG, score : int, interactible : Interactable) -> void:
-	var string_to_store = (" : %-15s > Time: %5dms / Count: %2d" % [interactible.name, interactible.on_screen_time, interactible.on_screen_appearance])
+	var interactible_pos_X = interactible.position.x
+	var interactible_pos_Z = -interactible.position.z
+	var string_to_store = (" : (%6.2f, %6.2f) > T: %5dms / A: %2d" % [interactible_pos_X, interactible_pos_Z, interactible.on_screen_time, interactible.on_screen_appearance])
 	print_event_to_log(time_stamp, event_tag, score, string_to_store)
