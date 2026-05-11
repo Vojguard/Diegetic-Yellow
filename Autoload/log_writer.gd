@@ -21,6 +21,7 @@ var event_dict = {
 }
 
 var log_file = null
+var heat_map_file = null
 
 func check_andor_create_folder() -> void:
 	if DirAccess.dir_exists_absolute(Globals.LOGS.LOG_FOLDER):
@@ -39,10 +40,21 @@ func open_log_file(date_time : Dictionary) -> void:
 		else:
 			log_file = FileAccess.open(path, FileAccess.WRITE)
 
+func open_heat_file(date_time : Dictionary, level : String) -> void:
+	check_andor_create_folder()
+	var level_name_for_file : String = level.split("/")[-1].split(".")[0]
+	if heat_map_file == null:
+		var path : String = Globals.LOGS.HEAT_MAP_FORMAT % [date_time.day, date_time.month, date_time.year, level_name_for_file]
+		heat_map_file = FileAccess.open(path, FileAccess.WRITE)
+
 func close_log_file() -> void:
 	if log_file != null:
 		log_file.close()
 		Globals.LOGS.IS_NEW_LOG = true
+
+func close_heat_file() -> void:
+	if heat_map_file != null:
+		heat_map_file.close()
 
 func check_log_open() -> bool:
 	if log_file == null: return false
@@ -69,6 +81,12 @@ func print_event_to_log(time_stamp : int, event_tag : EVENT_TAG, score : int, ex
 
 func print_interaction_to_log(time_stamp : int, event_tag : EVENT_TAG, score : int, interactible : Interactable) -> void:
 	var interactible_pos_X = interactible.position.x
-	var interactible_pos_Z = -interactible.position.z
+	var interactible_pos_Z = 0 - interactible.position.z
 	var string_to_store = (" : (%6.2f, %6.2f) > T: %5dms / A: %2d" % [interactible_pos_X, interactible_pos_Z, interactible.on_screen_time, interactible.on_screen_appearance])
 	print_event_to_log(time_stamp, event_tag, score, string_to_store)
+
+func print_pos_to_heatmap(time_stamp : int, player_pos : Vector3) -> void:
+	var sec = time_stamp % 60
+	var mins = time_stamp / 60
+	var string_to_store = ("[%02d:%02d] (%6.2f, %6.2f)" % [mins, sec, player_pos.x, 0 - player_pos.z])
+	heat_map_file.store_line(string_to_store)

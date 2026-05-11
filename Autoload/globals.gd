@@ -43,10 +43,14 @@ class GAME:
 		return version_walkthrough[level]
 
 class LEVEL:
+	static var start_time : int = 0
 	static var score : int = 0
 	static var percent_targets_destroyed : float = 0
 	static var percent_collectibles_collected : float = 0
 	static var time_spend : int = 0
+	
+	static func set_start_time() -> void:
+		start_time = Time.get_ticks_msec()
 	
 	## Takes [param ptd] for the percentage of targets destroyed [br]
 	## [param scr] for the score
@@ -72,7 +76,10 @@ class LEVEL:
 	## score
 	static func get_level_stats() -> Array:
 		return [percent_targets_destroyed, percent_collectibles_collected, time_spend, score]
-
+	
+	static func get_time() -> int:
+		return (Time.get_ticks_msec() - start_time) / 1000 
+	
 ## holds the const strings of scenes
 class SCENES:
 	## path to main menu
@@ -97,4 +104,5 @@ class SCENES:
 class LOGS:
 	const LOG_FOLDER : String = "user://game_logs//"
 	const LOG_FORMAT : String = LOG_FOLDER + "game_log-%02d%02d%02d.txt"
+	const HEAT_MAP_FORMAT : String = LOG_FOLDER + "heat_map-%02d%02d%02d-%s.txt"
 	static var IS_NEW_LOG : bool = false

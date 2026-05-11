@@ -15,6 +15,7 @@ const DEF_FOV = 75
 var _ads : bool = false
 var _current_mouse_sensivity
 var _pistol_tween : Tween
+var _last_heat : int = 0
 
 @onready var _camera : Camera3D = $Camera
 @onready var _interaction_cast : ShapeCast3D = $Camera/InteractionCast
@@ -40,6 +41,8 @@ func _physics_process(delta: float) -> void:
 	_handle_vertical_movement(delta)
 	
 	_handle_actions()
+	
+	_handle_print_to_heatmap()
 	
 	move_and_slide()
 
@@ -132,3 +135,9 @@ func _anim_pistol_focus(new_pos : Vector3, new_fov : float) -> void:
 	_pistol_tween.set_parallel()
 	_pistol_tween.tween_property(_camera, "fov", new_fov, tween_duration)
 	pass
+
+func _handle_print_to_heatmap() -> void:
+	var curr_sec = Globals.LEVEL.get_time()
+	if curr_sec - _last_heat > 0.9:
+		LogWriter.print_pos_to_heatmap(curr_sec, position)
+		_last_heat = curr_sec
