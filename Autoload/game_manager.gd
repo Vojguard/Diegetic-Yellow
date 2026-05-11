@@ -19,6 +19,7 @@ func _ready() -> void:
 	max_targets = $"../Targets".get_child_count()
 	max_items = $"../Collectible".get_child_count()
 	var curr_level : String = Globals.GAME.get_scene_at_current_location()
+	curr_level = curr_level.split("/")[-1].split(".")[0]
 	var time_dict := Time.get_datetime_dict_from_system()
 	LogWriter.print_header_to_log(time_dict, LogWriter.EVENT_TAG.EL, curr_level)
 	LogWriter.open_heat_file(time_dict, curr_level)
