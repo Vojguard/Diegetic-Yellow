@@ -20,20 +20,23 @@ var event_dict = {
 	EVENT_TAG.TH : "Target Hit"
 }
 
+var logs_subfolder : String = Globals.LOGS.LOG_FOLDER
 var log_file = null
 var heat_map_file = null
 
-func check_andor_create_folder() -> void:
-	if DirAccess.dir_exists_absolute(Globals.LOGS.LOG_FOLDER):
+func check_andor_create_folder(date_time : Dictionary) -> void:
+	logs_subfolder = Globals.LOGS.LOG_SUBFOLDER % [date_time.day, date_time.month, date_time.year]
+	if DirAccess.dir_exists_absolute(logs_subfolder):
 		print("exists")
 	else:
 		print("create folder")
-		DirAccess.make_dir_absolute(Globals.LOGS.LOG_FOLDER)
+		DirAccess.make_dir_absolute(logs_subfolder)
+	
 
 func open_log_file(date_time : Dictionary) -> void:
-	check_andor_create_folder()
+	check_andor_create_folder(date_time)
 	if log_file == null:
-		var path : String = Globals.LOGS.LOG_FORMAT % [date_time.day, date_time.month, date_time.year]
+		var path : String = logs_subfolder + Globals.LOGS.LOG_FORMAT % [date_time.day, date_time.month, date_time.year]
 		if FileAccess.file_exists(path):
 			log_file = FileAccess.open(path, FileAccess.READ_WRITE)
 			log_file.seek_end()
@@ -41,10 +44,10 @@ func open_log_file(date_time : Dictionary) -> void:
 			log_file = FileAccess.open(path, FileAccess.WRITE)
 
 func open_heat_file(date_time : Dictionary, level : String) -> void:
-	check_andor_create_folder()
+	check_andor_create_folder(date_time)
 	var level_name_for_file : String = level.split("/")[-1].split(".")[0]
 	if heat_map_file == null:
-		var path : String = Globals.LOGS.HEAT_MAP_FORMAT % [date_time.day, date_time.month, date_time.year, level_name_for_file]
+		var path : String = logs_subfolder + Globals.LOGS.HEAT_MAP_FORMAT % [date_time.day, date_time.month, date_time.year, level_name_for_file]
 		heat_map_file = FileAccess.open(path, FileAccess.WRITE)
 
 func close_log_file() -> void:

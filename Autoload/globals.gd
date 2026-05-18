@@ -102,7 +102,8 @@ class SCENES:
 	const WALKTHROUGH_TAILS : Array[String] = [LEVEL_ONE_ALT, LEVEL_TWO, LEVEL_ONE, LEVEL_TWO_ALT]
 
 class LOGS:
-	const LOG_FOLDER : String = "user://game_logs//"
-	const LOG_FORMAT : String = LOG_FOLDER + "game_log-%02d%02d%02d.txt"
-	const HEAT_MAP_FORMAT : String = LOG_FOLDER + "heat_map-%02d%02d%02d-%s.txt"
+	const LOG_FOLDER : String = "user://game_logs/"
+	const LOG_SUBFOLDER : String = LOG_FOLDER + "/%02d%02d%02d/"
+	const LOG_FORMAT : String = "game_log-%02d%02d%02d.txt"
+	const HEAT_MAP_FORMAT : String = "heat_map-%02d%02d%02d-%s.txt"
 	static var IS_NEW_LOG : bool = false
