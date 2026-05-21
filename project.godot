@@ -18,6 +18,7 @@ config/name="Diegetic Yellow"
 run/main_scene="uid://cos4y7qhiixte"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://bggkh3g1dk8kc"
+config/tags=PackedStringArray("developing", "school")
 
 [autoload]
 
