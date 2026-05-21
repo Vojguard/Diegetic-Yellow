@@ -24,8 +24,8 @@ var logs_subfolder : String = Globals.LOGS.LOG_FOLDER
 var log_file = null
 var heat_map_file = null
 
-func check_andor_create_folder(date_time : Dictionary) -> void:
-	logs_subfolder = Globals.LOGS.LOG_SUBFOLDER % [date_time.day, date_time.month, date_time.year]
+func check_andor_create_folder() -> void:
+	logs_subfolder = Globals.LOGS.LOG_SUBFOLDER % Globals.GAME.nickname
 	if DirAccess.dir_exists_absolute(logs_subfolder):
 		print("exists")
 	else:
@@ -34,30 +34,38 @@ func check_andor_create_folder(date_time : Dictionary) -> void:
 	
 
 func open_log_file(date_time : Dictionary) -> void:
-	check_andor_create_folder(date_time)
+	check_andor_create_folder()
 	if log_file == null:
-		var path : String = logs_subfolder + Globals.LOGS.LOG_FORMAT % [date_time.day, date_time.month, date_time.year]
+		var path : String = logs_subfolder + Globals.LOGS.LOG_FORMAT % Globals.GAME.nickname
 		if FileAccess.file_exists(path):
 			log_file = FileAccess.open(path, FileAccess.READ_WRITE)
 			log_file.seek_end()
+			print(log_file)
 		else:
 			log_file = FileAccess.open(path, FileAccess.WRITE)
 
 func open_heat_file(date_time : Dictionary, level : String) -> void:
-	check_andor_create_folder(date_time)
+	check_andor_create_folder()
 	var level_name_for_file : String = level.split("/")[-1].split(".")[0]
 	if heat_map_file == null:
-		var path : String = logs_subfolder + Globals.LOGS.HEAT_MAP_FORMAT % [date_time.day, date_time.month, date_time.year, level_name_for_file]
+		var path : String = logs_subfolder + Globals.LOGS.HEAT_MAP_FORMAT % [Globals.GAME.nickname, level_name_for_file]
 		heat_map_file = FileAccess.open(path, FileAccess.WRITE)
 
 func close_log_file() -> void:
 	if log_file != null:
+		print("closing Log")
 		log_file.close()
 		Globals.LOGS.IS_NEW_LOG = true
+	else:
+		print("no log to close")
 
 func close_heat_file() -> void:
 	if heat_map_file != null:
+		print("closing heat")
 		heat_map_file.close()
+		heat_map_file = null
+	else:
+		print("no heat to close")
 
 func check_log_open() -> bool:
 	if log_file == null: return false

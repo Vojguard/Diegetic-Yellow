@@ -9,6 +9,8 @@ const HEADS_STRING_NAME = "HEADS VERSION"
 const TAILS_STRING_NAME = "TAILS VERSION"
 
 class GAME:
+	static var nickname : String = ""
+	static var nick_entered : bool = false
 	const TARGET_HIT_SCORE = 20
 	const COLLECTABLE_SCORE = 50
 	
@@ -17,6 +19,10 @@ class GAME:
 	static var version_walkthrough := SCENES.WALKTHROUGH_HEADS
 	static var version_string_name = HEADS_STRING_NAME
 	static var location_at_walkthrough : int = 0
+	
+	static func set_nickname(nick : String) -> void:
+		nickname = nick
+		nick_entered = true
 	
 	static func set_chosen_game_version(version : GAME_VERSIONS) -> void:
 		if version == GAME_VERSIONS.HEADS:
@@ -103,7 +109,7 @@ class SCENES:
 
 class LOGS:
 	const LOG_FOLDER : String = "user://game_logs/"
-	const LOG_SUBFOLDER : String = LOG_FOLDER + "/%02d%02d%02d/"
-	const LOG_FORMAT : String = "game_log-%02d%02d%02d.txt"
-	const HEAT_MAP_FORMAT : String = "heat_map-%02d%02d%02d-%s.txt"
+	const LOG_SUBFOLDER : String = LOG_FOLDER + "/%s/"
+	const LOG_FORMAT : String = "game_log-%s.txt"
+	const HEAT_MAP_FORMAT : String = "heat_map-%s-%s.txt"
 	static var IS_NEW_LOG : bool = false

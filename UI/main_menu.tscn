@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c5ku11vtsrb8x" path="res://UI/redtarget.png" id="3_f40uw"]
 [ext_resource type="Texture2D" uid="uid://pjj2cnr33jsi" path="res://UI/glowingtarget.png" id="4_8ctay"]
 [ext_resource type="Texture2D" uid="uid://rbewaxf6ji7r" path="res://UI/glowingcube.png" id="4_f40uw"]
+[ext_resource type="Texture2D" uid="uid://fyonq4tm7wkc" path="res://UI/snaker_pistol_render.png" id="7_ev3b6"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=411992664]
 script = ExtResource("1_tk8dj")
@@ -142,11 +143,19 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "OPEN LOGS FOLDER"
 
-[node name="Version" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=721015073]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer2" unique_id=257117810]
+layout_mode = 2
+alignment = 2
+
+[node name="Nickname" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=574511777]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+
+[node name="Version" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=721015073]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "HEADS VERSION"
-horizontal_alignment = 2
 uppercase = true
 
 [node name="Instructions" type="ColorRect" parent="." unique_id=295235125]
@@ -257,6 +266,56 @@ theme_override_font_sizes/font_size = 32
 text = "BACK
 "
 
+[node name="Popup" type="Window" parent="." unique_id=883818464]
+transparent_bg = true
+oversampling_override = 1.0
+title = "Enter Nickname"
+initial_position = 2
+size = Vector2i(500, 1000)
+visible = false
+exclusive = true
+unresizable = true
+always_on_top = true
+transparent = true
+popup_window = true
+minimize_disabled = true
+maximize_disabled = true
+
+[node name="TextureRect" type="TextureRect" parent="Popup" unique_id=547581020]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_ev3b6")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Popup" unique_id=629389255]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -153.5
+offset_top = -96.0
+offset_right = 153.5
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Nickname" type="LineEdit" parent="Popup/VBoxContainer" unique_id=1292347433]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+placeholder_text = "nickname"
+max_length = 15
+emoji_menu_enabled = false
+
+[node name="enterNick" type="Label" parent="Popup/VBoxContainer" unique_id=1755762924]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "PRESS ENTER TO CONFIRM"
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Main/MainButtons/Play" to="." method="_on_main_play_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Main/MainButtons/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/Main/MainButtons/Quit" to="." method="_on_quit_pressed"]
@@ -266,3 +325,4 @@ text = "BACK
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer2/Logs" to="." method="_on_logs_pressed"]
 [connection signal="pressed" from="Instructions/InstrucContain/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Instructions/InstrucContain/Back" to="." method="_on_instruction_back_pressed"]
+[connection signal="text_submitted" from="Popup/VBoxContainer/Nickname" to="." method="_on_nickname_text_submitted"]

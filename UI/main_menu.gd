@@ -4,10 +4,12 @@ extends CanvasLayer
 
 var date_time = null
 
+@onready var popup: Window = $Popup
 @onready var datetime_label : Label = $MarginContainer/HBoxContainer/VBoxContainer2/DateTime
 @onready var mouse_sensitivity_val: Label = $MarginContainer/HBoxContainer/Main/Settings/MouseSensitivityVal
 @onready var full_screen: CheckBox = $MarginContainer/HBoxContainer/Main/Settings/HBoxContainer/FullScreen
-@onready var version: Label = $MarginContainer/HBoxContainer/VBoxContainer2/Version
+@onready var version: Label = $MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/Version
+@onready var nickname_label: Label = $MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/Nickname
 @onready var main_buttons: VBoxContainer = $MarginContainer/HBoxContainer/Main/MainButtons
 @onready var settings: VBoxContainer = $MarginContainer/HBoxContainer/Main/Settings
 @onready var instructions: ColorRect = $Instructions
@@ -16,10 +18,13 @@ func _ready() -> void:
 	instructions.visible = false
 	Globals.GAME.set_chosen_game_version(game_version)
 	version.text = Globals.GAME.version_string_name
+	nickname_label.text = Globals.GAME.nickname
 	mouse_sensitivity_val.text = "MOUSE SENSITIVITY : %f" % Globals.GAME.mouse_sens_modifier
 	full_screen.button_pressed = (
 		DisplayServer.window_get_mode() == DisplayServer.WindowMode.WINDOW_MODE_FULLSCREEN
 	)
+	if Globals.GAME.nick_entered == false:
+		popup.show()
 
 func _process(_delta: float) -> void:
 	date_time = Time.get_datetime_dict_from_system()
@@ -72,3 +77,8 @@ func _on_main_play_pressed() -> void:
 		_on_play_pressed()
 	else:
 		instructions.visible = true
+
+func _on_nickname_text_submitted(nick_entered: String) -> void:
+	Globals.GAME.set_nickname(nick_entered)
+	nickname_label.text = Globals.GAME.nickname
+	popup.hide()
