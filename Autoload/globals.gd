@@ -104,8 +104,8 @@ class SCENES:
 	const LEVEL_TWO_ALT : String = "res://Levels/Two/level_two_alt.tscn"
 	
 	
-	const WALKTHROUGH_HEADS : Array[String] = [LEVEL_ONE, LEVEL_TWO_ALT, LEVEL_ONE_ALT, LEVEL_TWO]
-	const WALKTHROUGH_TAILS : Array[String] = [LEVEL_ONE_ALT, LEVEL_TWO, LEVEL_ONE, LEVEL_TWO_ALT]
+	const WALKTHROUGH_HEADS : Array[String] = [LEVEL_ONE, LEVEL_TWO_ALT]
+	const WALKTHROUGH_TAILS : Array[String] = [LEVEL_ONE_ALT, LEVEL_TWO]
 
 class LOGS:
 	const LOG_FOLDER : String = "user://game_logs/"

@@ -11,12 +11,15 @@ var date_time = null
 @onready var version: Label = $MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/Version
 @onready var nickname_label: Label = $MarginContainer/HBoxContainer/VBoxContainer2/HBoxContainer/Nickname
 @onready var main_buttons: VBoxContainer = $MarginContainer/HBoxContainer/Main/MainButtons
+@onready var play_button: Button = $MarginContainer/HBoxContainer/Main/MainButtons/Play
 @onready var settings: VBoxContainer = $MarginContainer/HBoxContainer/Main/Settings
 @onready var instructions: ColorRect = $Instructions
 
 func _ready() -> void:
 	instructions.visible = false
 	Globals.GAME.set_chosen_game_version(game_version)
+	if Globals.GAME.get_current_walkthrough_location() > 0:
+		play_button.text = "CONTINUE"
 	version.text = Globals.GAME.version_string_name
 	nickname_label.text = Globals.GAME.nickname
 	mouse_sensitivity_val.text = "MOUSE SENSITIVITY : %f" % Globals.GAME.mouse_sens_modifier
