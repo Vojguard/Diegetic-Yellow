@@ -25,7 +25,7 @@ func _process(_delta: float) -> void:
 func _on_score_update(new_score : int) -> void:
 	score_display.text = ("Score : %3d " % new_score)
 
-func _on_target_hit(_t : Target) -> void:
+func _on_target_hit(_t : Target, _pp : Vector2i) -> void:
 	targets_hit += 1
 	targets_hit_display.text = ("Targets : %2d " % targets_hit)
 

@@ -50,12 +50,12 @@ func _on_player_loaded(p : PlayerController) -> void:
 	LogWriter.print_event_to_log(Globals.LEVEL.get_time(), LogWriter.EVENT_TAG.PL, score)
 	print("player_loaded")
 
-func _on_target_hit(_t : Target) -> void:
+func _on_target_hit(_t : Target, _pp : Vector2i) -> void:
 	targets_hit += 1
 	var add_score : int = target_hit_score + roundi(target_hit_score * 1.0/maxi(1, _t.on_screen_appearance))
 	print(add_score)
 	_update_score(add_score)
-	LogWriter.print_interaction_to_log(Globals.LEVEL.get_time(), LogWriter.EVENT_TAG.TH, score, _t)
+	LogWriter.print_interaction_to_log(Globals.LEVEL.get_time(), LogWriter.EVENT_TAG.TH, score, _t, _pp)
 	# LogWriter.print_event_to_log(get_time(), LogWriter.EVENT_TAG.TH, score)
 	print("target hit %d" % score)
 

@@ -90,10 +90,14 @@ func print_event_to_log(time_stamp : int, event_tag : EVENT_TAG, score : int, ex
 	var final_line_to_store = str(string_to_store, extra)
 	log_file.store_line(final_line_to_store)
 
-func print_interaction_to_log(time_stamp : int, event_tag : EVENT_TAG, score : int, interactible : Interactable) -> void:
+func print_interaction_to_log(time_stamp : int, event_tag : EVENT_TAG, score : int, interactible : Interactable, _player_pos : Vector2i = Vector2i.ZERO) -> void:
 	var interactible_pos_X : int = roundi(interactible.position.x)
 	var interactible_pos_Z : int = roundi(0 - interactible.position.z)
-	var string_to_store = (" : (%3d, %3d) > T: %5dms / A: %2d" % [interactible_pos_X, interactible_pos_Z, interactible.on_screen_time, interactible.on_screen_appearance])
+	var string_to_store : String = ""
+	if interactible is Target:
+		string_to_store = (" : (%3d, %3d) => (%3d, %3d) > T: %5dms / A: %2d" % [_player_pos.x, _player_pos.y, interactible_pos_X, interactible_pos_Z, interactible.on_screen_time, interactible.on_screen_appearance])
+	else:
+		string_to_store = (" : (%3d, %3d) > T: %5dms / A: %2d" % [interactible_pos_X, interactible_pos_Z, interactible.on_screen_time, interactible.on_screen_appearance])
 	print_event_to_log(time_stamp, event_tag, score, string_to_store)
 
 func print_pos_to_heatmap(time_stamp : int, player_pos : Vector3) -> void:

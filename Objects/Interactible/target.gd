@@ -6,11 +6,11 @@ var hit : bool = false
 var _last_time_appeared : float = 0
 @onready var _mesh : MeshInstance3D = $MeshInstance3D
 
-func take_hit() -> void:
+func take_hit(player_pos : Vector2i) -> void:
 	if !hit:
 		hit = true
 		on_screen_time += (Time.get_ticks_msec() - _last_time_appeared)
-		SignalBus.target_hit.emit(self)
+		SignalBus.target_hit.emit(self, player_pos)
 		print("ouch")
 		#_mesh.get_active_material(0).albedo_color = hit_color
 		queue_free()
